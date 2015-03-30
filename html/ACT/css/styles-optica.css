@@ -1,0 +1,561 @@
+@charset "utf-8";
+/* CSS Document */
+/* RESETEO PAGINA */
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}	
+/* FONTS */
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('BebasNeue-webfont.eot');
+    src: url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BebasNeue-webfont.woff2') format('woff2'),
+         url('BebasNeue-webfont.woff') format('woff'),
+         url('BebasNeue-webfont.ttf') format('truetype'),
+         url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'AvenirRegular';
+    src: url('AvenirNextLTPro-Regular.otf');
+    src: url('AvenirNextLTPro-Regular.otf?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ESTILOS */
+h1{
+	 font-family: 'bebas_neueregular';
+	 color:#313131;
+	}
+/**/	
+img{
+	width:100%;
+	}
+body{
+	 font-family: 'AvenirRegular', Helvetica, Arial;
+	 margin:0;
+	 padding:0;
+	 color:#4f4f4f;
+	}
+/**/	
+header{
+	width:100%;
+	background-color:#FFF;
+	}	
+.header-line{
+	width:100%;
+	float:left;
+	background-color:#07b1c6;
+	height:10px;
+	}	
+.cont-menu{
+	width:80%;
+	float:left;
+	padding:20px 10%;
+	}
+.logo-optica{
+	width:20%;
+	float:left;
+	}	
+nav{
+	width:80%;
+	float:left;
+	margin:2.5% 0 0 0;
+	}
+nav ul{
+	width:100%;
+	float:left;
+	}
+nav ul li{
+	width:16.5%;
+	float:left;
+	list-style:none;
+	
+	}	
+nav ul li a:link, nav ul li a:visited{
+	width:100%;
+	float:left;
+	text-align:center;
+	color:#a0a0a0;
+	font-size:0.8em;
+	}
+.nav ul li a:hover{
+	color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	}
+/*Slides Home*/
+.sliderhome{
+	width:100%;
+	float:left;
+	position:relative;
+	}	
+/* CAMPAÑAS PROMOSIONALES */	
+.section-cp{
+	width:100%;
+	float:left;
+	position:relative;
+	padding:5% 0;
+	background-color:#dde1e3;
+	}	
+.info-cp{
+	width:80%;
+	margin:0 10%;
+	}
+.info-promo{
+	width:40%;
+	float:left;
+	}
+.info-promo h1{
+	font-size:4em;
+	width:90%;
+	margin:2% 5% 0 5%;
+	float:left;
+	line-height: 55px;
+	}
+.info-promo span{
+	width:90%;
+	margin:30px 5% 0 5%;
+	font-size:1em;
+	text-align:justify;
+	float:left;
+	}		
+video{
+	width:60%;
+	float:left;
+	}
+/* Section Contacto */
+.cont-contacto{
+	width:100%;
+	float:left;
+	position:relative;
+	padding:0;
+	background-color:#313131;
+	}
+.cont-contacto img{
+	width:40%;
+	float:left;
+	margin:60px 0 0 0;
+	}
+.cont-fcontacto{
+	width:50%;
+	padding:50px 5% 0 5%;
+	float:left;
+	}	
+.cont-fcontacto h1{
+	color:#e0e0e0;
+	font-size:3em;
+	}
+.cont-fcontacto span{
+	width:100%;
+	padding:1% 0;
+	color:#e0e0e0;
+	font-size:1em;
+	}
+.color-gb{
+	color:#0bb0c7 !important;
+	}
+.f-contacto{
+	width:100%;
+	float:left;
+	} 
+.f-contacto input[type='text']{
+	width:40%;
+	float:left;
+	padding:20px 3% 5px 3%;
+	background-color:#313131;
+	outline:1px solid #e0e0e0;
+	border:none;
+	margin:20px 2% 0 0;
+	color:#e0e0e0;
+	}
+.f-contacto textarea{
+	width:88%;
+	min-height:200px;
+	float:left;
+	margin:20px 0 0 0;
+	outline:1px solid #e0e0e0;
+	border:none;
+	background-color:#313131;
+	padding:10px 3%;
+	color:#e0e0e0;
+	}	
+.f-contacto input[type='submit']{
+	width:150px;
+	background-color:#0bb0c7;
+	border:1px solid #0bb0c7;
+	color:#FFF;
+	padding:10px 0;
+	font-size:1em;
+	float:right;
+	margin:15px 5% 0 0;
+	}	
+.f-contacto input[type='submit']:hover{
+	background-color:#313131;
+	border:1px solid #0bb0c7;
+	transition:0.3s;
+	-moz-transition:0.3s;
+	-ms-transition:0.3s;
+	-o-transition:0.3s;
+	-webkit-transition:0.3s;
+	cursor:pointer;
+	}	
+/* LA EMPRESA */
+.gb-laempresa{
+	background-color:#fcfcfc;
+	}
+.img-laempresa{
+	width:50%;
+	float:left;
+	}
+.info-laempresa{
+	width:40%;
+	padding:2% 5% 0 5%;
+	float:left;
+	}
+.info-laempresa h1{
+	font-size:4em;
+	}
+.info-laempresa span{
+	width:80%;
+	float:left;
+	margin:3% 0 0 0;
+	text-align:justify;
+	line-height: 20px;
+	}	
+.section-laempresa{
+	width:100%;
+	float:left;
+	}	
+.info-mision, .info-vision{
+	width:50%;
+	float:left;
+	min-height:600px;
+	}
+.info-mision{
+	background:url(../images/img-mision.jpg);
+	background-position:bottom left;
+	background-repeat:no-repeat;
+	background-color:#ecedef;
+	background-size:75%;
+	}
+.info-vision{
+	background:url(../images/img-vision.jpg);
+	background-position:bottom right;
+	background-repeat:no-repeat;
+	background-color:#ccccd0;
+	background-size:75%;
+	}	
+#mision-a{
+	width:35%;
+	float:right;
+	margin:8% 8% 0 0;
+	}
+#vision-a{
+	width:35%;
+	float:left;
+	margin:8% 0 0 8%;
+	}	
+#mision-a h1, #vision-a h1{
+	font-size:4em;
+	}	
+#mision-a span, #vision-a span{
+	width:100%;
+	float:left;
+	margin:5px 0 0 0;
+	text-align:justify;
+	line-height: 20px;
+	}							
+/**/
+.info-copyright{
+	width:90%;
+	margin:10px 5% 20px 5%;
+	float:left;
+	}	
+.info-copyright ul{
+	width:16%;
+	margin:50px 42% 0 42%;
+	float:left;
+	}
+.info-copyright ul li{
+	width:23%;
+	float:left;
+	margin:0 1%;
+	list-style:none;
+	}
+.info-copyright ul li img{
+	width:100% !important;
+	margin:0 !important;
+	}	
+.info-copyright ul li a:link img, .info-copyright ul li a:visited img{
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	filter: grayscale(100%);
+	} 
+.info-copyright ul li a:hover img{
+	-webkit-filter: grayscale(40%);
+	-moz-filter: grayscale(40%);
+	-o-filter: grayscale(40%);
+	-ms-filter: grayscale(40%);
+	filter: grayscale(40%);
+	transition:0.3s;
+	-moz-transition:0.3s;
+	-ms-transition:0.3s;
+	-o-transition:0.3s;
+	-webkit-transition:0.3s;
+	}
+.info-copyright span{
+	width:100%;
+	text-align:center;
+	float:left;
+	color:#e0e0e0;
+	font-size:0.8em;
+	margin:20px 0 0 0;
+	}
+.info-copyright span a:link, .info-copyright span a:visited{
+	color:#e0e0e0;
+	}
+/* menu productos */
+.menu-productos{
+	background-color:#07b1c6;
+	width:80%;
+	padding:1% 10%;
+	float:left;		
+	}
+.menu-op1{
+	width:14%;
+	float:left;
+	}	
+.menu-op1 h2{
+	color:#FFF;
+	font-size:1em;
+	}	
+.menu-op1 ul{
+	width:100%;
+	padding:0;
+	margin:5px 0 0 0;
+	}	
+.menu-op1 ul li{
+	width:100%;
+	float:left;
+	padding:3px 0;
+	list-style:none;
+	color:#FFF;
+	}
+.menu-op2{
+	width:34%;
+	float:left;
+	border-left:1px solid #FFF;
+	border-right:1px solid #FFF;
+	padding:0 2.5%;
+	}	
+.menu-op2 h2{
+	color:#FFF;
+	font-size:1em;
+	}	
+.menu-op2 ul{
+	width:100%;
+	padding:0;
+	margin:5px 0 0 0;
+	}	
+.menu-op2 ul li{
+	width:33.3%;
+	float:left;
+	padding:3px 0;
+	list-style:none;
+	color:#FFF;
+	}
+.menu-op3{
+	width:25%;
+	float:left;
+	border-right:1px solid #FFF;
+	padding:0 0 0 2.5%;
+	margin:0 2.5% 0 0;
+	}	
+.menu-op3 h2{
+	color:#FFF;
+	font-size:1em;
+	}	
+.menu-op3 ul{
+	width:100%;
+	padding:0;
+	margin:5px 0 0 0;
+	}	
+.menu-op3 ul li{
+	width:50%;
+	float:left;
+	padding:3px 0;
+	list-style:none;
+	color:#FFF;
+	}	
+.menu-productos input[type='checkbox']{
+	border:none;
+	background-color:#FFF;
+	float:left;	
+	}	
+.menu-productos label{
+	color:#FFF;
+	float:left;
+	font-size:0.8em;
+	margin:0 0 0 5px;	
+	}
+/* PRODUCTOS OLA */
+.productos-ola{
+	width:80%;
+	padding:2% 10%;
+	float:left;
+	}
+.cont-producto{
+	width:23%;
+	padding:2% 1% 0.5% 1%;
+	float:left;
+	position:relative;
+	}	
+.cont-producto h3{
+	width:100%;
+	float:left;
+	font-family: 'AvenirRegular', Helvetica, Arial;
+	font-weight:200;
+	color:#b0b0b0;
+	text-align:center;
+	font-size:0.9em;
+	}
+.cont-producto img{
+	width:100%;
+	margin:2px 0;
+	
+	float:left;
+	}
+.ver-descripcion:link, .ver-descripcion:visited{
+	width:12%;
+	text-align:center;
+	padding:2% 0;
+	background-color:#07b1c6;
+	color:#FFF;
+	border-radius:100%;
+	font-size:1.1em;
+	position:absolute;
+	right:2%;
+	bottom:2%;
+	z-index:2;
+	}	
+.ver-descripcion:hover{
+	background-color:#313131;
+	transition:0.2s;
+	-moz-transition:0.2s;
+	-ms-transition:0.2s;
+	-o-transition:0.2s;
+	-webkit-transition:0.2s;
+	}						
+/**/
+.cont-improducto{
+	width:45%;
+	float:left;
+	margin:0 0 0 2.5%;
+	}	
+.info-colores{
+	width:100%;
+	float:left;
+	}
+.info-colores span{
+	float:left;
+	}
+.info-producto{
+	width:45%;
+	float:left;
+	margin:0 0 0 2.5%;
+	}	
+.info-producto h1{
+	font-size:3em;
+	}	
+.info-producto span{
+	width:100%;
+	float:left;
+	text-align:justify;
+	margin:5px 0;
+	line-height:20px;
+	}
+.tam-medida{
+	background-color:#b0b0b0;
+	color:#FFF;
+	padding:7px 0;
+	text-align:center;
+	width:50%;
+	float:left;
+	margin:10px 0 0 0;
+	}
+.art-relacionados{
+	width:100%;
+	margin:30px 0;
+	border-top:1px solid #313131;
+	float:left;
+	clear:both;
+	}	
+.tit-artre{
+	background-color:#313131;
+	color:#FFF;
+	font-family: 'bebas_neueregular';
+	font-size:3em;
+	float:left;
+	padding:10px 30px;
+	}
+.separador{
+	width:100%;
+	height:10px;
+	float:left;
+	}
+.color-gafas{
+	width:35px;
+	height:35px;
+	float:left;
+	margin:0 3px;
+	}
+#color-1{
+	color:#666;
+	background-color:#666;
+	}
+#color-2{
+	color:#03F;
+	background-color:#03F;
+	}
+#color-3{
+	color:#900;
+	background-color:#900;
+	}
+#color-4{
+	color:#39F;
+	background-color:#39F;
+	}
+#color-5{
+	color:#F99;
+	background-color:#F99;
+	}																															
