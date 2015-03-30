@@ -674,7 +674,7 @@ video{
 	position:fixed;
 	z-index:200;
 	top:25%;
-	left:1%;
+	right:1%;
 	}
 .nav-circ a:link, .nav-circ a:visited{
 	width:10px;
@@ -696,4 +696,8 @@ video{
 	-ms-transition:0.2s;
 	-o-transition:0.2s;
 	-webkit-transition:0.2s;
-}																																	
+}
+#img-trabaja{
+	width:40%;
+	float:left;
+	}																																	
