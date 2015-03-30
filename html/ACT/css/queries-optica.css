@@ -9,10 +9,6 @@
 	}
 }
 @media screen and (max-width: 1280px) {
-.cont-menu {
-  width: 90%;
-  padding: 20px 5%;
-	}
 .info-cp {
   width: 90%;
   margin: 0 5%;
@@ -45,10 +41,6 @@
 }
 }
 @media screen and (max-width: 1024px) {
-.cont-menu {
-  width: 95%;
-  padding: 20px 2.5%;
-	}
 .info-cp {
   width: 95%;
   margin: 0 2.5%;
@@ -101,6 +93,25 @@ nav {
 }
 .tam-medida {
   width: 100%;
+}
+header {
+  position: relative;
+}
+#cont-home {
+  height: auto;
+  position: relative;
+}
+.sliderhome {
+  height: auto;
+  margin: 0;
+}
+.section-cp {
+  height: auto;
+  position: relative;
+}
+.cont-contacto {
+  height: auto;
+  padding: 5% 0;
 }
 }
 @media screen and (max-width: 640px){

@@ -69,6 +69,10 @@ body{
 header{
 	width:100%;
 	background-color:#FFF;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
 	}	
 .header-line{
 	width:100%;
@@ -79,10 +83,10 @@ header{
 .cont-menu{
 	width:80%;
 	float:left;
-	padding:20px 10%;
+	padding:1% 10%;
 	}
 .logo-optica{
-	width:20%;
+	width:15%;
 	float:left;
 	}	
 nav{
@@ -111,18 +115,30 @@ nav ul li a:link, nav ul li a:visited{
 	color: transparent;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
 	}
+/* HOME */
+#cont-home{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	}	
 /*Slides Home*/
 .sliderhome{
 	width:100%;
+	height:94%;
+	background-color:#0C9;
 	float:left;
 	position:relative;
+	margin:6% 0 0 0;
 	}	
 /* CAMPAÑAS PROMOSIONALES */	
 .section-cp{
 	width:100%;
+	height:80%;
 	float:left;
 	position:relative;
-	padding:5% 0;
+	padding:10% 0;
 	background-color:#dde1e3;
 	}	
 .info-cp{
@@ -154,21 +170,114 @@ video{
 /* Section Contacto */
 .cont-contacto{
 	width:100%;
+	height:90%;
 	float:left;
 	position:relative;
-	padding:0;
+	padding:5% 0;
 	background-color:#313131;
 	}
-.cont-contacto img{
-	width:40%;
+	
+.img-contacto{
+	width:38%;
+	height:60%;
 	float:left;
 	margin:60px 0 0 0;
+	position:relative;
+	background-color:#06b1c5;
 	}
+.img-contacto img{
+	width: 18.5%;
+	float:left;
+	outline:1px solid #FFF;
+	position:absolute;
+	}	
+.barras2 img{
+	width: 29.4% !important;
+	float:left;
+	position:absolute;
+	}	
+.barra25p{
+	width:100%;
+	height:25%;
+	position:relative;
+	float:left;
+	}
+.barra50p{
+	width:100%;
+	height:50%;
+	position:relative;
+	float:left;
+	}
+.cont-barrasdown25{
+	width:63%;
+	height:100%;
+	position:relative;
+	float:left;
+	}	
+.cont-imgcont{
+	width:37%;
+	height:100%;
+	float:left;
+	position:relative;
+	}
+.cont-imgcont img{
+	width: 100%;
+	float:left;
+	position:absolute;
+	}
+/* POSICIONES IMAGENES */
+#img-1{
+	top:0;
+	right:55.5%;
+	}
+#img-2{
+	top:0;
+	right:37%;
+	}
+#img-3{
+	top:0;
+	right:18.5%;
+	}
+#img-4{
+	top:0;
+	right:0;
+	}
+#img-5{
+	top:0;
+	right:74.1%;
+	}
+#img-6{
+	top:0;
+	right:37.1%;
+	}
+#img-7{
+	top:0;
+	right:0;
+	}
+#img-8{
+	top:0;
+	left:0;
+	}
+#img-9{
+	top:0;
+	left:40.8%;
+	}
+#img-10{
+	top:0;
+	right:40.9%;
+	}
+#img-11{
+	top:0;
+	right:0;
+	}				
+/**/						
 .cont-fcontacto{
 	width:50%;
 	padding:50px 5% 0 5%;
 	float:left;
-	}	
+	position:relative;
+	}
+	
 .cont-fcontacto h1{
 	color:#e0e0e0;
 	font-size:3em;
@@ -558,4 +667,33 @@ video{
 #color-5{
 	color:#F99;
 	background-color:#F99;
-	}																															
+	}
+/**/
+.nav-circ{
+	width:10px;
+	position:fixed;
+	z-index:200;
+	top:25%;
+	left:1%;
+	}
+.nav-circ a:link, .nav-circ a:visited{
+	width:10px;
+	height:10px;
+	border-radius:100%;
+	background-color:rgba(255,255,255,0.6);
+	font-size:0.5px;
+	float:left;
+	margin:10px 0;
+	}	
+.nav-circ a:hover, .div-selected{
+	background-color:#0bb0c7 !important;
+	width:6px !important;
+	height:6px !important;
+	padding:2px;
+	border:1px solid #FFF;
+	transition:0.2s;
+	-moz-transition:0.2s;
+	-ms-transition:0.2s;
+	-o-transition:0.2s;
+	-webkit-transition:0.2s;
+}																																	
