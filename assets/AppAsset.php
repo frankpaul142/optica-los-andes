@@ -23,6 +23,11 @@ class AppAsset extends AssetBundle
         'css/queries-optica.css',
     ];
     public $js = [
+        '//code.angularjs.org/1.3.9/angular.min.js',
+        '//code.angularjs.org/1.3.9/angular-route.min.js',
+        '//code.angularjs.org/1.3.9/angular-animate.min.js',
+        'js/app.js',
+        'js/controllers.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

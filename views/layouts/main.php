@@ -22,23 +22,23 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body ng-app="Optica">
 
 <?php $this->beginBody() ?>
     <!-- HEADER OPTICA LOS ANDES -->
 <header>
 	<div class="header-line"></div>
     <div class="cont-menu">
-    	<div class="logo-optica"><img src="images/logo-ola.png"/></div>
+    	<a href="#/"><div class="logo-optica"><img src="images/logo-ola.png"/></div></a>
         <nav>
         	<ul>
-            	<li><a href="#">QUIENES SOMOS</a></li>
+            	<li><a href="#/quienes_somos">QUIENES SOMOS</a></li>
                 <!-- <li><a href="#">PRODUCTOS</a></li> -->
                 <!-- <li><a href="#">SERVICIOS</a></li> -->
                 <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
-                <li><a href="#">ENCUÉNTRANOS</a></li>
-                <li><a href="#">TRABAJA CON NOSOTROS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#/encuentranos">ENCUÉNTRANOS</a></li>
+                <li><a href="#/trabaja_con_nosotros">TRABAJA CON NOSOTROS</a></li>
+                <li><a href="#/contacto">CONTACTO</a></li>
             </ul>
         </nav>
     </div>

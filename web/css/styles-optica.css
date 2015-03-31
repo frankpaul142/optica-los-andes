@@ -125,25 +125,26 @@ nav ul li a:link, nav ul li a:visited{
 	}	
 /*Slides Home*/
 .sliderhome{
-	width:100%;
-	height:94%;
+	width:100vw;
+	height:100vh;
 	background-color:#0C9;
 	float:left;
 	position:relative;
-	margin:6% 0 0 0;
-	}	
+	}
+.contenedor{
+	padding-top: 6%;
+}
 /* CAMPAÑAS PROMOSIONALES */	
 .section-cp{
-	width:100%;
-	height:80%;
+	width:100vw;
+	height:100vh;
 	float:left;
 	position:relative;
-	padding:10% 0;
 	background-color:#dde1e3;
 	}	
 .info-cp{
 	width:80%;
-	margin:0 10%;
+	padding:10% 10%;
 	}
 .info-promo{
 	width:40%;
@@ -169,14 +170,16 @@ video{
 	}
 /* Section Contacto */
 .cont-contacto{
-	width:100%;
-	height:90%;
+	width:100vw;
+	height:100vh;
 	float:left;
 	position:relative;
-	padding:5% 0;
 	background-color:#313131;
 	}
-	
+.contenedor2{
+	height: 90%;
+	padding-top: 5%;
+}
 .img-contacto{
 	width:38%;
 	height:60%;
