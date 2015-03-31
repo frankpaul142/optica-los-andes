@@ -708,6 +708,83 @@ video{
 
 /* Angular Transitions */
 
+.scroll-down-leave.ng-leave      {
+    -webkit-animation:slideOutUp 0.7s both ease-in;
+    -moz-animation:slideOutUp 0.7s both ease-in;
+    animation:slideOutUp 0.7s both ease-in;
+}
+.scroll-down-enter.ng-enter      { 
+    -webkit-animation:slideInUp 0.7s both ease-in;
+    -moz-animation:slideInUp 0.7s both ease-in;
+    animation:slideInUp 0.7s both ease-in;  
+}
+.scroll-up-leave.ng-leave      {
+    -webkit-animation:slideOutBottom 0.7s both ease-in;
+    -moz-animation:slideOutBottom 0.7s both ease-in;
+    animation:slideOutBottom 0.7s both ease-in;
+}
+.scroll-up-enter.ng-enter      { 
+    -webkit-animation:slideInBottom 0.7s both ease-in;
+    -moz-animation:slideInBottom 0.7s both ease-in;
+    animation:slideInBottom 0.7s both ease-in;  
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+@-moz-keyframes slideInUp {
+    from    { -moz-transform:translateY(100%); }
+    to      { -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInUp {
+    from    { -webkit-transform:translateY(100%); }
+    to      { -webkit-transform: translateY(0); }
+}
+
+/* slide out to the top */
+@keyframes slideOutUp {
+    from    { transform:translateY(0); }
+    to      { transform: translateY(-100%); }
+}
+@-moz-keyframes slideOutUp {
+    from    { -moz-transform:translateY(0); }
+    to      { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes slideOutUp {
+    from    { -webkit-transform:translateY(0); }
+    to      { -webkit-transform: translateY(-100%); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInBottom {
+    from    { transform:translateY(-100%); }
+    to      { transform: translateY(0); }
+}
+@-moz-keyframes slideInBottom {
+    from    { -moz-transform:translateY(-100%); }
+    to      { -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInBottom {
+    from    { -webkit-transform:translateY(-100%); }
+    to      { -webkit-transform: translateY(0); }
+}
+
+/* slide out to the top */
+@keyframes slideOutBottom {
+    from    { transform:translateY(0); }
+    to      { transform: translateY(100%); }
+}
+@-moz-keyframes slideOutBottom {
+    from    { -moz-transform:translateY(0); }
+    to      { -moz-transform: translateY(100%); }
+}
+@-webkit-keyframes slideOutBottom {
+    from    { -webkit-transform:translateY(0); }
+    to      { -webkit-transform: translateY(100%); }
+}
+
 /* ANIMATIONS
 ============================================================================= */
 
@@ -717,7 +794,7 @@ video{
 /* page specific animations ------------------------ */
 
 /* home -------------------------- */
-.page-home.ng-leave         {
+/*.page-home.ng-leave         {
     -webkit-transform-origin: 0% 0%;
     -webkit-animation: rotateFall 1s both ease-in;
     -moz-transform-origin: 0% 0%;
@@ -729,10 +806,10 @@ video{
     -webkit-animation:scaleUp 0.5s both ease-in;
     -moz-animation:scaleUp 0.5s both ease-in;
     animation:scaleUp 0.5s both ease-in;    
-}
+}*/
 
 /* about ------------------------ */
-.page-about.ng-leave        {
+/*.page-about.ng-leave        {
     -webkit-animation:slideOutLeft 0.5s both ease-in;
     -moz-animation:slideOutLeft 0.5s both ease-in;
     animation:slideOutLeft 0.5s both ease-in;   
@@ -741,10 +818,10 @@ video{
     -webkit-animation:slideInRight 0.5s both ease-in;
     -moz-animation:slideInRight 0.5s both ease-in;
     animation:slideInRight 0.5s both ease-in;    
-}
+}*/
 
 /* contact ---------------------- */
-.page-contact.ng-leave      {
+/*.page-contact.ng-leave      {
     -webkit-transform-origin: 50% 50%;
     -webkit-animation: rotateOutNewspaper .5s both ease-in;
     -moz-transform-origin: 50% 50%;
@@ -756,10 +833,10 @@ video{
     -webkit-animation:slideInUp 0.5s both ease-in;
     -moz-animation:slideInUp 0.5s both ease-in;
     animation:slideInUp 0.5s both ease-in;  
-}
+}*/
 
 /* rotate and fall */
-@-webkit-keyframes rotateFall {
+/*@-webkit-keyframes rotateFall {
     0% { -webkit-transform: rotateZ(0deg); }
     20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
     40% { -webkit-transform: rotateZ(17deg); }
@@ -779,10 +856,10 @@ video{
     40% { transform: rotateZ(17deg); }
     60% { transform: rotateZ(16deg); }
     100% { transform: translateY(100%) rotateZ(17deg); }
-}
+}*/
 
 /* scale up */
-@keyframes scaleUp {
+/*@keyframes scaleUp {
     from        { opacity: 0.3; transform: scale(0.8); }
 }
 @-moz-keyframes scaleUp {
@@ -790,10 +867,10 @@ video{
 }
 @-webkit-keyframes scaleUp {
     from        { opacity: 0.3; -webkit-transform: scale(0.8); }
-}
+}*/
 
 /* slide in from the right */
-@keyframes slideInRight {
+/*@keyframes slideInRight {
     from    { transform:translateX(100%); }
     to      { transform: translateX(0); }
 }
@@ -804,24 +881,12 @@ video{
 @-webkit-keyframes slideInRight {
     from    { -webkit-transform:translateX(100%); }
     to      { -webkit-transform: translateX(0); }
-}
+}*/
+
+
 
 /* slide in from the bottom */
-@keyframes slideInUp {
-    from    { transform:translateY(100%); }
-    to      { transform: translateY(0); }
-}
-@-moz-keyframes slideInUp {
-    from    { -moz-transform:translateY(100%); }
-    to      { -moz-transform: translateY(0); }
-}
-@-webkit-keyframes slideInUp {
-    from    { -webkit-transform:translateY(100%); }
-    to      { -webkit-transform: translateY(0); }
-}
-
-/* slide in from the bottom */
-@keyframes slideOutLeft {
+/*@keyframes slideOutLeft {
     to      { transform: translateX(-100%); }
 }
 @-moz-keyframes slideOutLeft {  
@@ -829,10 +894,10 @@ video{
 }
 @-webkit-keyframes slideOutLeft {
     to      { -webkit-transform: translateX(-100%); }
-}
+}*/
 
 /* rotate out newspaper */
-@-webkit-keyframes rotateOutNewspaper {
+/*@-webkit-keyframes rotateOutNewspaper {
     to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
 }
 @-moz-keyframes rotateOutNewspaper {
@@ -840,6 +905,6 @@ video{
 }
 @keyframes rotateOutNewspaper {
     to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
+}*/
 
 /* --Angular Transitions-- */
