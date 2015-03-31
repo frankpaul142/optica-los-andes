@@ -15,7 +15,9 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Optica los Andes, distribuidor de lentes, gafas, lunas">
+	<meta name="keywords" content="Optica Los Andes, Optica, Los Andes, Lentes, Gafas, Lunas, Ojos, Examenes Visuales, Oftalmología, Armazones">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -23,45 +25,25 @@ AppAsset::register($this);
 <body>
 
 <?php $this->beginBody() ?>
-    <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'My Company',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
-            NavBar::end();
-        ?>
-
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= $content ?>
-        </div>
+    <!-- HEADER OPTICA LOS ANDES -->
+<header>
+	<div class="header-line"></div>
+    <div class="cont-menu">
+    	<div class="logo-optica"><img src="images/logo-ola.png"/></div>
+        <nav>
+        	<ul>
+            	<li><a href="#">QUIENES SOMOS</a></li>
+                <!-- <li><a href="#">PRODUCTOS</a></li> -->
+                <!-- <li><a href="#">SERVICIOS</a></li> -->
+                <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
+                <li><a href="#">ENCUÉNTRANOS</a></li>
+                <li><a href="#">TRABAJA CON NOSOTROS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
     </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
+</header>
+<?= $content ?>
 
 <?php $this->endBody() ?>
 </body>

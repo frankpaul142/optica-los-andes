@@ -19,11 +19,13 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/styles-optica.css',
+        'css/queries-optica.css',
     ];
     public $js = [
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        // 'yii\bootstrap\BootstrapAsset',
     ];
 }
