@@ -52,20 +52,7 @@ AppAsset::register($this);
 </header>
 <?= $content ?>
 
-<?php $this->endBody() ?>
-<script>
-$( ".cont-loader" ).click(function() {
-    
-    
-    $( ".mid-top" ).addClass( "hide-top" );
-    $( ".mid-bot" ).addClass( "hide-bot" );
-    $('.loading').fadeOut();
-    $(this).delay(800).fadeOut(800);
-    
-    
-    
-});
-    </script>       
+<?php $this->endBody() ?>     
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -765,7 +765,7 @@ video{
 	padding:30px 10% !important;
 	background:rgba(0,0,0,0.8);
 	margin:15px 0 0 0 !important;
-	display:none;
+	/*display:none;*/
 	}
 .submenu-locales li{
 	list-style: circle;

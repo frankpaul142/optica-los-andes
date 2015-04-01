@@ -1,8 +1,7 @@
 $(document).ready(function() {
-    $(".list-locales li a").click(function() {
-        var checkElement = $(this).next();
-        if ((checkElement.is('ul'))) {
-            ($(this)).slideToggle();
-        }
-    });
+    $( ".mid-top" ).addClass( "hide-top" );
+    $( ".mid-bot" ).addClass( "hide-bot" );
+    $('.loading').fadeOut();
+    $('.cont-loader').delay(800).fadeOut(800);
+    
 });

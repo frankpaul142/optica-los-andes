@@ -48,10 +48,10 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 		$location.url($scope.scrollUrl).replace();
 		// scrolling = false;
 	});
-	$(document).bind('mousewheel', function(e) {
+	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.wheelDelta / 120 < 0) {
-				scrolling = true;
+			if (e.originalEvent.deltaY>0) {
+				// scrolling = true;
 				$scope.pageClass = 'scroll-down-leave';
 				$scope.scrollUrl = 'promo';
 				$scope.$apply();
@@ -90,9 +90,10 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 		$location.url($scope.scrollUrl).replace();
 		// scrolling = false;
 	});
-	$(document).bind('mousewheel', function(e) {
+	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.wheelDelta / 120 < 0) {
+			if (e.originalEvent.deltaY>0) {
+				// scrolling = true;
 				$scope.pageClass = 'scroll-down-leave';
 				$scope.scrollUrl = 'contacto';
 				$scope.$apply();
@@ -135,9 +136,9 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
 		$location.url($scope.scrollUrl).replace();
 		// scrolling = false;
 	});
-	$(document).bind('mousewheel', function(e) {
+	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.wheelDelta / 120 > 0) {
+			if (e.originalEvent.deltaY < 0) {
 				$scope.pageClass = 'scroll-up-leave';
 				$scope.scrollUrl = 'promo';
 				$scope.$apply();
@@ -177,9 +178,9 @@ controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
 		$location.url($scope.scrollUrl).replace();
 		// scrolling = false;
 	});
-	$(document).bind('mousewheel', function(e) {
+	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.wheelDelta / 120 < 0) {
+			if (e.originalEvent.deltaY > 0) {
 				scrolling = true;
 				$scope.pageClass = 'scroll-down-leave';
 				$scope.scrollUrl = 'trabaja_con_nosotros';
@@ -220,9 +221,9 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 		$location.url($scope.scrollUrl).replace();
 		// scrolling = false;
 	});
-	$(document).bind('mousewheel', function(e) {
+	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.wheelDelta / 120 > 0) {
+			if (e.originalEvent.deltaY < 0) {
 				scrolling = true;
 				$scope.pageClass = 'scroll-up-leave';
 				$scope.scrollUrl = 'quienes_somos';
@@ -234,6 +235,7 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
 	console.log('LocalesCtrl');
+	$scope.quito=false;
 	$scope.pageClass = 'scroll-right-enter';
 	$rootScope.page = 6;
 	$rootScope.$on('sectionMenu', function(event, args) {
@@ -241,4 +243,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
+	$scope.desplegar=function () {
+		$scope.quito=!$scope.quito;
+	}
 });
