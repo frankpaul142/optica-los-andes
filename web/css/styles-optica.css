@@ -303,8 +303,18 @@ video{
 	width:100%;
 	float:left;
 	} 
-.f-contacto input[type='text']{
+.f-contacto input[type='text'], input[type='email']{
 	width:40%;
+	float:left;
+	padding:20px 3% 5px 3%;
+	background-color:#313131;
+	outline:1px solid #e0e0e0;
+	border:none;
+	margin:20px 2% 0 0;
+	color:#e0e0e0;
+	}
+.f-contacto select{
+	width:46%;
 	float:left;
 	padding:20px 3% 5px 3%;
 	background-color:#313131;

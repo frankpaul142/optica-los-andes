@@ -1,70 +1,53 @@
 <div class="cont-locales">
-    	
-    	<div class="list-locales">
-       		<span>Optica los Andes posee 50 locales, por todo el Ecuador por las principales ciudades del país, ofreciendo productos de calidad y facilidad a nuestros clientes donde quiera que este.</span>
-        	<ul>
-            	<li><a href="javascript:void(0)" ng-click="desplegar()">QUITO</a>
-                	<ul class="submenu-locales" ng-if="quito">
-                    	<li><a href="#">- C.C. EL BOSQUE</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0)" class="selected-list">GUAYAQUIL</a>
-                	<ul class="submenu-locales" ng-if="guayaquil">
-                    	<li><a href="#">- C.C. EL BOSQUE</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                        <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0)">CUENCA</a></li>
-                <li><a href="javascript:void(0)">PORTOVIEJO</a></li>
-                <li><a href="javascript:void(0)">MANTA</a></li>
-                <li><a href="javascript:void(0)">ESMERALDAS</a></li>
-                <li><a href="javascript:void(0)">AMBATO</a></li>
-                <li><a href="javascript:void(0)">RIOBAMBA</a></li>
-                <li><a href="#">SALINAS</a></li>
-                <li><a href="#">QUEVEDO</a></li>
-                <li><a href="#">MACHALA</a></li>
-                <li><a href="#">IBARRA</a></li>
-            </ul>
-        </div>
-        <div class="info-locales">
-        	<div class="tit-encuentranos">ENCUÉNTRANOS</div>
-            <img src="images/local-optica.jpg" alt="imagen local"/>
-            <div class="desc-locales">
-            	<div class="direccion">
-                	<img src="images/ico-locales.png" alt="icono direccion"/>
-                    <div class="txt-locales">
-                    	<h4>C.C. El Bosque</h4>
-                        <span>Carvajal y Lizardo García.</span>
-                        <div class="txt-telefonos">
-                        	<img src="images/ico-telefono.png" alt="icono telefono"/>
-                            <span>2 222-5454</span>
-                        </div>
-                         <div class="txt-telefonos">
-                        	<img src="images/ico-movil.png" alt="icono telefono"/>
-                            <span>09 952-5454</span>
-                        </div>
+    <div class="loading" ng-show="loading">
+        <div class="dot"></div>
+        <div class="dot2"></div>
+    </div>
+    <div class="list-locales" ng-show="!loading">
+        <span>Optica los Andes posee 50 locales, por todo el Ecuador por las principales ciudades del país, ofreciendo productos de calidad y facilidad a nuestros clientes donde quiera que este.</span>
+        <ul>
+            <li><a href="javascript:void(0)" ng-click="desplegar()">QUITO</a>
+                <ul class="submenu-locales" ng-if="quito">
+                    <li><a href="#">- C.C. EL BOSQUE</a></li>
+                    <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
+                    <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
+                    <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
+                    <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
+                    <li><a href="#">- C.C. QUICENTRO SHOPPING</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="info-locales">
+        <div class="tit-encuentranos">ENCUÉNTRANOS</div>
+        <img src="images/local-optica.jpg" alt="imagen local" />
+        <div class="desc-locales">
+            <div class="direccion">
+                <img src="images/ico-locales.png" alt="icono direccion" />
+                <div class="txt-locales">
+                    <h4>C.C. El Bosque</h4>
+                    <span>Carvajal y Lizardo García.</span>
+                    <div class="txt-telefonos">
+                        <img src="images/ico-telefono.png" alt="icono telefono" />
+                        <span>2 222-5454</span>
+                    </div>
+                    <div class="txt-telefonos">
+                        <img src="images/ico-movil.png" alt="icono telefono" />
+                        <span>09 952-5454</span>
                     </div>
                 </div>
-                <div class="direccion">
-                	<img src="images/ico-horario.png" alt="icono direccion"/>
-                    <div class="txt-locales">
-                    	<h4>HORARIO DE ATENCIÓN</h4>
-                        <span>Lunes a Viernes 9:00 a 19:00<br/>Sábado y Domingo 10:00 a 17:00</span>
-                    </div>
+            </div>
+            <div class="direccion">
+                <img src="images/ico-horario.png" alt="icono direccion" />
+                <div class="txt-locales">
+                    <h4>HORARIO DE ATENCIÓN</h4>
+                    <span>Lunes a Viernes 9:00 a 19:00<br/>Sábado y Domingo 10:00 a 17:00</span>
                 </div>
-                <div class="direccion-maps">
-                	<a href="#"><img src="images/ico-ubicacion.png" alt="icono ubicación"/>
+            </div>
+            <div class="direccion-maps">
+                <a href="#"><img src="images/ico-ubicacion.png" alt="icono ubicación" />
                     <h4>VER UBICACIÓN DEL LOCAL</h4></a>
-                </div>
             </div>
         </div>
     </div>
+</div>
