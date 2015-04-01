@@ -15,6 +15,7 @@ use Yii;
  * @property string $phone
  * @property string $cellphone
  * @property string $maps
+ * @property string $status
  *
  * @property City $city
  */
@@ -36,6 +37,7 @@ class Local extends \yii\db\ActiveRecord
         return [
             [['city_id', 'name', 'address', 'schedule'], 'required'],
             [['city_id'], 'integer'],
+            [['status'], 'string'],
             [['name'], 'string', 'max' => 150],
             [['address', 'schedule', 'maps'], 'string', 'max' => 255],
             [['phone'], 'string', 'max' => 9],
@@ -57,6 +59,7 @@ class Local extends \yii\db\ActiveRecord
             'phone' => 'Phone',
             'cellphone' => 'Cellphone',
             'maps' => 'Maps',
+            'status' => 'Status',
         ];
     }
 
