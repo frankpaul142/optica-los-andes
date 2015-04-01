@@ -24,6 +24,10 @@ app.config(function($routeProvider /*, $locationProvider*/ ) {
 		templateUrl: 'partials/trabaja.html',
 		controller: 'TrabajaCtrl'
 	}).
+	when('/locales', {
+		templateUrl: 'partials/locales.html',
+		controller: 'LocalesCtrl'
+	}).
 	otherwise({
 		redirectTo: '/'
 	});

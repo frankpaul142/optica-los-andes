@@ -36,7 +36,7 @@ AppAsset::register($this);
                 <!-- <li><a href="#">PRODUCTOS</a></li> -->
                 <!-- <li><a href="#">SERVICIOS</a></li> -->
                 <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
-                <li><a href="#/encuentranos">ENCUÉNTRANOS</a></li>
+                <li><a href="#/locales">ENCUÉNTRANOS</a></li>
                 <li><a href="#/trabaja_con_nosotros">TRABAJA CON NOSOTROS</a></li>
                 <li><a href="#/contacto">CONTACTO</a></li>
             </ul>

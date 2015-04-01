@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
         '//code.angularjs.org/1.3.9/angular-animate.min.js',
         'js/app.js',
         'js/controllers.js',
+        'js/script.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
