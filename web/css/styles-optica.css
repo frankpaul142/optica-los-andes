@@ -1128,3 +1128,100 @@ video{
 }*/
 
 /* --Angular Transitions-- */
+
+/*loader*/
+body {
+  margin: 0;
+    transition: 0.3s all;
+    
+}
+.cont-loader{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}    
+.mid-top, .mid-bot {
+    width: 100%;
+    height: 50%;
+    background: #00B0C7;
+    float:left;
+    position: relative;
+} 
+.hide-top{
+    -webkit-animation: top-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+}  
+.hide-bot{
+    -webkit-animation: bot-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+}    
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(-50%, -50%);
+}
+.loading .dot {
+  position: absolute;
+  border-radius: 50%;
+  left: 1px;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  -webkit-animation: spin 2.5s 0s infinite both;
+}
+.loading .dot2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  -webkit-animation: spin2 2.5s 0s infinite both;
+}
+
+@-webkit-keyframes spin {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  25%, 75% {
+    box-shadow: 28px 0 0 white, -28px 0 0 white, 0 28px 0 white, 0 -28px 0 white, 20px -20px 0 white, 20px 20px 0 white, -20px -20px 0 white, -20px 20px 0 white;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+@-webkit-keyframes spin2 {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+  }
+  25%, 75% {
+    box-shadow: 52px 0 0 white, -52px 0 0 white, 0 52px 0 white, 0 -52px 0 white, 38px -38px 0 white, 38px 38px 0 white, -38px -38px 0 white, -38px 38px 0 white;
+    background: transparent;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+
+/*afterloading*/  
+@-webkit-keyframes top-hide {
+    0% {-webkit-transform:translateY(0%)}
+    100%{-webkit-transform:translateY(-100%)}
+}  
+    
+    
+@-webkit-keyframes bot-hide {
+    0% {-webkit-transform:translateY(0%)}
+    100%{-webkit-transform:translateY(100%)}
+}

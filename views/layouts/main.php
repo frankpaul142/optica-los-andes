@@ -23,7 +23,14 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body ng-app="Optica" ng-controller="MainCtrl">
-
+<div class="cont-loader">   
+    <div class="mid-top"></div> 
+    <div class="mid-bot"></div>    
+    <div class="loading">
+        <div class="dot"></div>
+        <div class="dot2"></div>
+    </div>
+</div> 
 <?php $this->beginBody() ?>
     <!-- HEADER OPTICA LOS ANDES -->
 <header>
@@ -46,6 +53,19 @@ AppAsset::register($this);
 <?= $content ?>
 
 <?php $this->endBody() ?>
+<script>
+$( ".cont-loader" ).click(function() {
+    
+    
+    $( ".mid-top" ).addClass( "hide-top" );
+    $( ".mid-bot" ).addClass( "hide-bot" );
+    $('.loading').fadeOut();
+    $(this).delay(800).fadeOut(800);
+    
+    
+    
+});
+    </script>       
 </body>
 </html>
 <?php $this->endPage() ?>
