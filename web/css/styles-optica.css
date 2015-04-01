@@ -1151,9 +1151,13 @@ body {
 } 
 .hide-top{
     -webkit-animation: top-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+    -moz-animation: top-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+    animation: top-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
 }  
 .hide-bot{
     -webkit-animation: bot-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+    -moz-animation: bot-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+    animation: bot-hide 1s 0s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
 }    
 .loading {
   position: fixed;
@@ -1162,6 +1166,8 @@ body {
   width: 20px;
   height: 20px;
   -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .loading .dot {
   position: absolute;
@@ -1172,6 +1178,9 @@ body {
   height: 18px;
   background: white;
   -webkit-animation: spin 2.5s 0s infinite both;
+    -moz-animation: spin 2.5s 0s infinite both;
+    animation: spin 2.5s 0s infinite both;
+    
 }
 .loading .dot2 {
   position: absolute;
@@ -1180,8 +1189,10 @@ body {
   height: 20px;
   background: white;
   -webkit-animation: spin2 2.5s 0s infinite both;
+    -moz-animation: spin2 2.5s 0s infinite both;
+    animation: spin2 2.5s 0s infinite both;
 }
-
+/*anim chome*/
 @-webkit-keyframes spin {
   0%, 100% {
     box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
@@ -1193,7 +1204,7 @@ body {
     box-shadow: 28px 0 0 white, -28px 0 0 white, 0 28px 0 white, 0 -28px 0 white, 20px -20px 0 white, 20px 20px 0 white, -20px -20px 0 white, -20px 20px 0 white;
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
     box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
   }
 }
@@ -1224,4 +1235,49 @@ body {
 @-webkit-keyframes bot-hide {
     0% {-webkit-transform:translateY(0%)}
     100%{-webkit-transform:translateY(100%)}
+}
+
+/*anim-moz*/
+@-moz-keyframes spin {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    -moz-transform: rotate(180deg);
+  }
+  25%, 75% {
+    box-shadow: 28px 0 0 white, -28px 0 0 white, 0 28px 0 white, 0 -28px 0 white, 20px -20px 0 white, 20px 20px 0 white, -20px -20px 0 white, -20px 20px 0 white;
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+@-moz-keyframes spin2 {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    -moz-transform: rotate(-180deg);
+  }
+  25%, 75% {
+    box-shadow: 52px 0 0 white, -52px 0 0 white, 0 52px 0 white, 0 -52px 0 white, 38px -38px 0 white, 38px 38px 0 white, -38px -38px 0 white, -38px 38px 0 white;
+    background: transparent;
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+
+/*afterloading*/  
+@-moz-keyframes top-hide {
+    0% {-moz-transform:translateY(0%)}
+    100%{-moz-transform:translateY(-100%)}
+}  
+    
+    
+@-moz-keyframes bot-hide {
+    0% {-moz-transform:translateY(0%)}
+    100%{-moz-transform:translateY(100%)}
 }
