@@ -233,9 +233,10 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 	});
 });
 
-controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
+controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$http) {
 	console.log('LocalesCtrl');
-	$scope.quito=false;
+	$scope.loading=true;
+	$scope.ciudadActiva=0;
 	$scope.pageClass = 'scroll-right-enter';
 	$rootScope.page = 6;
 	$rootScope.$on('sectionMenu', function(event, args) {
@@ -243,7 +244,22 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
-	$scope.desplegar=function () {
-		$scope.quito=!$scope.quito;
+	$scope.desplegar=function (id) {
+		$scope.ciudadActiva=id;
+	};
+	if(typeof(ciudades)==='undefined'){
+		$http.get('site/load-stores').success(function (data) {
+			console.log(data);
+			if(data!=''){
+				$scope.ciudades=ciudades;
+			}
+			$scope.loading=false;
+		}).error(function (data) {
+			console.log('error loadStores');
+			$scope.loading=false;
+		});
+	}
+	else{
+		$scope.ciudades=ciudades;
 	}
 });

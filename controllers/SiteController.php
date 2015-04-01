@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\City;
+use app\models\Local;
 
 class SiteController extends Controller
 {
@@ -92,5 +94,27 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionLoadStores()
+    {
+        $cities=City::findAll([]);
+        $return=[];
+        foreach ($cities as $i => $city) {
+            $cit=[];
+            $cit['name']=$city->description;
+            foreach ($city->locals as $j => $local) {
+                $loc=[];
+                $loc['name']=$local->name;
+                $loc['address']=$local->address;
+                $loc['schedule']=$local->schedule;
+                $loc['phone']=$local->phone;
+                $loc['cellphone']=$local->cellphone;
+                $loc['maps']=$local->maps;
+                $cit['locals'][$local->id]=$loc;
+            }
+            $return[$city->id]=$cit;
+        }
+        return json_encode($return);
     }
 }

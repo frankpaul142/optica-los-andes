@@ -37,3 +37,10 @@ app.config(function($routeProvider /*, $locationProvider*/ ) {
 });
 
 // --configs
+
+
+// vars
+
+var ciudades;
+
+// --vars

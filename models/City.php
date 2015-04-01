@@ -49,6 +49,6 @@ class City extends \yii\db\ActiveRecord
      */
     public function getLocals()
     {
-        return $this->hasMany(Local::className(), ['city_id' => 'id']);
+        return $this->hasMany(Local::className(), ['city_id' => 'id'])->where('status="ACTIVE"');
     }
 }
