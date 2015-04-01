@@ -74,9 +74,40 @@
 }
 }	
 @media screen and (max-width: 860px) {
-nav {
-  display:none;
-}	
+
+/**/
+nav{
+	/*display:none;*/
+	width:90%;
+	margin:0;
+	padding:1% 5%;
+	position:absolute;
+	top:100%;
+	left:0;
+	background-color:#FFF;
+	}
+nav ul{
+	width:100%;
+	float:left;
+	}
+nav ul li{
+	width:16.5%;
+	float:left;
+	list-style:none;
+	
+	}	
+nav ul li a:link, nav ul li a:visited{
+	width:100%;
+	float:left;
+	text-align:center;
+	color:#a0a0a0;
+	font-size:0.8em;
+	}
+.nav ul li a:hover{
+	color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	}
+/**/	
 .img-laempresa {
   width: 100%;
 }
@@ -112,6 +143,9 @@ header {
 .cont-contacto {
   height: auto;
   padding: 5% 0;
+}
+.logo-optica {
+  width: 20%;
 }
 }
 @media screen and (max-width: 640px){
