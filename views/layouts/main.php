@@ -22,23 +22,23 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body ng-app="Optica">
+<body ng-app="Optica" ng-controller="MainCtrl">
 
 <?php $this->beginBody() ?>
     <!-- HEADER OPTICA LOS ANDES -->
 <header>
 	<div class="header-line"></div>
     <div class="cont-menu">
-    	<a href="#/"><div class="logo-optica"><img src="images/logo-ola.png"/></div></a>
+    	<a href="#/" ng-click="toSection($event,1)"><div class="logo-optica"><img src="images/logo-ola.png"/></div></a>
         <nav>
         	<ul>
-            	<li><a href="#/quienes_somos">QUIENES SOMOS</a></li>
+            	<li><a href="#/quienes_somos" ng-click="toSection($event,4)">QUIENES SOMOS</a></li>
                 <!-- <li><a href="#">PRODUCTOS</a></li> -->
                 <!-- <li><a href="#">SERVICIOS</a></li> -->
                 <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
-                <li><a href="#/locales">ENCUÉNTRANOS</a></li>
-                <li><a href="#/trabaja_con_nosotros">TRABAJA CON NOSOTROS</a></li>
-                <li><a href="#/contacto">CONTACTO</a></li>
+                <li><a href="#/locales" ng-click="toSection($event,6)">ENCUÉNTRANOS</a></li>
+                <li><a href="#/trabaja_con_nosotros" ng-click="toSection($event,5)">TRABAJA CON NOSOTROS</a></li>
+                <li><a href="#/contacto" ng-click="toSection($event,3)">CONTACTO</a></li>
             </ul>
         </nav>
     </div>

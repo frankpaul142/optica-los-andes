@@ -64,6 +64,7 @@ body{
 	 margin:0;
 	 padding:0;
 	 color:#4f4f4f;
+	 overflow: hidden;
 	}
 /**/	
 header{
@@ -117,23 +118,22 @@ nav ul li a:link, nav ul li a:visited{
 	}
 /* HOME */
 #cont-home{
-	width:100%;
-	height:100%;
+	width:100vw;
+	height:100vh;
 	position:absolute;
 	left:0;
 	top:0;
+	overflow: hidden;
 	}	
 /*Slides Home*/
 .sliderhome{
-	width:100vw;
-	height:100vh;
+	width:100%;
+	height:94%;
 	background-color:#0C9;
 	float:left;
 	position:relative;
-	}
-.contenedor{
 	padding-top: 6%;
-}
+	}
 /* CAMPAÑAS PROMOSIONALES */	
 .section-cp{
 	width:100vw;
@@ -170,16 +170,13 @@ video{
 	}
 /* Section Contacto */
 .cont-contacto{
-	width:100vw;
-	height:100vh;
+	width:100%;
+	height:95%;
 	float:left;
 	position:relative;
 	background-color:#313131;
-	}
-.contenedor2{
-	height: 90%;
 	padding-top: 5%;
-}
+	}
 .img-contacto{
 	width:38%;
 	height:60%;
@@ -227,6 +224,14 @@ video{
 	width: 100%;
 	float:left;
 	position:absolute;
+	}
+
+.cont-quienes{
+	width:100%;
+	height:93%;
+	float:left;
+	position:relative;
+	padding-top: 7%;
 	}
 /* POSICIONES IMAGENES */
 #img-1{
@@ -707,7 +712,7 @@ video{
 
 .cont-locales{
 	width: 100%;
-	height: 84.3%;
+	height: 92%;
 	padding: 8% 0 0 0;
 	position: relative;
 	background: url(../images/fondo-locales.jpg);

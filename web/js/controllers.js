@@ -1,69 +1,172 @@
 var controllers = angular.module('OpticaControllers', []);
 
+controllers.controller('MainCtrl', function($scope, $location, $rootScope) {
+	console.log('MainCtrl');
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		$rootScope.$emit('sectionMenu', section);
+		if (section == 1) {
+			$location.url('');
+		} else if (section == 4) {
+			$location.url('quienes_somos');
+		} else if (section == 6) {
+			$location.url('locales');
+		} else if (section == 5) {
+			$location.url('trabaja_con_nosotros');
+		} else if (section == 3) {
+			$location.url('contacto');
+		}
+	}
+});
+
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
-    console.log('HomeCtrl');
-    $rootScope.page = 1;
-    $scope.pageClass = 'scroll-down-leave scroll-up-enter';
-    $scope.toSection = function($event, section) {
-        $event.preventDefault();
-        if (section == 2) {
-            $location.url('promo');
-        } else if (section == 3) {
-            $location.url('contacto');
-        }
-    }
+	console.log('HomeCtrl');
+	if ($rootScope.page > 3) {
+		$scope.pageClass = 'scroll-left-enter';
+	} else {
+		$scope.pageClass = 'scroll-up-enter';
+	}
+	$rootScope.page = 1;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args > 3) {
+			$scope.pageClass = 'scroll-right-leave';
+		}
+		else{
+			$scope.pageClass = 'scroll-down-leave';
+		}
+	});
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		$scope.pageClass = 'scroll-down-leave';
+		if (section == 2) {
+			$location.url('promo');
+		} else if (section == 3) {
+			$location.url('contacto');
+		}
+	}
 });
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
-    console.log('PromoCtrl');
-    if ($rootScope.page > 2) {
-        $scope.pageClass = 'scroll-up-enter';
-    } else {
-        $scope.pageClass = 'scroll-down-enter';
-    }
-    $rootScope.page = 2;
-    $scope.toSection = function($event, section) {
-        $event.preventDefault();
-        if (section == 1) {
-            $scope.pageClass = 'scroll-up-leave';
-            $location.url('');
-        } else if (section == 3) {
-            $scope.pageClass = 'scroll-down-leave';
-            $location.url('contacto');
-        }
-    }
+	console.log('PromoCtrl');
+	if ($rootScope.page > 2) {
+		$scope.pageClass = 'scroll-up-enter';
+	} else {
+		$scope.pageClass = 'scroll-down-enter';
+	}
+	$rootScope.page = 2;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args > 3) {
+			$scope.pageClass = 'scroll-right-leave';
+		}
+	});
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		if (section == 1) {
+			$scope.pageClass = 'scroll-up-leave';
+			$location.url('');
+		} else if (section == 3) {
+			$scope.pageClass = 'scroll-down-leave';
+			$location.url('contacto');
+		}
+	}
 });
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
-    console.log('ContactoCtrl');
-    $rootScope.page = 3;
-    $scope.pageClass = 'scroll-down-enter';
-    $scope.toSection = function($event, section) {
-        $event.preventDefault();
-        if (section == 1) {
-            $scope.pageClass = 'scroll-up-leave';
-            $location.url('');
-        } else if (section == 2) {
-            $scope.pageClass = 'scroll-up-leave';
-            $location.url('promo');
-        }
-    }
+	console.log('ContactoCtrl');
+	if($rootScope.page<3){
+		$scope.pageClass = 'scroll-down-enter';
+	}
+	else{
+		$scope.pageClass = 'scroll-left-enter';
+	}
+	$rootScope.page = 3;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args > 3) {
+			$scope.pageClass = 'scroll-right-leave';
+		}
+		else{
+			$scope.pageClass='scroll-up-leave';
+		}
+	});
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		if (section == 1) {
+			$scope.pageClass = 'scroll-up-leave';
+			$location.url('');
+		} else if (section == 2) {
+			$scope.pageClass = 'scroll-up-leave';
+			$location.url('promo');
+		}
+	}
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
-    console.log('QuienesCtrl');
-    $rootScope.page = 4;
-    $scope.pageClass = 'scroll-down';
+	console.log('QuienesCtrl');
+	if ($rootScope.page <= 3) {
+		$scope.pageClass = 'scroll-right-enter';
+	} else if ($rootScope.page < 6) {
+		$scope.pageClass = 'scroll-up-enter';
+	} else {
+		$scope.pageClass = 'scroll-left-enter';
+	}
+	$rootScope.page = 4;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args <= 3) {
+			$scope.pageClass = 'scroll-left-leave';
+		} else if (args == 6) {
+			$scope.pageClass = 'scroll-right-leave';
+		}
+		else{
+			$scope.pageClass = 'scroll-down-leave';
+		}
+	});
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		if (section == 5) {
+			$scope.pageClass = 'scroll-down-leave';
+			$location.url('trabaja_con_nosotros');
+		}
+	}
 });
 
 controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
-    console.log('TrabajaCtrl');
-    $rootScope.page = 5;
-    $scope.pageClass = 'scroll-down';
+	console.log('TrabajaCtrl');
+	if($rootScope.page<=3){
+		$scope.pageClass='scroll-right-enter';
+	}
+	else if($rootScope.page<6){
+		$scope.pageClass = 'scroll-down-enter';
+	}
+	else{
+		$scope.pageClass = 'scroll-left-enter';
+	}
+	$rootScope.page = 5;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args <= 3) {
+			$scope.pageClass = 'scroll-left-leave';
+		} else if (args == 6) {
+			$scope.pageClass = 'scroll-right-leave';
+		}
+		else{
+			$scope.pageClass = 'scroll-up-leave';
+		}
+	});
+	$scope.toSection = function($event, section) {
+		$event.preventDefault();
+		if (section == 4) {
+			$scope.pageClass = 'scroll-up-leave';
+			$location.url('quienes_somos');
+		}
+	}
 });
 
 controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
-    console.log('LocalesCtrl');
-    $rootScope.page = 6;
-    $scope.pageClass = 'scroll-down';
+	console.log('LocalesCtrl');
+	$scope.pageClass='scroll-right-enter';
+	$rootScope.page = 6;
+	$rootScope.$on('sectionMenu', function(event, args) {
+		if (args <6) {
+			$scope.pageClass = 'scroll-left-leave';
+		}
+	});
 });
