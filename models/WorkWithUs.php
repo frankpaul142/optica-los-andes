@@ -34,7 +34,7 @@ class WorkWithUs extends \yii\db\ActiveRecord
             [['comment'], 'string'],
             [['name', 'email'], 'string', 'max' => 150],
             [['phone'], 'string', 'max' => 10],
-            [['cv'], 'string', 'max' => 50]
+            [['cv'], 'file'],
         ];
     }
 
