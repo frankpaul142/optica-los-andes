@@ -775,7 +775,8 @@ video{
 	padding:30px 10% !important;
 	background:rgba(0,0,0,0.8);
 	margin:15px 0 0 0 !important;
-	/*display:none;*/
+	max-height: 300px;
+	overflow-y: auto;
 	}
 .submenu-locales li{
 	list-style: circle;
@@ -790,7 +791,7 @@ video{
 	outline:none;
 	font-size:14px;
 	}			
-.selected-list{
+.selectedList{
 	outline:1px solid #2fb9c9 !important;
 	background:#2fb9c9 !important;
 	}			
@@ -1214,7 +1215,7 @@ body {
     transform: translate(-50%, -50%);
 }
 .loading2 .dot {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   left: 1px;
   top: 1px;
@@ -1227,7 +1228,7 @@ body {
     
 }
 .loading2 .dot2 {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   width: 20px;
   height: 20px;

@@ -98,7 +98,7 @@ class SiteController extends Controller
 
     public function actionLoadStores()
     {
-        $cities=City::findAll([]);
+        $cities=City::find()->all();
         $return=[];
         foreach ($cities as $i => $city) {
             $cit=[];
@@ -110,8 +110,9 @@ class SiteController extends Controller
                 $loc['schedule']=$local->schedule;
                 $loc['phone']=$local->phone;
                 $loc['cellphone']=$local->cellphone;
-                $loc['maps']=$local->maps;
-                $cit['locals'][$local->id]=$loc;
+                $loc['map']=$local->maps;
+                $loc['picture']=$local->picture;
+                $cit['locales'][$local->id]=$loc;
             }
             $return[$city->id]=$cit;
         }

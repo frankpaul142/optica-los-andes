@@ -236,7 +236,11 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$http) {
 	console.log('LocalesCtrl');
 	$scope.loading=true;
+	$scope.store={};
+	$scope.store.picture='local-optica.jpg';
+	$scope.localActivo=0;
 	$scope.ciudadActiva=0;
+	$scope.desplegar=false;
 	$scope.pageClass = 'scroll-right-enter';
 	$rootScope.page = 6;
 	$rootScope.$on('sectionMenu', function(event, args) {
@@ -244,13 +248,31 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$ht
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
-	$scope.desplegar=function (id) {
+	$scope.changeCity=function (id) {
+		if($scope.ciudadActiva==id){
+			$scope.desplegar=!$scope.desplegar;
+		}
+		else{
+			$scope.desplegar=true;
+		}
 		$scope.ciudadActiva=id;
+		
 	};
+	$scope.changeStore=function (id) {
+		$scope.store.name=ciudades[$scope.ciudadActiva]['locales'][id]['name'];
+		$scope.store.address=ciudades[$scope.ciudadActiva]['locales'][id]['address'];
+		$scope.store.phone=ciudades[$scope.ciudadActiva]['locales'][id]['phone'];
+		$scope.store.cellphone=ciudades[$scope.ciudadActiva]['locales'][id]['cellphone'];
+		$scope.store.schedule=ciudades[$scope.ciudadActiva]['locales'][id]['schedule'];
+		$scope.store.map=ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
+		$scope.store.picture=ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
+		$scope.localActivo=id;
+	}
 	if(typeof(ciudades)==='undefined'){
 		$http.get('site/load-stores').success(function (data) {
-			console.log(data);
+			// console.log(data);
 			if(data!=''){
+				ciudades=data;
 				$scope.ciudades=ciudades;
 			}
 			$scope.loading=false;
@@ -261,5 +283,6 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$ht
 	}
 	else{
 		$scope.ciudades=ciudades;
+		$scope.loading=false;
 	}
 });

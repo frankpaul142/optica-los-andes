@@ -7,8 +7,8 @@
 		</div>
 		<ul ng-show="!loading">
 			<li ng-repeat="(key, ciudad) in ciudades">
-				<a href="javascript:void(0)" ng-click="desplegar(key)" ng-class="{selected-list: ciudadActiva==key}">{{ciudad.name}}</a>
-				<ul class="submenu-locales" ng-if="ciudadActiva==key">
+				<a href="javascript:void(0)" ng-click="changeCity(key)" ng-class="{selectedList: ciudadActiva==key}">{{ciudad.name}}</a>
+				<ul class="submenu-locales" ng-if="desplegar && ciudadActiva==key">
 					<li ng-repeat="(key2, local) in ciudad.locales">
 						<a href="javascript:void(0)" ng-click="changeStore(key2)">{{local.name}}</a>
 					</li>
@@ -18,20 +18,20 @@
 	</div>
 	<div class="info-locales">
 		<div class="tit-encuentranos">ENCUÉNTRANOS</div>
-		<img src="images/local-optica.jpg" alt="imagen local" />
-		<div class="desc-locales">
+		<img src="images/{{store.picture}}" alt="imagen local" />
+		<div class="desc-locales" ng-show="localActivo!=0">
 			<div class="direccion">
 				<img src="images/ico-locales.png" alt="icono direccion" />
 				<div class="txt-locales">
-					<h4>C.C. El Bosque</h4>
-					<span>Carvajal y Lizardo García.</span>
+					<h4>{{store.name}}</h4>
+					<span>{{store.address}}</span>
 					<div class="txt-telefonos">
 						<img src="images/ico-telefono.png" alt="icono telefono" />
-						<span>2 222-5454</span>
+						<span>{{store.phone}}</span>
 					</div>
 					<div class="txt-telefonos">
 						<img src="images/ico-movil.png" alt="icono telefono" />
-						<span>09 952-5454</span>
+						<span>{{store.cellphone}}</span>
 					</div>
 				</div>
 			</div>
@@ -39,11 +39,11 @@
 				<img src="images/ico-horario.png" alt="icono direccion" />
 				<div class="txt-locales">
 					<h4>HORARIO DE ATENCIÓN</h4>
-					<span>Lunes a Viernes 9:00 a 19:00<br/>Sábado y Domingo 10:00 a 17:00</span>
+					<span>{{store.schedule}}</span>
 				</div>
 			</div>
 			<div class="direccion-maps">
-				<a href="#"><img src="images/ico-ubicacion.png" alt="icono ubicación" />
+				<a href="{{store.map}}" ng-if="store.map"><img src="images/ico-ubicacion.png" alt="icono ubicación" />
 					<h4>VER UBICACIÓN DEL LOCAL</h4></a>
 			</div>
 		</div>
