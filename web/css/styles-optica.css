@@ -1281,3 +1281,48 @@ body {
     0% {-moz-transform:translateY(0%)}
     100%{-moz-transform:translateY(100%)}
 }
+/*anim-ms*/
+@keyframes spin {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  25%, 75% {
+    box-shadow: 28px 0 0 white, -28px 0 0 white, 0 28px 0 white, 0 -28px 0 white, 20px -20px 0 white, 20px 20px 0 white, -20px -20px 0 white, -20px 20px 0 white;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+@keyframes spin2 {
+  0%, 100% {
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  25%, 75% {
+    box-shadow: 52px 0 0 white, -52px 0 0 white, 0 52px 0 white, 0 -52px 0 white, 38px -38px 0 white, 38px 38px 0 white, -38px -38px 0 white, -38px 38px 0 white;
+    background: transparent;
+  }
+  100% {
+    transform: rotate(-360deg);
+    box-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white, 0 0 0 white;
+  }
+}
+
+/*afterloading*/  
+@keyframes top-hide {
+    0% {transform:translateY(0%)}
+    100%{transform:translateY(-100%)}
+}  
+    
+    
+@keyframes bot-hide {
+    0% {transform:translateY(0%)}
+    100%{transform:translateY(100%)}
+}
+
