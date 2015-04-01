@@ -30,8 +30,7 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	$rootScope.$on('sectionMenu', function(event, args) {
 		if (args > 3) {
 			$scope.pageClass = 'scroll-right-leave';
-		}
-		else{
+		} else {
 			$scope.pageClass = 'scroll-down-leave';
 		}
 	});
@@ -43,7 +42,22 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 		} else if (section == 3) {
 			$location.url('contacto');
 		}
-	}
+	};
+	$scope.scrollUrl = '';
+	$scope.$watch('scrollUrl', function() {
+		$location.url($scope.scrollUrl).replace();
+		// scrolling = false;
+	});
+	$(document).bind('mousewheel', function(e) {
+		// if (!scrolling) {
+			if (e.originalEvent.wheelDelta / 120 < 0) {
+				scrolling = true;
+				$scope.pageClass = 'scroll-down-leave';
+				$scope.scrollUrl = 'promo';
+				$scope.$apply();
+			}
+		// }
+	});
 });
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
@@ -57,6 +71,8 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 	$rootScope.$on('sectionMenu', function(event, args) {
 		if (args > 3) {
 			$scope.pageClass = 'scroll-right-leave';
+		} else {
+			$scope.pageClass = 'scroll-up-leave';
 		}
 	});
 	$scope.toSection = function($event, section) {
@@ -68,24 +84,40 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-down-leave';
 			$location.url('contacto');
 		}
-	}
+	};
+	$scope.scrollUrl = 'promo';
+	$scope.$watch('scrollUrl', function() {
+		$location.url($scope.scrollUrl).replace();
+		// scrolling = false;
+	});
+	$(document).bind('mousewheel', function(e) {
+		// if (!scrolling) {
+			if (e.originalEvent.wheelDelta / 120 < 0) {
+				$scope.pageClass = 'scroll-down-leave';
+				$scope.scrollUrl = 'contacto';
+				$scope.$apply();
+			} else {
+				$scope.pageClass = 'scroll-up-leave';
+				$scope.scrollUrl = '';
+				$scope.$apply();
+			}
+		// }
+	});
 });
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
 	console.log('ContactoCtrl');
-	if($rootScope.page<3){
+	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
-	}
-	else{
+	} else {
 		$scope.pageClass = 'scroll-left-enter';
 	}
 	$rootScope.page = 3;
 	$rootScope.$on('sectionMenu', function(event, args) {
 		if (args > 3) {
 			$scope.pageClass = 'scroll-right-leave';
-		}
-		else{
-			$scope.pageClass='scroll-up-leave';
+		} else {
+			$scope.pageClass = 'scroll-up-leave';
 		}
 	});
 	$scope.toSection = function($event, section) {
@@ -97,7 +129,21 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-up-leave';
 			$location.url('promo');
 		}
-	}
+	};
+	$scope.scrollUrl = 'contacto';
+	$scope.$watch('scrollUrl', function() {
+		$location.url($scope.scrollUrl).replace();
+		// scrolling = false;
+	});
+	$(document).bind('mousewheel', function(e) {
+		// if (!scrolling) {
+			if (e.originalEvent.wheelDelta / 120 > 0) {
+				$scope.pageClass = 'scroll-up-leave';
+				$scope.scrollUrl = 'promo';
+				$scope.$apply();
+			}
+		// }
+	});
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
@@ -115,8 +161,7 @@ controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-left-leave';
 		} else if (args == 6) {
 			$scope.pageClass = 'scroll-right-leave';
-		}
-		else{
+		} else {
 			$scope.pageClass = 'scroll-down-leave';
 		}
 	});
@@ -126,18 +171,31 @@ controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-down-leave';
 			$location.url('trabaja_con_nosotros');
 		}
-	}
+	};
+	$scope.scrollUrl = 'quienes_somos';
+	$scope.$watch('scrollUrl', function() {
+		$location.url($scope.scrollUrl).replace();
+		// scrolling = false;
+	});
+	$(document).bind('mousewheel', function(e) {
+		// if (!scrolling) {
+			if (e.originalEvent.wheelDelta / 120 < 0) {
+				scrolling = true;
+				$scope.pageClass = 'scroll-down-leave';
+				$scope.scrollUrl = 'trabaja_con_nosotros';
+				$scope.$apply();
+			}
+		// }
+	});
 });
 
 controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 	console.log('TrabajaCtrl');
-	if($rootScope.page<=3){
-		$scope.pageClass='scroll-right-enter';
-	}
-	else if($rootScope.page<6){
+	if ($rootScope.page <= 3) {
+		$scope.pageClass = 'scroll-right-enter';
+	} else if ($rootScope.page < 6) {
 		$scope.pageClass = 'scroll-down-enter';
-	}
-	else{
+	} else {
 		$scope.pageClass = 'scroll-left-enter';
 	}
 	$rootScope.page = 5;
@@ -146,8 +204,7 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-left-leave';
 		} else if (args == 6) {
 			$scope.pageClass = 'scroll-right-leave';
-		}
-		else{
+		} else {
 			$scope.pageClass = 'scroll-up-leave';
 		}
 	});
@@ -157,15 +214,30 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 			$scope.pageClass = 'scroll-up-leave';
 			$location.url('quienes_somos');
 		}
-	}
+	};
+	$scope.scrollUrl = 'trabaja_con_nosotros';
+	$scope.$watch('scrollUrl', function() {
+		$location.url($scope.scrollUrl).replace();
+		// scrolling = false;
+	});
+	$(document).bind('mousewheel', function(e) {
+		// if (!scrolling) {
+			if (e.originalEvent.wheelDelta / 120 > 0) {
+				scrolling = true;
+				$scope.pageClass = 'scroll-up-leave';
+				$scope.scrollUrl = 'quienes_somos';
+				$scope.$apply();
+			}
+		// }
+	});
 });
 
 controllers.controller('LocalesCtrl', function($scope, $location, $rootScope) {
 	console.log('LocalesCtrl');
-	$scope.pageClass='scroll-right-enter';
+	$scope.pageClass = 'scroll-right-enter';
 	$rootScope.page = 6;
 	$rootScope.$on('sectionMenu', function(event, args) {
-		if (args <6) {
+		if (args < 6) {
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
