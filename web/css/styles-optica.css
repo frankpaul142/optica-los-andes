@@ -1202,6 +1202,40 @@ body {
     -moz-animation: spin2 2.5s 0s infinite both;
     animation: spin2 2.5s 0s infinite both;
 }
+.loading2 {
+	width: 35%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /*width: 20px;*/
+  /*height: 20px;*/
+  -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.loading2 .dot {
+  position: absolute;
+  border-radius: 50%;
+  left: 1px;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  -webkit-animation: spin 2.5s 0s infinite both;
+    -moz-animation: spin 2.5s 0s infinite both;
+    animation: spin 2.5s 0s infinite both;
+    
+}
+.loading2 .dot2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  -webkit-animation: spin2 2.5s 0s infinite both;
+    -moz-animation: spin2 2.5s 0s infinite both;
+    animation: spin2 2.5s 0s infinite both;
+}
 /*anim chome*/
 @-webkit-keyframes spin {
   0%, 100% {
