@@ -45,8 +45,9 @@
 }
 @media screen and (max-width: 1024px) {
 .info-cp {
-  width: 95%;
-  margin: 0 2.5%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
 }
 .menu-productos {
   width: 95%;
@@ -109,11 +110,11 @@ header {
   position: relative;
 }
 #cont-home {
-  height: auto;
+  height: 100%;
   position: relative;
 }
 .sliderhome {
-  height: auto;
+  /*height: auto;*/
   margin: 0;
 }
 .section-cp {
@@ -128,12 +129,13 @@ header {
 }
 @media screen and (max-width: 640px){
 .info-promo{
-	width:90%;
-	margin:0 5%;
+	width: 100%;
+  margin: 10% auto;
 	}
 video {
-  width: 90%;
-  margin:0 5%;
+  width: 100%;
+  margin: 0 auto;
+  
 }
 .info-copyright ul {
   width: 30%;
@@ -176,6 +178,9 @@ video {
   width: 90%;
   margin: 20px 5%;
 }
+.img-contacto{
+    display: none;
+}    
 }
 @media screen and (max-width: 430px){
 .info-copyright ul {

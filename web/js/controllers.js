@@ -16,6 +16,7 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 		} else if (section == 3) {
 			$location.url('contacto');
 		}
+
 	}
 	$scope.$on('$routeChangeStart', function() {
 		$rootScope.scrolling1 = true;
@@ -29,6 +30,7 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
+
 	if ($rootScope.page > 3) {
 		$scope.pageClass = 'scroll-left-enter';
 	} else {
@@ -112,22 +114,32 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('ContactoCtrl');
-	var wall_important = new freewall('.img-contacto');
-	// wall_important.fitWidth();
-	wall_important.reset({
-		selector: '.item',
-		animate: true,
-		cellW: 300,
-		cellH: 'auto',
+
+	var myArray = ['150', '150'];
+	var temp = "<div class='cell' style='width:{width}px; height: {height}px; background-image: url(images/contacto/contacto_{index}.jpg);background-size:cover; background-repeat:no-repeat;'></div>";
+	var w = 120,
+		h = 120,
+		html = '',
+		limitItem = 12;
+	for (var i = 0; i < limitItem; ++i) {
+		w = myArray[Math.floor(Math.random() * myArray.length)];
+		html += temp.replace(/\{height\}/g, h).replace(/\{width\}/g, w).replace("{index}", i + 1);
+	}
+	$(".img-contacto").html(html);
+
+	var wall = new freewall(".img-contacto");
+	wall.reset({
+		selector: '.cell',
+		animate: false,
+		cellW: w,
+		cellH: h,
+		delay: 150,
 		onResize: function() {
-			wall_important.fitWidth();
+			wall.fitWidth();
 		}
 	});
+	wall.fitWidth();
 
-	var images = wall_important.container.find('.item');
-	images.find('img').load(function() {
-		wall_important.fitWidth();
-	});
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
 	} else {
@@ -172,97 +184,87 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
 			$('#inputCedula').hide();
 		}
 	});
-	$scope.showAlert=false;
-	$scope.textoEnviar='Enviar';
+	$scope.showAlert = false;
+	$scope.textoEnviar = 'Enviar';
 	$scope.enviar = function($event) {
 		$event.preventDefault();
 		var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 		var reDigits = /^\d{10}$/;
 		if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Nombre no puede estar vacío";
-		}
-		else if (typeof($scope.iapellido) === 'undefined' || $scope.iapellido == '') {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Apellido no puede estar vacío";
-		}
-		else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Email no puede estar vacío";
-		}
-		else if (!reEmail.test($scope.iemail)) {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Email no es válido";
-		}
-		else if (typeof($scope.icelular) === 'undefined' || $scope.icelular == '') {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Celular no puede estar vacío";
-		}
-		else if (!reDigits.test($scope.icelular)) {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Celular no es válido";
-		}
-		else if ($scope.itipo=='Reclamo' && (typeof($scope.icedula) === 'undefined' || $scope.icedula == '')) {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Cédula no puede estar vacío";
-		}
-		else if ($scope.itipo=='Reclamo' && !reDigits.test($scope.icedula)) {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Cédula no es válido";
-		}
-		else if (typeof($scope.imensaje) === 'undefined' || $scope.imensaje == '') {
-			$scope.showAlert=true;
-			$scope.alertType="danger";
-			$scope.alertMsg="Mensaje no puede estar vacío";
-		}
-		else{
-			$scope.showAlert=false;
-			$scope.textoEnviar='Enviando';
-			var form=$('#formContacto').serializeArray();
-			$.post('site/contact',form).success(function (data) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Nombre no puede estar vacío";
+		} else if (typeof($scope.iapellido) === 'undefined' || $scope.iapellido == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Apellido no puede estar vacío";
+		} else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Email no puede estar vacío";
+		} else if (!reEmail.test($scope.iemail)) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Email no es válido";
+		} else if (typeof($scope.icelular) === 'undefined' || $scope.icelular == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Celular no puede estar vacío";
+		} else if (!reDigits.test($scope.icelular)) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Celular no es válido";
+		} else if ($scope.itipo == 'Reclamo' && (typeof($scope.icedula) === 'undefined' || $scope.icedula == '')) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Cédula no puede estar vacío";
+		} else if ($scope.itipo == 'Reclamo' && !reDigits.test($scope.icedula)) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Cédula no es válido";
+		} else if (typeof($scope.imensaje) === 'undefined' || $scope.imensaje == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Mensaje no puede estar vacío";
+		} else {
+			$scope.showAlert = false;
+			$scope.textoEnviar = 'Enviando';
+			var form = $('#formContacto').serializeArray();
+			$.post('site/contact', form).success(function(data) {
 				console.log(data);
-				if(data=='enviado'){
-					$scope.showAlert=true;
-					$scope.alertType="success";
-					$scope.alertMsg="Su mensaje ha sido enviado. Gracias por contactarnos.";
-					$scope.inombre='';
-					$scope.iapellido='';
-					$scope.iemail='';
-					$scope.icelular='';
-					$scope.imensaje='';
-					$scope.itipo='Consulta';
+				if (data == 'enviado') {
+					$scope.showAlert = true;
+					$scope.alertType = "success";
+					$scope.alertMsg = "Su mensaje ha sido enviado. Gracias por contactarnos.";
+					$scope.inombre = '';
+					$scope.iapellido = '';
+					$scope.iemail = '';
+					$scope.icelular = '';
+					$scope.imensaje = '';
+					$scope.itipo = 'Consulta';
+				} else {
+					$scope.showAlert = true;
+					$scope.alertType = "danger";
+					$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
 				}
-				else{
-					$scope.showAlert=true;
-					$scope.alertType="danger";
-					$scope.alertMsg="Error al enviar mensaje. Intente de nuevo por favor.";
-				}
-				$scope.textoEnviar='Enviar';
+				$scope.textoEnviar = 'Enviar';
 				$scope.$apply();
-			}).error(function (data) {
+			}).error(function(data) {
 				console.log(data);
-				$scope.showAlert=true;
-				$scope.alertType="danger";
-				$scope.alertMsg="Error al enviar mensaje. Intente de nuevo por favor.";
-				$scope.textoEnviar='Enviar';
+				$scope.showAlert = true;
+				$scope.alertType = "danger";
+				$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+				$scope.textoEnviar = 'Enviar';
 				$scope.$apply();
 			});
 		}
 	};
 	$scope.keypressed = function(keyEvent) {
-        /*if (keyEvent.which === 13) {
-            $scope.entrar();
-        }*/
-        $scope.showAlert = false;
-    };
+		/*if (keyEvent.which === 13) {
+		    $scope.entrar();
+		}*/
+		$scope.showAlert = false;
+	};
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
