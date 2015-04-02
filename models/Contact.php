@@ -33,7 +33,7 @@ class Contact extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type', 'name', 'lastname', 'email', 'cellphone', 'message', 'identity'], 'required'],
+            [['type', 'name', 'lastname', 'email', 'cellphone', 'message'], 'required'],
             [['type', 'message'], 'string'],
             [['name', 'lastname', 'email'], 'string', 'max' => 150],
             [['cellphone', 'identity'], 'string', 'max' => 10],

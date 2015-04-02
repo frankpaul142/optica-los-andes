@@ -17,13 +17,13 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 			$location.url('contacto');
 		}
 	}
-	$scope.$on('$routeChangeStart',function () {
+	$scope.$on('$routeChangeStart', function() {
 		$rootScope.scrolling1 = true;
 	});
 	$scope.$on('$routeChangeSuccess', function() {
 		$timeout(function() {
 			$rootScope.scrolling1 = false;
-		},750);
+		}, 750);
 	});
 });
 
@@ -110,24 +110,24 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 	});
 });
 
-controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert, $timeout) {
+controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('ContactoCtrl');
-	var wall_important=new freewall('.img-contacto');
+	var wall_important = new freewall('.img-contacto');
 	// wall_important.fitWidth();
 	wall_important.reset({
-            selector: '.item',
-            animate: true,
-            cellW: 300,
-            cellH: 'auto',
-            onResize: function() {
-                wall_important.fitWidth();
-            }
-        });
+		selector: '.item',
+		animate: true,
+		cellW: 300,
+		cellH: 'auto',
+		onResize: function() {
+			wall_important.fitWidth();
+		}
+	});
 
-        var images = wall_important.container.find('.item');
-        images.find('img').load(function() {
-            wall_important.fitWidth();
-        });
+	var images = wall_important.container.find('.item');
+	images.find('img').load(function() {
+		wall_important.fitWidth();
+	});
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
 	} else {
@@ -172,19 +172,97 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
 			$('#inputCedula').hide();
 		}
 	});
+	$scope.showAlert=false;
+	$scope.textoEnviar='Enviar';
 	$scope.enviar = function($event) {
 		$event.preventDefault();
+		var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var reDigits = /^\d{10}$/;
 		if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
-			console.log('nombre vacio');
-			myAlert = $alert({
-				title: 'Error',
-				content: 'Nombre es obligatorio',
-				placement: 'top',
-				type: 'info',
-				show: true
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Nombre no puede estar vacío";
+		}
+		else if (typeof($scope.iapellido) === 'undefined' || $scope.iapellido == '') {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Apellido no puede estar vacío";
+		}
+		else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Email no puede estar vacío";
+		}
+		else if (!reEmail.test($scope.iemail)) {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Email no es válido";
+		}
+		else if (typeof($scope.icelular) === 'undefined' || $scope.icelular == '') {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Celular no puede estar vacío";
+		}
+		else if (!reDigits.test($scope.icelular)) {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Celular no es válido";
+		}
+		else if ($scope.itipo=='Reclamo' && (typeof($scope.icedula) === 'undefined' || $scope.icedula == '')) {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Cédula no puede estar vacío";
+		}
+		else if ($scope.itipo=='Reclamo' && !reDigits.test($scope.icedula)) {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Cédula no es válido";
+		}
+		else if (typeof($scope.imensaje) === 'undefined' || $scope.imensaje == '') {
+			$scope.showAlert=true;
+			$scope.alertType="danger";
+			$scope.alertMsg="Mensaje no puede estar vacío";
+		}
+		else{
+			$scope.showAlert=false;
+			$scope.textoEnviar='Enviando';
+			var form=$('#formContacto').serializeArray();
+			$.post('site/contact',form).success(function (data) {
+				console.log(data);
+				if(data=='enviado'){
+					$scope.showAlert=true;
+					$scope.alertType="success";
+					$scope.alertMsg="Su mensaje ha sido enviado. Gracias por contactarnos.";
+					$scope.inombre='';
+					$scope.iapellido='';
+					$scope.iemail='';
+					$scope.icelular='';
+					$scope.imensaje='';
+					$scope.itipo='Consulta';
+				}
+				else{
+					$scope.showAlert=true;
+					$scope.alertType="danger";
+					$scope.alertMsg="Error al enviar mensaje. Intente de nuevo por favor.";
+				}
+				$scope.textoEnviar='Enviar';
+				$scope.$apply();
+			}).error(function (data) {
+				console.log(data);
+				$scope.showAlert=true;
+				$scope.alertType="danger";
+				$scope.alertMsg="Error al enviar mensaje. Intente de nuevo por favor.";
+				$scope.textoEnviar='Enviar';
+				$scope.$apply();
 			});
 		}
 	};
+	$scope.keypressed = function(keyEvent) {
+        /*if (keyEvent.which === 13) {
+            $scope.entrar();
+        }*/
+        $scope.showAlert = false;
+    };
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {

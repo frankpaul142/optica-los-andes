@@ -33,19 +33,20 @@
         <span class="color-gb">¿Tienes alguna pregunta?</span>
 		<br/> Póngase en contacto con nosotros y le ayudaremos rápidamente con la respuesta que necesita.
 		</span>
-		<form class="f-contacto">
-			<input type="text" placeholder="NOMBRE" required ng-model="inombre" />
-			<input type="text" placeholder="APELLIDO" required ng-model="iapellido" />
-			<input type="email" placeholder="EMAIL" required ng-model="iemail" />
-			<input type="text" placeholder="CELULAR" required ng-model="icelular" />
-			<select id="contactoTipo" ng-model="itipo" ng-init="itipo='Consulta'">
+		<alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
+		<form class="f-contacto" id="formContacto">
+			<input type="text" placeholder="NOMBRE" required ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" />
+			<input type="text" placeholder="APELLIDO" required ng-model="iapellido" ng-keypress="keypressed($event)" name="apellido" />
+			<input type="text" placeholder="EMAIL" required ng-model="iemail" ng-keypress="keypressed($event)" name="email" />
+			<input type="text" placeholder="CELULAR" required ng-model="icelular" ng-keypress="keypressed($event)" name="celular" />
+			<select id="contactoTipo" ng-model="itipo" ng-init="itipo='Consulta'" name="tipo">
 				<option value="Consulta">Consulta</option>
 				<option value="Reclamo">Reclamo</option>
 				<option value="Sugerencia">Sugerencia</option>
 			</select>
-			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula">
-			<textarea placeholder="MENSAJE" required ng-model="imensaje"></textarea>
-			<input type="submit" value="Enviar" ng-click="enviar($event)" />
+			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula" ng-keypress="keypressed($event)" name="cedula" />
+			<textarea placeholder="MENSAJE" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje"></textarea>
+			<input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
 		</form>
 	</div>
 	<div class="info-copyright">

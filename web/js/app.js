@@ -1,4 +1,4 @@
-var app = angular.module('Optica', ['ngRoute', 'ngAnimate', 'OpticaControllers', 'mgcrea.ngStrap']);
+var app = angular.module('Optica', ['ngRoute', 'ngAnimate', 'OpticaControllers', 'ui.bootstrap']);
 
 // configs
 
