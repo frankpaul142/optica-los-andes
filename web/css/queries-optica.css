@@ -39,6 +39,9 @@
 .tit-artre {
   font-size: 2.5em;
 }
+.list-locales li a:link, .list-locales li a:visited {
+  font-size: 40px;
+}
 }
 @media screen and (max-width: 1024px) {
 .info-cp {
@@ -71,6 +74,14 @@
 }	
 .menu-op2 {
   width: 40%;
+}
+.cont-menu {
+  width: 90%;
+  float: left;
+  padding: 1% 5%;
+}
+.list-locales li a:link, .list-locales li a:visited {
+  font-size: 32px;
 }
 }	
 @media screen and (max-width: 860px) {
@@ -113,11 +124,7 @@ header {
   height: auto;
   padding: 5% 0;
 }
-.cont-menu {
-  width: 90%;
-  float: left;
-  padding: 1% 5%;
-}
+
 }
 @media screen and (max-width: 640px){
 .info-promo{
