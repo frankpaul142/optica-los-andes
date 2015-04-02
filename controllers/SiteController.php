@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\City;
 use app\models\Local;
+use app\models\Contact;
 
 class SiteController extends Controller
 {
@@ -79,7 +80,7 @@ class SiteController extends Controller
 
     public function actionContact()
     {
-        $model = new ContactForm();
+        /*$model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
@@ -88,6 +89,33 @@ class SiteController extends Controller
             return $this->render('contact', [
                 'model' => $model,
             ]);
+        }*/
+        if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['celular']) && isset($_POST['tipo']) && isset($_POST['mensaje'])){
+            $contact=new Contact;
+            $contact->type=$_POST['tipo'];
+            $contact->name=$_POST['nombre'];
+            $contact->lastname=$_POST['apellido'];
+            $contact->email=$_POST['email'];
+            $contact->cellphone=$_POST['celular'];
+            $contact->message=$_POST['mensaje'];
+            if($contact->type=='Reclamo'){
+                if(isset($_POST['cedula'])){
+                    $contact->identity=$_POST['cedula'];
+                }
+                else{
+                    echo "no cedula";
+                }
+            }
+            if($contact->save()){
+            	echo "enviado";
+            }
+            else{
+            	echo "no save";
+            	print_r($contact->getErrors());
+            }
+        }
+        else{
+            echo "no post";
         }
     }
 
