@@ -1,6 +1,6 @@
 var controllers = angular.module('OpticaControllers', []);
 
-controllers.controller('MainCtrl', function($scope, $location, $rootScope) {
+controllers.controller('MainCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('MainCtrl');
 	$scope.toSection = function($event, section) {
 		$event.preventDefault();
@@ -17,6 +17,14 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope) {
 			$location.url('contacto');
 		}
 	}
+	$scope.$on('$routeChangeStart',function () {
+		$rootScope.scrolling1 = true;
+	});
+	$scope.$on('$routeChangeSuccess', function() {
+		$timeout(function() {
+			$rootScope.scrolling1 = false;
+		},750);
+	});
 });
 
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
@@ -46,21 +54,19 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	$scope.scrollUrl = '';
 	$scope.$watch('scrollUrl', function() {
 		$location.url($scope.scrollUrl).replace();
-		// scrolling = false;
 	});
 	$(document).bind('wheel', function(e) {
-		// if (!scrolling) {
-			if (e.originalEvent.deltaY>0) {
-				// scrolling = true;
+		if (!$rootScope.scrolling1) {
+			if (e.originalEvent.deltaY > 0) {
 				$scope.pageClass = 'scroll-down-leave';
 				$scope.scrollUrl = 'promo';
 				$scope.$apply();
 			}
-		// }
+		}
 	});
 });
 
-controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
+controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
@@ -88,12 +94,10 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 	$scope.scrollUrl = 'promo';
 	$scope.$watch('scrollUrl', function() {
 		$location.url($scope.scrollUrl).replace();
-		// scrolling = false;
 	});
 	$(document).bind('wheel', function(e) {
-		// if (!scrolling) {
-			if (e.originalEvent.deltaY>0) {
-				// scrolling = true;
+		if (!$rootScope.scrolling1) {
+			if (e.originalEvent.deltaY > 0) {
 				$scope.pageClass = 'scroll-down-leave';
 				$scope.scrollUrl = 'contacto';
 				$scope.$apply();
@@ -102,11 +106,11 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 				$scope.scrollUrl = '';
 				$scope.$apply();
 			}
-		// }
+		}
 	});
 });
 
-controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert) {
+controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert, $timeout) {
 	console.log('ContactoCtrl');
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
@@ -134,32 +138,37 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
 	$scope.scrollUrl = 'contacto';
 	$scope.$watch('scrollUrl', function() {
 		$location.url($scope.scrollUrl).replace();
-		// scrolling = false;
 	});
 	$(document).bind('wheel', function(e) {
-		// if (!scrolling) {
+		if (!$rootScope.scrolling1) {
 			if (e.originalEvent.deltaY < 0) {
 				$scope.pageClass = 'scroll-up-leave';
 				$scope.scrollUrl = 'promo';
 				$scope.$apply();
 			}
-		// }
+		}
 	});
 	$('#inputCedula').hide();
-    $('#contactoTipo').change(function () {
-    	if($(this).val()=='Reclamo'){
-    		$('#inputCedula').show();
-    	}
-    	else{
-    		$('#inputCedula').hide();
-    	}
-    });
-    $scope.enviar=function ($event) {
-    	$event.preventDefault();
-    	if(typeof($scope.inombre)==='undefined' || $scope.inombre==''){console.log('nombre vacio');
-    		myAlert=$alert({title:'Error',content:'Nombre es obligatorio',placement:'top',type:'info',show:true});
-    	}
-    };
+	$('#contactoTipo').change(function() {
+		if ($(this).val() == 'Reclamo') {
+			$('#inputCedula').show();
+		} else {
+			$('#inputCedula').hide();
+		}
+	});
+	$scope.enviar = function($event) {
+		$event.preventDefault();
+		if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
+			console.log('nombre vacio');
+			myAlert = $alert({
+				title: 'Error',
+				content: 'Nombre es obligatorio',
+				placement: 'top',
+				type: 'info',
+				show: true
+			});
+		}
+	};
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
@@ -195,12 +204,12 @@ controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
 	});
 	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.deltaY > 0) {
-				scrolling = true;
-				$scope.pageClass = 'scroll-down-leave';
-				$scope.scrollUrl = 'trabaja_con_nosotros';
-				$scope.$apply();
-			}
+		if (e.originalEvent.deltaY > 0) {
+			scrolling = true;
+			$scope.pageClass = 'scroll-down-leave';
+			$scope.scrollUrl = 'trabaja_con_nosotros';
+			$scope.$apply();
+		}
 		// }
 	});
 });
@@ -238,24 +247,24 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 	});
 	$(document).bind('wheel', function(e) {
 		// if (!scrolling) {
-			if (e.originalEvent.deltaY < 0) {
-				scrolling = true;
-				$scope.pageClass = 'scroll-up-leave';
-				$scope.scrollUrl = 'quienes_somos';
-				$scope.$apply();
-			}
+		if (e.originalEvent.deltaY < 0) {
+			scrolling = true;
+			$scope.pageClass = 'scroll-up-leave';
+			$scope.scrollUrl = 'quienes_somos';
+			$scope.$apply();
+		}
 		// }
 	});
 });
 
-controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$http) {
+controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $http) {
 	console.log('LocalesCtrl');
-	$scope.loading=true;
-	$scope.store={};
-	$scope.store.picture='locales.jpeg';
-	$scope.localActivo=0;
-	$scope.ciudadActiva=0;
-	$scope.desplegar=false;
+	$scope.loading = true;
+	$scope.store = {};
+	$scope.store.picture = 'locales.jpeg';
+	$scope.localActivo = 0;
+	$scope.ciudadActiva = 0;
+	$scope.desplegar = false;
 	$scope.pageClass = 'scroll-right-enter';
 	$rootScope.page = 6;
 	$rootScope.$on('sectionMenu', function(event, args) {
@@ -263,41 +272,39 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$ht
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
-	$scope.changeCity=function (id) {
-		if($scope.ciudadActiva==id){
-			$scope.desplegar=!$scope.desplegar;
+	$scope.changeCity = function(id) {
+		if ($scope.ciudadActiva == id) {
+			$scope.desplegar = !$scope.desplegar;
+		} else {
+			$scope.desplegar = true;
 		}
-		else{
-			$scope.desplegar=true;
-		}
-		$scope.ciudadActiva=id;
-		
+		$scope.ciudadActiva = id;
+
 	};
-	$scope.changeStore=function (id) {
-		$scope.store.name=ciudades[$scope.ciudadActiva]['locales'][id]['name'];
-		$scope.store.address=ciudades[$scope.ciudadActiva]['locales'][id]['address'];
-		$scope.store.phone=ciudades[$scope.ciudadActiva]['locales'][id]['phone'];
-		$scope.store.cellphone=ciudades[$scope.ciudadActiva]['locales'][id]['cellphone'];
-		$scope.store.schedule=ciudades[$scope.ciudadActiva]['locales'][id]['schedule'];
-		$scope.store.map=ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
-		$scope.store.picture=ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
-		$scope.localActivo=id;
+	$scope.changeStore = function(id) {
+		$scope.store.name = ciudades[$scope.ciudadActiva]['locales'][id]['name'];
+		$scope.store.address = ciudades[$scope.ciudadActiva]['locales'][id]['address'];
+		$scope.store.phone = ciudades[$scope.ciudadActiva]['locales'][id]['phone'];
+		$scope.store.cellphone = ciudades[$scope.ciudadActiva]['locales'][id]['cellphone'];
+		$scope.store.schedule = ciudades[$scope.ciudadActiva]['locales'][id]['schedule'];
+		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
+		$scope.store.picture = ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
+		$scope.localActivo = id;
 	}
-	if(typeof(ciudades)==='undefined'){
-		$http.get('site/load-stores').success(function (data) {
+	if (typeof(ciudades) === 'undefined') {
+		$http.get('site/load-stores').success(function(data) {
 			// console.log(data);
-			if(data!=''){
-				ciudades=data;
-				$scope.ciudades=ciudades;
+			if (data != '') {
+				ciudades = data;
+				$scope.ciudades = ciudades;
 			}
-			$scope.loading=false;
-		}).error(function (data) {
+			$scope.loading = false;
+		}).error(function(data) {
 			console.log('error loadStores');
-			$scope.loading=false;
+			$scope.loading = false;
 		});
-	}
-	else{
-		$scope.ciudades=ciudades;
-		$scope.loading=false;
+	} else {
+		$scope.ciudades = ciudades;
+		$scope.loading = false;
 	}
 });
