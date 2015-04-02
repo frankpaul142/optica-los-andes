@@ -725,7 +725,7 @@ video{
 	width:10px;
 	position:fixed;
 	z-index:200;
-	top:25%;
+	top:50%;
 	right:1%;
 	}
 .nav-circ a:link, .nav-circ a:visited{
@@ -789,7 +789,7 @@ video{
 	}	
 .list-locales li a:link, .list-locales li a:visited{
 	font-family: 'bebas_neueregular';
-	padding:10px 20px;
+	padding:0;
 	color:#FFF;
 	outline:1px solid #FFF;
 	font-size:46px;
@@ -805,7 +805,7 @@ video{
 	-webkit-transition:0.3s;
 	}
 .submenu-locales{
-	width: 20% ;
+	width: 20% !important ;
   /* padding: 30px 10% !important; */
   background: rgba(0,0,0,0.95);
   margin: 10px 0 0 0 !important;
@@ -1479,10 +1479,13 @@ body {
 }
 
 .alert{
-	padding: 15px;
-	margin-top: 10px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: left;
+  position: absolute;
+  bottom: 0;
+  width: 30%;
 }
 .alert-danger{
 	background-color: #f2dede;
