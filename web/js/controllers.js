@@ -354,6 +354,114 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 		}
 		// }
 	});
+	$scope.showAlert = false;
+	$scope.textoEnviar = 'Postular';
+	$scope.enviar = function($event) {
+		$event.preventDefault();
+		var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var reDigits = /^\d{10}$/;
+		if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Nombre no puede estar vacío";
+		} else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Email no puede estar vacío";
+		} else if (!reEmail.test($scope.iemail)) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Email no es válido";
+		} else if (typeof($scope.icelular) === 'undefined' || $scope.icelular == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Celular no puede estar vacío";
+		} else if (!reDigits.test($scope.icelular)) {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Celular no es válido";
+		} else if (typeof($scope.imensaje) === 'undefined' || $scope.imensaje == '') {
+			$scope.showAlert = true;
+			$scope.alertType = "danger";
+			$scope.alertMsg = "Mensaje no puede estar vacío";
+		} else {
+			$scope.showAlert = false;
+			$scope.textoEnviar = 'Enviando';
+			/*var fdata=new FormData();
+			jQuery.each(jQuery('#icv')[0].files, function(i, file) {
+			    fdata.append('file-'+i, file);
+			});*/
+			console.log($('#formTrabaja')[0]);
+			var form=new FormData($('#formTrabaja')[0]);
+			// var form = $('#formTrabaja').serializeArray();console.log(form);
+			// form.push(fdata);console.log(form);
+			jQuery.ajax({
+			    url: 'site/work',
+			    data: form,
+			    cache: false,
+			    contentType: false,
+			    processData: false,
+			    type: 'POST',
+			    success: function(data){
+			        console.log(data);
+					if (data == 'enviado') {
+						$scope.showAlert = true;
+						$scope.alertType = "success";
+						$scope.alertMsg = "Su mensaje ha sido enviado. Gracias por contactarnos.";
+						$scope.inombre = '';
+						$scope.iemail = '';
+						$scope.icelular = '';
+						$scope.imensaje = '';
+					} else {
+						$scope.showAlert = true;
+						$scope.alertType = "danger";
+						$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+					}
+					$scope.textoEnviar = 'Postular';
+					$scope.$apply();
+				},
+				error: function(data) {
+					console.log(data);
+					$scope.showAlert = true;
+					$scope.alertType = "danger";
+					$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+					$scope.textoEnviar = 'Postular';
+					$scope.$apply();
+				}
+			});
+			/*$.post('site/work', form).success(function(data) {
+				console.log(data);
+				if (data == 'enviado') {
+					$scope.showAlert = true;
+					$scope.alertType = "success";
+					$scope.alertMsg = "Su mensaje ha sido enviado. Gracias por contactarnos.";
+					$scope.inombre = '';
+					$scope.iemail = '';
+					$scope.icelular = '';
+					$scope.imensaje = '';
+				} else {
+					$scope.showAlert = true;
+					$scope.alertType = "danger";
+					$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+				}
+				$scope.textoEnviar = 'Postular';
+				$scope.$apply();
+			}).error(function(data) {
+				console.log(data);
+				$scope.showAlert = true;
+				$scope.alertType = "danger";
+				$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+				$scope.textoEnviar = 'Postular';
+				$scope.$apply();
+			});*/
+		}
+	};
+	$scope.keypressed = function(keyEvent) {
+		/*if (keyEvent.which === 13) {
+		    $scope.entrar();
+		}*/
+		$scope.showAlert = false;
+	};
 });
 
 controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $http) {

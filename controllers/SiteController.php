@@ -11,6 +11,8 @@ use app\models\ContactForm;
 use app\models\City;
 use app\models\Local;
 use app\models\Contact;
+use app\models\WorkWithUs;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -112,6 +114,47 @@ class SiteController extends Controller
             else{
             	echo "no save";
             	print_r($contact->getErrors());
+            }
+        }
+        else{
+            echo "no post";
+        }
+    }
+
+    public function actionWork()
+    {
+        if(isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['celular']) && isset($_POST['mensaje']) && isset($_FILES['cv'])){
+            $work=new WorkWithUs;
+            $work->name=$_POST['nombre'];
+            $work->email=$_POST['email'];
+            $work->phone=$_POST['celular'];
+            $work->comment=$_POST['mensaje'];
+            $filename = date('Y_m_d_H_i_s').'_'.$_FILES['cv']['name'];
+		    $filetype = $_FILES['cv']['type'];
+		    $filetemp = $_FILES['cv']['tmp_name'];
+		    $filepath = "images/cv/";
+            if(is_uploaded_file($filetemp)) {
+		        if(move_uploaded_file($filetemp, $filepath . $filename)) {
+		        	if(chmod($filepath . $filename, 777)){
+		            	$work->cv=$filename;
+		        	}
+		        	else{
+		        		echo "no chmod";
+		        	}
+		        }
+		        else {
+		            echo "no move";
+		        }
+		    }
+		    else {
+		        echo "no upload";
+		    }
+            if($work->save()){
+            	echo "enviado";
+            }
+            else{
+            	echo "no save";
+            	print_r($work->getErrors());
             }
         }
         else{
