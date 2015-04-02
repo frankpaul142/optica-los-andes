@@ -1479,10 +1479,13 @@ body {
 }
 
 .alert{
-	padding: 15px;
-	margin-top: 10px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: left;
+  position: absolute;
+  bottom: 0;
+  width: 30%;
 }
 .alert-danger{
 	background-color: #f2dede;
