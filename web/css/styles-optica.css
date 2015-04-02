@@ -1453,3 +1453,13 @@ body {
      -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
         transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
+
+.item{
+	width:250px !important;float:left;overflow:hidden;height:250px !important;
+}
+.item img{
+	width: auto;
+	height: auto;
+	min-height: 50px;
+	min-width: 50px;
+}

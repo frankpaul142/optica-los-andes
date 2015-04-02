@@ -112,6 +112,22 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert, $timeout) {
 	console.log('ContactoCtrl');
+	var wall_important=new freewall('.img-contacto');
+	// wall_important.fitWidth();
+	wall_important.reset({
+            selector: '.item',
+            animate: true,
+            cellW: 300,
+            cellH: 'auto',
+            onResize: function() {
+                wall_important.fitWidth();
+            }
+        });
+
+        var images = wall_important.container.find('.item');
+        images.find('img').load(function() {
+            wall_important.fitWidth();
+        });
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
 	} else {
