@@ -8,7 +8,7 @@
 		<ul ng-show="!loading">
 			<li ng-repeat="(key, ciudad) in ciudades">
 				<a href="javascript:void(0)" ng-click="changeCity(key)" ng-class="{selectedList: ciudadActiva==key}">{{ciudad.name}}</a>
-				<ul class="submenu-locales" ng-if="desplegar && ciudadActiva==key">
+				<ul class="submenu-locales at-view-slide-in-left at-view-flip-out-right-opposite ng-scope" ng-if="desplegar && ciudadActiva==key">
 					<li ng-repeat="(key2, local) in ciudad.locales">
 						<a href="javascript:void(0)" ng-click="changeStore(key2)">{{local.name}}</a>
 					</li>
