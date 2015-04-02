@@ -189,6 +189,7 @@ video{
 	position:relative;
 	background-color:#313131;
 	padding-top: 5%;
+    zoom: 80%;
 	}
 .img-contacto{
 	width:38%;
@@ -197,6 +198,7 @@ video{
 	margin:60px 0 0 0;
 	position:relative;
 	background-color:#06b1c5;
+    
 	}
 .img-contacto img{
 	width: 18.5%;
@@ -245,6 +247,7 @@ video{
 	float:left;
 	position:relative;
 	padding-top: 7%;
+    zoom: 80%;
 	}
 /* POSICIONES IMAGENES */
 #img-1{
@@ -784,7 +787,7 @@ video{
 	-webkit-transition:0.3s;
 	}
 .submenu-locales{
-	width: 30% !important;
+	width: 20% !important;
   /* padding: 30px 10% !important; */
   background: rgba(0,0,0,0.95);
   margin: 10px 0 0 0 !important;
@@ -792,13 +795,16 @@ video{
   overflow-y: auto;
   opacity: 1;
   display: block;
-  position: absolute;
+      position: fixed;
+  top: 26%;
+  right: 35%;
+  z-index: 999;
 	}
 .submenu-locales li{
 	list-style: circle;
-  	padding: 15px 1%;
-  	width: 48%;
-  	float: left;
+  padding: 15px 1%;
+  width: 90%;
+  float: left;
 	}
 .submenu-locales li a:link, .submenu-locales li a:visited{
 	  font-family: 'bebas_neueregular';
