@@ -77,8 +77,8 @@
 
 /**/
 nav{
-	/*display:none;*/
-	width:90%;
+	display:none;
+	width:92%;
 	margin:0;
 	padding:1% 5%;
 	position:absolute;
@@ -91,10 +91,11 @@ nav ul{
 	float:left;
 	}
 nav ul li{
-	width:16.5%;
+	width:100%;
 	float:left;
 	list-style:none;
-	
+	padding:15px 0;
+	border-top:1px solid #F3F3F3;
 	}	
 nav ul li a:link, nav ul li a:visited{
 	width:100%;
