@@ -106,7 +106,7 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope) {
 	});
 });
 
-controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
+controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert) {
 	console.log('ContactoCtrl');
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
@@ -145,6 +145,21 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope) {
 			}
 		// }
 	});
+	$('#inputCedula').hide();
+    $('#contactoTipo').change(function () {
+    	if($(this).val()=='Reclamo'){
+    		$('#inputCedula').show();
+    	}
+    	else{
+    		$('#inputCedula').hide();
+    	}
+    });
+    $scope.enviar=function ($event) {
+    	$event.preventDefault();
+    	if(typeof($scope.inombre)==='undefined' || $scope.inombre==''){console.log('nombre vacio');
+    		myAlert=$alert({title:'Error',content:'Nombre es obligatorio',placement:'top',type:'info',show:true});
+    	}
+    };
 });
 
 controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
@@ -237,7 +252,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope,$ht
 	console.log('LocalesCtrl');
 	$scope.loading=true;
 	$scope.store={};
-	$scope.store.picture='local-optica.jpg';
+	$scope.store.picture='locales.jpeg';
 	$scope.localActivo=0;
 	$scope.ciudadActiva=0;
 	$scope.desplegar=false;

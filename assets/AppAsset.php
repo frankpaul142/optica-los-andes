@@ -26,6 +26,8 @@ class AppAsset extends AssetBundle
         '//code.angularjs.org/1.3.9/angular.min.js',
         '//code.angularjs.org/1.3.9/angular-route.min.js',
         '//code.angularjs.org/1.3.9/angular-animate.min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.2.0/angular-strap.min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.2.0/angular-strap.tpl.min.js',
         'js/app.js',
         'js/controllers.js',
         'js/script.js',

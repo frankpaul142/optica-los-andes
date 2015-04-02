@@ -28,24 +28,24 @@
 		</div>
 	</div>
 	<div class="cont-fcontacto">
-		<h1>CONTACTANOS</h1>
+		<h1>CONTÁCTANOS</h1>
 		<span>
         <span class="color-gb">¿Tienes alguna pregunta?</span>
 		<br/> Póngase en contacto con nosotros y le ayudaremos rápidamente con la respuesta que necesita.
 		</span>
 		<form class="f-contacto">
-			<input type="text" placeholder="NOMBRE" />
-			<input type="text" placeholder="APELLIDO" />
-			<input type="email" placeholder="EMAIL" />
-			<input type="text" placeholder="CELULAR" />
-			<select>
-				<option>Reclamo</option>
-				<option>Sugerencia</option>
-				<option>Consulta</option>
+			<input type="text" placeholder="NOMBRE" required ng-model="inombre" />
+			<input type="text" placeholder="APELLIDO" required ng-model="iapellido" />
+			<input type="email" placeholder="EMAIL" required ng-model="iemail" />
+			<input type="text" placeholder="CELULAR" required ng-model="icelular" />
+			<select id="contactoTipo" ng-model="itipo" ng-init="Consulta">
+				<option value="Consulta">Consulta</option>
+				<option value="Reclamo">Reclamo</option>
+				<option value="Sugerencia">Sugerencia</option>
 			</select>
-			<input type="text" placeholder="CÉDULA">
-			<textarea placeholder="MENSAJE"></textarea>
-			<input type="submit" value="Enviar" />
+			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula">
+			<textarea placeholder="MENSAJE" required ng-model="imensaje"></textarea>
+			<input type="submit" value="Enviar" ng-click="enviar($event)" />
 		</form>
 	</div>
 	<div class="info-copyright">
