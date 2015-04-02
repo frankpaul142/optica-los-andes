@@ -112,22 +112,31 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $alert, $timeout) {
 	console.log('ContactoCtrl');
-	var wall_important=new freewall('.img-contacto');
+	//var wall_important=new freewall('.img-contacto');
 	// wall_important.fitWidth();
-	wall_important.reset({
-            selector: '.item',
-            animate: true,
-            cellW: 300,
-            cellH: 'auto',
-            onResize: function() {
-                wall_important.fitWidth();
-            }
-        });
 
-        var images = wall_important.container.find('.item');
-        images.find('img').load(function() {
-            wall_important.fitWidth();
-        });
+			var myArray = ['150', '150'];
+			var temp = "<div class='cell' style='width:{width}px; height: {height}px; background-image: url(images/contacto/contacto_{index}.jpg);background-size:cover; background-repeat:no-repeat;'></div>";
+			var w = 120, h = 120, html = '', limitItem = 12;
+			for (var i = 0; i < limitItem; ++i) {
+				w = myArray[Math.floor(Math.random() * myArray.length)];
+				html += temp.replace(/\{height\}/g, h).replace(/\{width\}/g, w).replace("{index}", i + 1);
+			}
+			$(".img-contacto").html(html);
+			
+			var wall = new freewall(".img-contacto");
+			wall.reset({
+				selector: '.cell',
+				animate: false,
+				cellW: w,
+				cellH: h,
+				delay: 150,
+				onResize: function() {
+					wall.fitWidth();
+				}
+			});
+			wall.fitWidth();
+	
 	if ($rootScope.page < 3) {
 		$scope.pageClass = 'scroll-down-enter';
 	} else {
