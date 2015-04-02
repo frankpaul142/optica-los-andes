@@ -70,6 +70,9 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
+	document.getElementById('vid1').addEventListener('loadedmetadata', function() {
+  this.currentTime = 01;
+}, false);
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
 	} else {
@@ -386,6 +389,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
 		$scope.store.picture = ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
 		$scope.localActivo = id;
+		$scope.desplegar=false;
 	}
 	if (typeof(ciudades) === 'undefined') {
 		$http.get('site/load-stores').success(function(data) {

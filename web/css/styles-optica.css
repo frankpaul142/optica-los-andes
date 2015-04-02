@@ -725,7 +725,7 @@ video{
 	width:10px;
 	position:fixed;
 	z-index:200;
-	top:25%;
+	top:50%;
 	right:1%;
 	}
 .nav-circ a:link, .nav-circ a:visited{
