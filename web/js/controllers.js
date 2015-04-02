@@ -16,6 +16,7 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 		} else if (section == 3) {
 			$location.url('contacto');
 		}
+
 	}
 	$scope.$on('$routeChangeStart',function () {
 		$rootScope.scrolling1 = true;
@@ -29,6 +30,7 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
+
 	if ($rootScope.page > 3) {
 		$scope.pageClass = 'scroll-left-enter';
 	} else {
