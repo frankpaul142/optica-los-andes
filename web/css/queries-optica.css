@@ -143,11 +143,16 @@ header {
 }    
 .info-locales {
   width: 100%;
-  margin:0;} 
+  margin:0;
+position: absolute;
+  bottom: 10%} 
 .submenu-locales li {
   padding: 2px;
   width: 40%;
-}    
+}   
+.loading2 {
+  top: 15%;
+  left: 47%;}    
 .submenu-locales{
   top: auto;
   right: auto;

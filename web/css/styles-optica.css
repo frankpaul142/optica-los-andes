@@ -789,7 +789,7 @@ video{
 	}	
 .list-locales li a:link, .list-locales li a:visited{
 	font-family: 'bebas_neueregular';
-	padding:10px 20px;
+	padding:0;
 	color:#FFF;
 	outline:1px solid #FFF;
 	font-size:46px;
