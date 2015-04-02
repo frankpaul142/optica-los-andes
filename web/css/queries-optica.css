@@ -11,7 +11,9 @@
 @media screen and (max-width: 1280px) {
 .info-cp {
   width: 90%;
-  margin: 0 5%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 10%;
 }	
 .info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
   font-size: 3em;
