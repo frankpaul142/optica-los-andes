@@ -113,6 +113,11 @@ header {
   height: auto;
   padding: 5% 0;
 }
+.cont-menu {
+  width: 90%;
+  float: left;
+  padding: 1% 5%;
+}
 }
 @media screen and (max-width: 640px){
 .info-promo{
