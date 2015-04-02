@@ -389,6 +389,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
 		$scope.store.picture = ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
 		$scope.localActivo = id;
+		$scope.desplegar=false;
 	}
 	if (typeof(ciudades) === 'undefined') {
 		$http.get('site/load-stores').success(function(data) {
