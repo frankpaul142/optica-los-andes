@@ -110,7 +110,7 @@ header {
   position: relative;
 }
 #cont-home {
-  height: 100%;
+  height: 90%;
   position: relative;
 }
 .sliderhome {
@@ -118,14 +118,43 @@ header {
   margin: 0;
 }
 .section-cp {
-  height: auto;
+  height: 100%;
   position: relative;
 }
 .cont-contacto {
   height: auto;
   padding: 5% 0;
 }
-
+.list-locales {
+  width: 100%;
+  margin: 0;
+}
+.cont-locales span{
+    display: none;
+}    
+.list-locales li a:link, .list-locales li a:visited{
+    font-size: 20px;
+  padding: 0;
+}    
+.tit-encuentranos{
+    padding: 2%;
+      width: 96%;
+  text-align: center;
+}    
+.info-locales {
+  width: 100%;
+  margin:0;} 
+.submenu-locales li {
+  padding: 2px;
+  width: 40%;
+}    
+.submenu-locales{
+  top: auto;
+  right: auto;
+left: 0;    
+  bottom: 8%;
+  width: 100%!important;
+}    
 }
 @media screen and (max-width: 640px){
 .info-promo{

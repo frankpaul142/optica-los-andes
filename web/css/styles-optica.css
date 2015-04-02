@@ -756,7 +756,7 @@ video{
 
 .cont-locales{
 	width: 100%;
-	height: 92%;
+	height: 100%;
 	padding: 8% 0 0 0;
 	position: relative;
 	background: url(../images/fondo-locales.jpg);
@@ -805,7 +805,7 @@ video{
 	-webkit-transition:0.3s;
 	}
 .submenu-locales{
-	width: 20% !important;
+	width: 20% !important ;
   /* padding: 30px 10% !important; */
   background: rgba(0,0,0,0.95);
   margin: 10px 0 0 0 !important;
@@ -813,7 +813,7 @@ video{
   overflow-y: auto;
   opacity: 1;
   display: block;
-      position: fixed;
+      position: absolute;
   top: 26%;
   right: 35%;
   z-index: 999;
@@ -1479,10 +1479,13 @@ body {
 }
 
 .alert{
-	padding: 15px;
-	margin-top: 10px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: left;
+  position: absolute;
+  bottom: 0;
+  width: 30%;
 }
 .alert-danger{
 	background-color: #f2dede;
