@@ -70,6 +70,9 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
+	document.getElementById('vid1').addEventListener('loadedmetadata', function() {
+  this.currentTime = 01;
+}, false);
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
 	} else {
