@@ -33,6 +33,7 @@ class AppAsset extends AssetBundle
         'js/app.js',
         'js/controllers.js',
         'js/script.js',
+        'js/angular-swipe.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

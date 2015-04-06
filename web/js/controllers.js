@@ -66,13 +66,20 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 			}
 		}
 	});
+	$scope.swipeup = function($event) {
+		console.log('home swipeUp ' + $rootScope.scrolling1);
+		if (!$rootScope.scrolling1) {
+			$scope.pageClass = 'scroll-down-leave';
+			$scope.scrollUrl = 'promo';
+		}
+	};
 });
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
 	document.getElementById('vid1').addEventListener('loadedmetadata', function() {
-  this.currentTime = 01;
-}, false);
+		this.currentTime = 01;
+	}, false);
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
 	} else {
@@ -113,6 +120,18 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 			}
 		}
 	});
+	$scope.swipeup = function($event) {
+		if (!$rootScope.scrolling1) {
+			$scope.pageClass = 'scroll-down-leave';
+			$scope.scrollUrl = 'contacto';
+		}
+	};
+	$scope.swipedown = function($event) {
+		if (!$rootScope.scrolling1) {
+			$scope.pageClass = 'scroll-up-leave';
+			$scope.scrollUrl = '';
+		}
+	};
 });
 
 controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $timeout) {
@@ -179,6 +198,12 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
 			}
 		}
 	});
+	$scope.swipedown = function($event) {
+		if (!$rootScope.scrolling1) {
+			$scope.pageClass = 'scroll-up-leave';
+			$scope.scrollUrl = 'promo';
+		}
+	};
 	$('#inputCedula').hide();
 	$('#contactoTipo').change(function() {
 		if ($(this).val() == 'Reclamo') {
@@ -299,18 +324,23 @@ controllers.controller('QuienesCtrl', function($scope, $location, $rootScope) {
 	$scope.scrollUrl = 'quienes_somos';
 	$scope.$watch('scrollUrl', function() {
 		$location.url($scope.scrollUrl).replace();
-		// scrolling = false;
 	});
 	$(document).bind('wheel', function(e) {
-		// if (!scrolling) {
-		if (e.originalEvent.deltaY > 0) {
-			scrolling = true;
+		if (!$rootScope.scrolling1) {
+			if (e.originalEvent.deltaY > 0) {
+				scrolling = true;
+				$scope.pageClass = 'scroll-down-leave';
+				$scope.scrollUrl = 'trabaja_con_nosotros';
+				$scope.$apply();
+			}
+		}
+	});
+	$scope.swipeup = function($event) {
+		if (!$rootScope.scrolling1) {
 			$scope.pageClass = 'scroll-down-leave';
 			$scope.scrollUrl = 'trabaja_con_nosotros';
-			$scope.$apply();
 		}
-		// }
-	});
+	};
 });
 
 controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
@@ -345,15 +375,21 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 		// scrolling = false;
 	});
 	$(document).bind('wheel', function(e) {
-		// if (!scrolling) {
-		if (e.originalEvent.deltaY < 0) {
-			scrolling = true;
+		if (!$rootScope.scrolling1) {
+			if (e.originalEvent.deltaY < 0) {
+				scrolling = true;
+				$scope.pageClass = 'scroll-up-leave';
+				$scope.scrollUrl = 'quienes_somos';
+				$scope.$apply();
+			}
+		}
+	});
+	$scope.swipedown = function($event) {
+		if (!$rootScope.scrolling1) {
 			$scope.pageClass = 'scroll-up-leave';
 			$scope.scrollUrl = 'quienes_somos';
-			$scope.$apply();
 		}
-		// }
-	});
+	};
 	$scope.showAlert = false;
 	$scope.textoEnviar = 'Postular';
 	$scope.enviar = function($event) {
@@ -392,18 +428,18 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 			    fdata.append('file-'+i, file);
 			});*/
 			console.log($('#formTrabaja')[0]);
-			var form=new FormData($('#formTrabaja')[0]);
+			var form = new FormData($('#formTrabaja')[0]);
 			// var form = $('#formTrabaja').serializeArray();console.log(form);
 			// form.push(fdata);console.log(form);
 			jQuery.ajax({
-			    url: 'site/work',
-			    data: form,
-			    cache: false,
-			    contentType: false,
-			    processData: false,
-			    type: 'POST',
-			    success: function(data){
-			        console.log(data);
+				url: 'site/work',
+				data: form,
+				cache: false,
+				contentType: false,
+				processData: false,
+				type: 'POST',
+				success: function(data) {
+					console.log(data);
 					if (data == 'enviado') {
 						$scope.showAlert = true;
 						$scope.alertType = "success";
@@ -429,31 +465,6 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 					$scope.$apply();
 				}
 			});
-			/*$.post('site/work', form).success(function(data) {
-				console.log(data);
-				if (data == 'enviado') {
-					$scope.showAlert = true;
-					$scope.alertType = "success";
-					$scope.alertMsg = "Su mensaje ha sido enviado. Gracias por contactarnos.";
-					$scope.inombre = '';
-					$scope.iemail = '';
-					$scope.icelular = '';
-					$scope.imensaje = '';
-				} else {
-					$scope.showAlert = true;
-					$scope.alertType = "danger";
-					$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
-				}
-				$scope.textoEnviar = 'Postular';
-				$scope.$apply();
-			}).error(function(data) {
-				console.log(data);
-				$scope.showAlert = true;
-				$scope.alertType = "danger";
-				$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
-				$scope.textoEnviar = 'Postular';
-				$scope.$apply();
-			});*/
 		}
 	};
 	$scope.keypressed = function(keyEvent) {
@@ -497,7 +508,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
 		$scope.store.picture = ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
 		$scope.localActivo = id;
-		$scope.desplegar=false;
+		$scope.desplegar = false;
 	}
 	if (typeof(ciudades) === 'undefined') {
 		$http.get('site/load-stores').success(function(data) {
