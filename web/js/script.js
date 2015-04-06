@@ -28,3 +28,13 @@ function addLoadEvent(func) {
 addLoadEvent(preloader);
     
 });
+$('.trigger').click(function() {
+		$('nav.nav-resp').toggle();
+});
+$(document).mousedown(function(e) {
+		var menu = $('nav.nav-resp');
+		var trigger = $('.trigger');
+		if (!menu.is(e.target) && !trigger.is(e.target) && menu.has(e.target).length === 0) {
+			$('.nav.nav-resp').hide();
+		}
+	});
