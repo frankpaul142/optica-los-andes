@@ -21,6 +21,12 @@ AppAsset::register($this);
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <?= Html::csrfMetaTags() ?>
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="css/fractionslider.css">		
+		
+		
+    
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
@@ -51,7 +57,14 @@ AppAsset::register($this);
                 <li><a href="#/contacto" ng-click="toSection($event,3)">CONTACTO</a></li>
             </ul>
         </nav>
-        <div class="trigger">☰</div>
+        <div class="trigger">
+            <section class="mod model-1">
+              <div class="menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"> </div>
+            </div></section>
+        </div>
         <nav class="nav-resp">
         	<ul>
                 <li><a href="#/" ng-click="toSection($event,1)">HOME</a></li>

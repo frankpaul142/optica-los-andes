@@ -34,6 +34,8 @@ class AppAsset extends AssetBundle
         'js/controllers.js',
         'js/script.js',
         'js/angular-swipe.js',
+        'js/anima-plg.js',
+        'js/jquery.fractionslider.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

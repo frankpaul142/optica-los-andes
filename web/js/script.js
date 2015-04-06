@@ -29,8 +29,18 @@ addLoadEvent(preloader);
     
 });
 $('.trigger').click(function() {
-		$('nav.nav-resp').toggle();
+		$('nav.nav-resp').slideToggle();
+    $('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
+    $('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
+    $('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');
+    
 });
+$('nav.nav-resp ul li a').click(function(){
+    $('nav.nav-resp').slideUp();
+    $('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
+    $('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
+    $('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');
+    });
 $(document).mousedown(function(e) {
 		var menu = $('nav.nav-resp');
 		var trigger = $('.trigger');
