@@ -20,6 +20,8 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/styles-optica.css',
+        'css/style.css',
+        'css/fractionslider.css',
         'css/queries-optica.css',
     ];
     public $js = [
@@ -34,8 +36,8 @@ class AppAsset extends AssetBundle
         'js/controllers.js',
         'js/script.js',
         'js/angular-swipe.js',
-        'js/anima-plg.js',
-        'js/jquery.fractionslider.js',
+        //'js/anima-plg.js',
+        'js/jquery.fractionslider.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

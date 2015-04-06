@@ -30,6 +30,16 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
+	$('.slider').fractionSlider({
+		'fullWidth': 			true,
+		'controls': 			true, 
+		'pager': 				true,
+		'responsive': 			true,
+		'dimensions': 			"1000,550",
+	    'increase': 			false,
+		'pauseOnHover': 		true,
+		'slideEndAnimation': 	true
+	});
 
 	if ($rootScope.page > 3) {
 		$scope.pageClass = 'scroll-left-enter';

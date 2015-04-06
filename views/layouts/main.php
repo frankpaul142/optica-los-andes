@@ -21,9 +21,7 @@ AppAsset::register($this);
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <?= Html::csrfMetaTags() ?>
-    
-    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
-		<link rel="stylesheet" href="css/fractionslider.css">		
+	
 		
 		
     
