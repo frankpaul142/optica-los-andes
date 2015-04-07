@@ -33,10 +33,10 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	$('.slider').fractionSlider({
 		'fullWidth': 			true,
 		'controls': 			true, 
-		'pager': 				true,
+		'pager': 				false,
 		'responsive': 			true,
-		'dimensions': 			"1000,550",
-	    'increase': 			false,
+		'dimensions': 			"1000,500",
+	    'increase': 			true,
 		'pauseOnHover': 		true,
 		'slideEndAnimation': 	true
 	});

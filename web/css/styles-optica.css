@@ -159,11 +159,11 @@ nav ul li a:link, nav ul li a:visited{
 /*Slides Home*/
 .sliderhome{
 	width:100%;
-	height:94%;
+	height:100%;
 	/*background-color:#0C9; */
 	float:left;
 	position:relative;
-	padding-top: 6%;
+	padding-top: 100px;
 	}
 /* CAMPAÑAS PROMOSIONALES */	
 .section-cp{
@@ -1433,7 +1433,7 @@ body {
 
 /*afterloading*/  
 @keyframes top-hide {
-    0% {transform:translateY(0%)}
+    0% {transform:translateY(0%)}z
     100%{transform:translateY(-100%)}
 }  
     

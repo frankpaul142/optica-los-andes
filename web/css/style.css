@@ -10,8 +10,8 @@
 	
 	background:#1b1b1b;
 	
-	border:1px solid #000;
-	box-shadow:0 3px 5px #666;
+	/*border:1px solid #000;
+	box-shadow:0 3px 5px #666;*/
 }
 
 .slider{
@@ -25,13 +25,13 @@
 
 @media only screen and (min-width: 1000px){
 	.slider{
-		width:1000px;
+		width:100%;
 	}
 }
 
 @media only screen and (min-width: 1440px){
 	.slider{
-		width:1440px;
+		width:100%;
 	}
 }
 
