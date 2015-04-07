@@ -1431,7 +1431,7 @@ body {
 
 /*afterloading*/  
 @keyframes top-hide {
-    0% {transform:translateY(0%)}z
+    0% {transform:translateY(0%)}
     100%{transform:translateY(-100%)}
 }  
     
