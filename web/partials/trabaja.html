@@ -4,13 +4,14 @@
         <span>
         </span>
         <form class="f-contacto" id="formTrabaja" enctype="multipart/form-data">
-            <input type="text" placeholder="NOMBRE" required ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" />
-            <input type="text" placeholder="EMAIL" required ng-model="iemail" ng-keypress="keypressed($event)" name="email" />
-            <input type="text" placeholder="CELULAR" required ng-model="icelular" ng-keypress="keypressed($event)" name="celular" />
+            <input type="text" placeholder="NOMBRE" ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" class="noPreventDefault" />
+            <input type="text" placeholder="EMAIL" ng-model="iemail" ng-keypress="keypressed($event)" name="email" class="noPreventDefault" />
+            <input type="text" placeholder="CELULAR" ng-model="icelular" ng-keypress="keypressed($event)" name="celular" class="noPreventDefault" />
             <p class="file">
-            <input type="file" required ng-model="icv" ng-keypress="keypressed($event)" name="cv" id="icv" />
-                <label for="icv">CARGAR CURRICULUM</label></p>
-            <textarea placeholder="COMENTARIOS" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje"></textarea>
+                <input type="file" ng-model="icv" ng-keypress="keypressed($event)" name="cv" id="icv" />
+                <label for="icv">CARGAR CURRICULUM</label>
+            </p>
+            <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
             <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
         </form>
         <alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
