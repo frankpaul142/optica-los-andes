@@ -242,8 +242,11 @@ video {
 }
 @media screen and (max-width: 430px){
 .info-copyright ul {
-  width: 50%;
-  margin: 50px 25% 0 25%;
+    width: 36%;
+  float: none;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
 }
 .cont-contacto img {
   width: 60%;
