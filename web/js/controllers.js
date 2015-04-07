@@ -32,7 +32,7 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
 	$('.slider').fractionSlider({
 		'fullWidth': 			true,
-		'controls': 			true, 
+		'controls': 			false, 
 		'pager': 				false,
 		'responsive': 			true,
 		'dimensions': 			"1000,500",
