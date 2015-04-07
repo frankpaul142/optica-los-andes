@@ -37,7 +37,7 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 		'responsive': 			true,
 		'dimensions': 			"1000,500",
 	    'increase': 			true,
-		'pauseOnHover': 		true,
+		'pauseOnHover': 		false,
 		'slideEndAnimation': 	true
 	});
 
