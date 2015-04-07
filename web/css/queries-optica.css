@@ -1,11 +1,11 @@
 @media screen and (max-width: 1600px) {
 .info-mision, .info-vision{
-	min-height:500px;
+	min-height:600px;
 	}
 }
 @media screen and (max-width: 1366px) {
 .info-mision, .info-vision{
-	min-height:400px;
+	min-height:500px;
 	}
 }
 @media screen and (max-width: 1280px) {
