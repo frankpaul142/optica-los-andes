@@ -137,9 +137,12 @@ header {
   position: relative;
 }
 .cont-contacto {
-  height: auto;
+  
   padding: 5% 0;
 }
+    .info-copyright {
+  width: 100%;
+    left: 0}
 .list-locales {
   width: 100%;
   margin: 0;
@@ -153,8 +156,14 @@ header {
 }    
 .tit-encuentranos{
     padding: 2%;
-      width: 96%;
+      width: 100%;
   text-align: center;
+}    
+.desc-locales{
+    width: 100%;
+}    
+.list-locales li{
+      padding: 5px 5px;
 }    
 .info-locales {
   width: 100%;
@@ -163,7 +172,7 @@ position: absolute;
   bottom: 10%} 
 .submenu-locales li {
   padding: 2px;
-  width: 40%;
+  width: 50%;
 }   
 .loading2 {
   top: 15%;
@@ -241,7 +250,7 @@ video {
   margin: 20px 0 0 0;
 }
 .cont-fcontacto {
-  width: 90%;
+  width: 100%;
   padding: 20px 5% 0 5%;
 }
 .cont-menu {
@@ -266,6 +275,7 @@ video {
 }
 .info-copyright span {
   font-size: 0.7em;
+    display: none;
 }
 #img-trabaja{
 	display:none;
