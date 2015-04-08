@@ -49,7 +49,7 @@
 .info-cp {
   width: 90%;
   margin: 0 auto;
-  padding: 0;
+    padding-top: 20%;
 }
 .menu-productos {
   width: 95%;
@@ -186,6 +186,9 @@ left: 0;
 }    
 }
 @media screen and (max-width: 640px){
+.cont-quienes{
+    padding-top: 12%;
+}    
 .info-promo{
 	width: 100%;
   margin: 10% auto;
@@ -309,6 +312,29 @@ video {
   font-size: 2em;
   padding: 10px 10px;
 }
+.tit-encuentranos{
+    display: none;
+}    
+.list-locales li a:link, .list-locales li a:visited{
+    font-size: 15px;
+}    
+.list-locales li {
+  padding: 5px;
+}
+.cont-locales {
+  padding: 20% 0 0 0;
+}
+nav.nav-resp ul li a{
+    padding: 25px;
+}   
+.img-laempresa {
+  width: 60%;
+  margin: 0 auto;
+  float: none;
+}
+.cont-fcontacto {
+ padding: 15% 5% 0 5%;
+}    
 }		
 	
 
