@@ -461,7 +461,12 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 					} else {
 						$scope.showAlert = true;
 						$scope.alertType = "danger";
-						$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+						if(data.substr(0,12)=='no extension'){
+							$scope.alertMsg = "Solo se acepta formato pdf.";
+						}
+						else{
+							$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
+						}
 					}
 					$scope.textoEnviar = 'Postular';
 					$scope.$apply();
