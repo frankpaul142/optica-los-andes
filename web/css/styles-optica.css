@@ -217,9 +217,9 @@ video{
 	width:38%;
 	height:400px !important;
 	float:left;
-	margin:60px 0 0 0;
+	margin:60px 0 0 3%;
 	position:relative;
-	background-color:#06b1c5;
+	/*background-color:#06b1c5;*/
     overflow: hidden;
     
 	}
