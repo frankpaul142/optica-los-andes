@@ -116,6 +116,7 @@ header{
 	width:100%;
 	float:left;
 	padding:1% 10%;
+      background-color: #fff;
 	}
 .logo-optica{
 	width:15%;
@@ -1051,8 +1052,8 @@ input#uploadFile {
     to      { -moz-transform: translateY(0); }
 }
 @-webkit-keyframes slideInDown {
-    from    { -webkit-transform:translateY(1%); }
-    to      { -webkit-transform: translateY(-100%); }
+    from    { -webkit-transform:translateY(-100%); }
+    to      { -webkit-transform: translateY(0%); }
 }
 
 /* slide out to the top */
@@ -1065,7 +1066,7 @@ input#uploadFile {
     to      { -moz-transform: translateY(-100%); }
 }
 @-webkit-keyframes slideOutDown {
-    from    { -webkit-transform:translateY(-100%); }
+    from    { -webkit-transform:translateY(0); }
     to      { -webkit-transform: translateY(100%); }
 }
 
