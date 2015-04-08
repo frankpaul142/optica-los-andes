@@ -133,22 +133,29 @@ class SiteController extends Controller
 		    $filetype = $_FILES['cv']['type'];
 		    $filetemp = $_FILES['cv']['tmp_name'];
 		    $filepath = "images/cv/";
-            if(is_uploaded_file($filetemp)) {
-		        if(move_uploaded_file($filetemp, $filepath . $filename)) {
-		        	if(chmod($filepath . $filename, 777)){
-		            	$work->cv=$filename;
-		        	}
-		        	else{
-		        		echo "no chmod";
-		        	}
-		        }
-		        else {
-		            echo "no move";
-		        }
-		    }
-		    else {
-		        echo "no upload";
-		    }
+            $allowed =  array('pdf');
+            $ext = pathinfo($_FILES['cv']['name'], PATHINFO_EXTENSION);
+            if(in_array($ext,$allowed)){
+                if(is_uploaded_file($filetemp)) {
+    		        if(move_uploaded_file($filetemp, $filepath . $filename)) {
+    		        	if(chmod($filepath . $filename, 777)){
+    		            	$work->cv=$filename;
+    		        	}
+    		        	else{
+    		        		echo "no chmod";
+    		        	}
+    		        }
+    		        else {
+    		            echo "no move";
+    		        }
+    		    }
+    		    else {
+    		        echo "no upload";
+    		    }
+            }
+            else{
+                echo "no extension";
+            }
             if($work->save()){
             	echo "enviado";
             }
