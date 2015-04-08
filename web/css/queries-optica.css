@@ -142,7 +142,8 @@ header {
 }
     .info-copyright {
   width: 100%;
-    left: 0}
+    left: 0;
+      display: none;}
 .list-locales {
   width: 100%;
   margin: 0;

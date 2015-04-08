@@ -1,3 +1,6 @@
+<script>document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};</script>
 <section class="cont-contacto" ng-swipe-down="swipedown($event)">
     <div class="cont-fcontacto">
         <h1>TRABAJA CON NOSOTROS</h1>
@@ -7,10 +10,16 @@
             <input type="text" placeholder="NOMBRE" ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" class="noPreventDefault" />
             <input type="text" placeholder="EMAIL" ng-model="iemail" ng-keypress="keypressed($event)" name="email" class="noPreventDefault" />
             <input type="text" placeholder="CELULAR" ng-model="icelular" ng-keypress="keypressed($event)" name="celular" class="noPreventDefault" />
-            <p class="file">
-                <input type="file" ng-model="icv" ng-keypress="keypressed($event)" name="cv" id="icv" />
-                <label for="icv">CARGAR CURRICULUM</label>
-            </p>
+            <div class="file">
+                
+                <div class="fileUpload btn btn-primary">
+                <span>Curriculum</span>
+                <input id="uploadBtn" type="file" class="upload" />
+                    
+</div>
+                <input id="uploadFile" placeholder="Subir archivo..." disabled="disabled" />
+            <div style="clear:both"></div>
+            </div>
             <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
             <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
         </form>
