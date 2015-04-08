@@ -974,44 +974,44 @@ input#uploadFile {
 /* Angular Transitions */
 
 .scroll-down-leave.ng-leave      {
-    -webkit-animation:slideOutUp 0.7s both ease-in;
-    -moz-animation:slideOutUp 0.7s both ease-in;
-    animation:slideOutUp 0.7s both ease-in;
+    -webkit-animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
 }
 .scroll-down-enter.ng-enter      { 
-    -webkit-animation:slideInUp 0.7s both ease-in;
-    -moz-animation:slideInUp 0.7s both ease-in;
-    animation:slideInUp 0.7s both ease-in;  
+    -webkit-animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
 }
 .scroll-up-leave.ng-leave      {
-    -webkit-animation:slideOutDown 0.7s both ease-in;
-    -moz-animation:slideOutDown 0.7s both ease-in;
-    animation:slideOutDown 0.7s both ease-in;
+    -webkit-animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
 }
 .scroll-up-enter.ng-enter      { 
-    -webkit-animation:slideInDown 0.7s both ease-in;
-    -moz-animation:slideInDown 0.7s both ease-in;
-    animation:slideInDown 0.7s both ease-in;  
+    -webkit-animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
 }
 .scroll-right-leave.ng-leave      {
-    -webkit-animation:slideOutLeft 0.7s both ease-in;
-    -moz-animation:slideOutLeft 0.7s both ease-in;
-    animation:slideOutLeft 0.7s both ease-in;
+    -webkit-animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
 }
 .scroll-right-enter.ng-enter      { 
-    -webkit-animation:slideInLeft 0.7s both ease-in;
-    -moz-animation:slideInLeft 0.7s both ease-in;
-    animation:slideInLeft 0.7s both ease-in;  
+    -webkit-animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
 }
 .scroll-left-leave.ng-leave      {
-    -webkit-animation:slideOutRight 0.7s both ease-in;
-    -moz-animation:slideOutRight 0.7s both ease-in;
-    animation:slideOutRight 0.7s both ease-in;
+    -webkit-animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
 }
 .scroll-left-enter.ng-enter      { 
-    -webkit-animation:slideInRight 0.7s both ease-in;
-    -moz-animation:slideInRight 0.7s both ease-in;
-    animation:slideInRight 0.7s both ease-in;  
+    -webkit-animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -moz-animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
 }
 
 /* slide in from the bottom */
