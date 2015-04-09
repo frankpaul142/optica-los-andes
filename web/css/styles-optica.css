@@ -1059,11 +1059,11 @@ input#uploadFile {
 /* slide out to the top */
 @keyframes slideOutDown {
     from    { transform:translateY(0); }
-    to      { transform: translateY(-100%); }
+    to      { transform: translateY(100%); }
 }
 @-moz-keyframes slideOutDown {
     from    { -moz-transform:translateY(0); }
-    to      { -moz-transform: translateY(-100%); }
+    to      { -moz-transform: translateY(100%); }
 }
 @-webkit-keyframes slideOutDown {
     from    { -webkit-transform:translateY(0); }
