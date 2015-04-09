@@ -974,44 +974,44 @@ input#uploadFile {
 /* Angular Transitions */
 
 .scroll-down-leave.ng-leave      {
-    -webkit-animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideOutUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -webkit-animation:slideOutUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideOutUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideOutUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }
 .scroll-down-enter.ng-enter      { 
-    -webkit-animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideInUp 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
+    -webkit-animation:slideInUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideInUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideInUp 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);  
 }
 .scroll-up-leave.ng-leave      {
-    -webkit-animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideOutDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -webkit-animation:slideOutDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideOutDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideOutDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }
 .scroll-up-enter.ng-enter      { 
-    -webkit-animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideInDown 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
+    -webkit-animation:slideInDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideInDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideInDown 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);  
 }
 .scroll-right-leave.ng-leave      {
-    -webkit-animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideOutLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -webkit-animation:slideOutLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideOutLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideOutLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }
 .scroll-right-enter.ng-enter      { 
-    -webkit-animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideInLeft 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
+    -webkit-animation:slideInLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideInLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideInLeft 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);  
 }
 .scroll-left-leave.ng-leave      {
-    -webkit-animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideOutRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
+    -webkit-animation:slideOutRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideOutRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideOutRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }
 .scroll-left-enter.ng-enter      { 
-    -webkit-animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    -moz-animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);
-    animation:slideInRight 0.7s both cubic-bezier(0.810, -0.260, 0.260, 1.250);  
+    -webkit-animation:slideInRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-animation:slideInRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation:slideInRight 0.7s both cubic-bezier(0.445, 0.050, 0.550, 0.950);  
 }
 
 /* slide in from the bottom */
