@@ -96,9 +96,17 @@ section .gb-laempresa{
   padding-top: 0px;
       width: 100%
 	}    
+.txt-telefonos img{
+    width: 20%;
+}    
 nav.nav-resp{
     display: none;
 }
+.txt-telefonos{
+    margin: 0;
+}   
+.direccion {
+  width: 50%;}    
     .trigger{
 display: block;}    
 nav {
@@ -147,8 +155,11 @@ header {
   width: 100%;
   margin: 0;
 }
-.cont-locales span{
-    display: none;
+.list-locales span {
+  display: none;
+}   
+.desc-locales span{
+    font-size: 12px;
 }    
 .list-locales li a:link, .list-locales li a:visited{
     font-size: 20px;
@@ -169,7 +180,7 @@ header {
   width: 100%;
   margin:0;
 position: absolute;
-  bottom: 10%} 
+  bottom: 4%;} 
 .submenu-locales li {
   padding: 2px;
   width: 50%;
@@ -181,7 +192,7 @@ position: absolute;
   top: auto;
   right: auto;
 left: 0;    
-  bottom: 8%;
+  bottom: 0%;
   width: 100%!important;
 }    
 }
@@ -245,7 +256,7 @@ video {
 .file{width: 100%}    
 }
 @media screen and (max-width: 430px){
-.cont-locales{padding: 30% 0 0 0;}  
+.cont-locales{padding: 20% 0 0 0;}  
 .info-copyright ul {
     width: 36%;
   float: none;

@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$('.cont-loader').delay(800).fadeOut(800);
 	$('.trigger').click(function() {
 		$('nav.nav-resp').slideToggle();
+        $('.submenu-locales').slideToggle();
 		$('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
 		$('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
 		$('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');
