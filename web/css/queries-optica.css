@@ -2,6 +2,12 @@
 .info-mision, .info-vision{
 	min-height:600px;
 	}
+.resp-home{
+    display: none;
+}    
+.sliderhome{
+    display: block;
+}    
 }
 @media screen and (max-width: 1366px) {
 .info-mision, .info-vision{
@@ -49,7 +55,7 @@
 .info-cp {
   width: 90%;
   margin: 0 auto;
-    padding-top: 20%;
+  padding-top: 20%;
 }
 .menu-productos {
   width: 95%;
@@ -86,10 +92,19 @@
 .list-locales li a:link, .list-locales li a:visited {
   font-size: 32px;
 }
+.info-copyright{
+bottom: 10%;} 
+.trigger{
+    display: block;
+}
+nav{
+    display: none;
+}  
+nav.nav-resp{
+    display: none;
+} 
 }	
-@media screen and (min-width: 861px) {
-nav.nav-resp, .trigger{
-display: none!important;} }
+
 @media screen and (max-width: 860px) {
 section .gb-laempresa{
     height: auto;
@@ -197,6 +212,12 @@ left: 0;
 }    
 }
 @media screen and (max-width: 640px){
+.resp-home{
+    display: block;
+}    
+.sliderhome{
+    display: none;
+}    
 .cont-quienes{
     padding-top: 12%;
 }    
@@ -313,7 +334,13 @@ video {
   width: 90%;
   margin: 0 5%;
 }
-.file{width: 100%}    
+.file{width: 100%} 
+.lens-txt,.lens-txt2{
+    width: 45%;
+}   
+.lens,.lens-txt3{
+width: 100%;
+}    
 }
 @media screen and (max-width: 340px){
 .ver-descripcion:link, .ver-descripcion:visited {
