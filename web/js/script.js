@@ -9,6 +9,7 @@ $(document).ready(function() {
 		$('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
 		$('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
 		$('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');
+        $('header').toggleClass('addclass-header');
 
 	});
 	$('nav.nav-resp ul li a').click(function() {
@@ -16,7 +17,17 @@ $(document).ready(function() {
 		$('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
 		$('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
 		$('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');
+        $('header').removeClass('addclass-header');
 	});
+    $('.logo-optica img').click(function() {
+    $('nav.nav-resp').slideUp();    
+    $('header').removeClass('addclass-header');
+    $('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
+		$('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
+		$('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');    
+    
+    });                                
+                                    
 	$(document).mousedown(function(e) {
 		var menu = $('nav.nav-resp');
 		var trigger = $('.trigger');
