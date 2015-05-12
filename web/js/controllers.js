@@ -31,14 +31,14 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
 	$('.slider').fractionSlider({
-		'fullWidth': 			true,
-		'controls': 			false, 
-		'pager': 				false,
-		'responsive': 			true,
-		'dimensions': 			"1000,500",
-	    'increase': 			true,
-		'pauseOnHover': 		false,
-		'slideEndAnimation': 	true,
+		'fullWidth': true,
+		'controls': false,
+		'pager': false,
+		'responsive': true,
+		'dimensions': "1000,500",
+		'increase': true,
+		'pauseOnHover': false,
+		'slideEndAnimation': true,
 	});
 
 	if ($rootScope.page > 3) {
@@ -87,9 +87,42 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
-	document.getElementById('vid1').addEventListener('loadedmetadata', function() {
-		this.currentTime = 01;
-	}, false);
+	var vids=['TU_eres_TWO','TU_eres_TWO'];
+	$scope.currentVideo = 0;
+	$scope.videos=[];
+	for(i in vids){
+		$scope.videos.push({'webm':'images/videos/'+vids[i]+'.webm','mp4':'images/videos/'+vids[i]+'.mp4','ogg':'images/videos/'+vids[i]+'.ogg'});
+	}
+	var numVideos=Object.keys($scope.videos).length;
+	var tiempo=50*numVideos;
+	var videos=[];
+	var canvas=[];
+	var contexts=[];
+	var w=[];
+	var h=[];
+	var ratios=[];
+	$timeout(function() {
+		for(var i=0; i<numVideos; i++){
+			videos[i]=document.getElementById('vid'+i);
+			canvas[i] = document.getElementById('cvs'+i);
+			contexts[i] = canvas[i].getContext('2d');
+			videos[i].currentTime = 1;
+			ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
+			w[i] = videos[i].videoWidth - 200;
+			h[i] = parseInt(w[i] / ratios[i], 10);
+			canvas[i].width = w[i];
+			canvas[i].height = h[i];
+			contexts[i].fillRect(0, 0, w[i], h[i]);
+		}
+		$timeout(function() {
+			for(i=0; i<numVideos; i++){
+				contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
+			}
+		}, tiempo);
+	},1000);
+	$scope.changeVideo = function(num) {
+		$scope.currentVideo = num;
+	};
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
 	} else {
@@ -461,10 +494,9 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 					} else {
 						$scope.showAlert = true;
 						$scope.alertType = "danger";
-						if(data.substr(0,12)=='no extension'){
+						if (data.substr(0, 12) == 'no extension') {
 							$scope.alertMsg = "Solo se acepta formato pdf.";
-						}
-						else{
+						} else {
 							$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
 						}
 					}

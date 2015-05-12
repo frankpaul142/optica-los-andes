@@ -183,11 +183,11 @@ nav ul li a:link, nav ul li a:visited{
 	background-color:#dde1e3;
 	}	
 .info-cp{
-	width:80%;
+	/*width:80%;*/
 	padding:10% 10%;
 	}
 .info-promo{
-	width:40%;
+	width:60%;
 	float:left;
 	}
 .info-promo h1{
