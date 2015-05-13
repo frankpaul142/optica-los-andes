@@ -87,14 +87,14 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
-	var vids=['TU_eres_TWO','TU_eres_TWO'];
+	var vids=['OLA - Lo que Quieres Ver 45 Secs (Historia Completa)','OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)'];
 	$scope.currentVideo = 0;
 	$scope.videos=[];
 	for(i in vids){
-		$scope.videos.push({'webm':'images/videos/'+vids[i]+'.webm','mp4':'images/videos/'+vids[i]+'.mp4','ogg':'images/videos/'+vids[i]+'.ogg'});
+		$scope.videos.push({'webm':'images/videos/'+vids[i]+'.webm','mp4':'images/videos/'+vids[i]+'.mp4','ogv':'images/videos/'+vids[i]+'.ogv'});
 	}
 	var numVideos=Object.keys($scope.videos).length;
-	var tiempo=50*numVideos;
+	var tiempo=100*numVideos;
 	var videos=[];
 	var canvas=[];
 	var contexts=[];
@@ -106,7 +106,7 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 			videos[i]=document.getElementById('vid'+i);
 			canvas[i] = document.getElementById('cvs'+i);
 			contexts[i] = canvas[i].getContext('2d');
-			videos[i].currentTime = 1;
+			//videos[i].currentTime = 1;
 			ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
 			w[i] = videos[i].videoWidth - 200;
 			h[i] = parseInt(w[i] / ratios[i], 10);
@@ -119,7 +119,7 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 				contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
 			}
 		}, tiempo);
-	},1000);
+	},1500);
 	$scope.changeVideo = function(num) {
 		$scope.currentVideo = num;
 	};

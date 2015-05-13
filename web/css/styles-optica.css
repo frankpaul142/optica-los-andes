@@ -207,7 +207,14 @@ nav ul li a:link, nav ul li a:visited{
 video{
 	width:60%;
 	float:left;
+	padding-top: 2%;
 	}
+.cont-canvas{
+	float:left;
+	width:37%;
+	padding-left:4%;
+	padding-top: 2%;
+}
 /* Section Contacto */
 .cont-contacto{
 	width:100%;

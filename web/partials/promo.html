@@ -7,23 +7,11 @@
 		<video ng-repeat="vid in videos track by $index" id="vid{{$index}}" controls ng-show="currentVideo==$index">
 			<source ng-src="{{vid.webm}}" type="video/webm" />
 			<source ng-src="{{vid.mp4}}" type="video/mp4" />
-			<source ng-src="{{vid.ogg}}" type="video/ogg" />
+			<source ng-src="{{vid.ogv}}" type="video/ogv" />
 			HTML5 Video is required for this example
 		</video>
-		<!-- <video id="vid1" controls ng-show="currentVideo==1">
-			<source src="images/videos/TU_eres_TWO.webm" type="video/webm" />
-			<source src="images/videos/TU_eres_TWO.mp4" type="video/mp4" />
-			<source src="images/videos/TU_eres_TWO.ogg" type="video/ogg" /> HTML5 Video is required for this example
-		</video>
-		<video id="vid2" controls ng-show="currentVideo==2">
-			<source src="images/videos/TU_eres_TWO.webm" type="video/webm" />
-			<source src="images/videos/TU_eres_TWO.mp4" type="video/mp4" />
-			<source src="images/videos/TU_eres_TWO.ogg" type="video/ogg" /> HTML5 Video is required for this example
-		</video> -->
-		<div style="float:left; width:40%; padding-left:4%;">
+		<div class="cont-canvas">
 			<canvas ng-repeat="vid in videos track by $index" id="cvs{{$index}}" style="width:90%" ng-click="changeVideo($index)"></canvas>
-			<!-- <canvas id="cvs1" style="width:90%" ng-click="changeVideo(1)"></canvas>
-			<canvas id="cvs2" style="width:90%" ng-click="changeVideo(2)"></canvas> -->
 		</div>
 	</div>
 	<!--  -->
