@@ -87,39 +87,62 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
-	var vids=['OLA - Lo que Quieres Ver 45 Secs (Historia Completa)','OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)'];
+	var vids = ['OLA - Lo que Quieres Ver 45 Secs (Historia Completa)', 'OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)'];
 	$scope.currentVideo = 0;
-	$scope.videos=[];
-	for(i in vids){
-		$scope.videos.push({'webm':'images/videos/'+vids[i]+'.webm','mp4':'images/videos/'+vids[i]+'.mp4','ogv':'images/videos/'+vids[i]+'.ogv'});
+	$scope.videos = [];
+	for (i in vids) {
+		$scope.videos.push({
+			'webm': 'images/videos/' + vids[i] + '.webm',
+			'mp4': 'images/videos/' + vids[i] + '.mp4',
+			'ogv': 'images/videos/' + vids[i] + '.ogv'
+		});
 	}
-	var numVideos=Object.keys($scope.videos).length;
-	var tiempo=100*numVideos;
-	var videos=[];
-	var canvas=[];
-	var contexts=[];
-	var w=[];
-	var h=[];
-	var ratios=[];
+	var numVideos = Object.keys($scope.videos).length;
+	var tiempo = 100 * numVideos;
+	var videos = [];
+	var canvas = [];
+	var contexts = [];
+	var w = [];
+	var h = [];
+	var ratios = [];
 	$timeout(function() {
-		for(var i=0; i<numVideos; i++){
-			videos[i]=document.getElementById('vid'+i);
-			canvas[i] = document.getElementById('cvs'+i);
+		for (var i = 0; i < numVideos; i++) {
+			videos[i] = document.getElementById('vid' + i);
+			canvas[i] = document.getElementById('cvs' + i);
 			contexts[i] = canvas[i].getContext('2d');
 			//videos[i].currentTime = 1;
-			ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
-			w[i] = videos[i].videoWidth - 200;
-			h[i] = parseInt(w[i] / ratios[i], 10);
-			canvas[i].width = w[i];
-			canvas[i].height = h[i];
-			contexts[i].fillRect(0, 0, w[i], h[i]);
-		}
-		$timeout(function() {
-			for(i=0; i<numVideos; i++){
-				contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
+			//console.log(videos[i].readyState);
+			if (videos[i].readyState >= 2) {
+				drawCanvas(i);
+			} else {
+				videos[i].onloadeddata = function(ev) {
+					drawCanvas(ev.srcElement.id.substr(3))
+				};
 			}
-		}, tiempo);
-	},1500);
+		}
+	}, 500);
+	function drawCanvas(i) {
+		//console.log('loadedmetadata' + i);
+		ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
+		w[i] = videos[i].videoWidth - 200;
+		h[i] = parseInt(w[i] / ratios[i], 10);
+		canvas[i].width = w[i];
+		canvas[i].height = h[i];
+		contexts[i].fillRect(0, 0, w[i], h[i]);
+		//$timeout(function() {
+		//for(i=0; i<numVideos; i++){
+		contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
+		contexts[i].strokeStyle = 'white';
+		contexts[i].beginPath();
+		contexts[i].moveTo(w[i]/3, h[i]/3);
+		contexts[i].lineTo(w[i]/3, h[i]-h[i]/3);
+		contexts[i].lineTo(w[i]-w[i]/2.6, h[i]/2);
+		contexts[i].lineTo(w[i]/3, h[i]/3);
+		contexts[i].fillStyle = 'white';
+		contexts[i].fill();
+		//}
+		//}, tiempo);
+	}
 	$scope.changeVideo = function(num) {
 		$scope.currentVideo = num;
 	};
