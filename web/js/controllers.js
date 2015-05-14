@@ -124,7 +124,6 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 				drawCanvas(parseInt(this.id.substr(3)));
 			});
 			//videos[i].currentTime = 1;
-			//console.log(videos[i].readyState);
 			if (videos[i].readyState >= 2) {
 				drawCanvas(i);
 			} else {
@@ -144,17 +143,15 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 		canvas[i].height = h[i];
 		contexts[i].fillRect(0, 0, w[i], h[i]);
 		contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
-		contexts[i].strokeStyle = 'black';
 		contexts[i].fillStyle = 'white';
 		var radio=50;
 		var anchoLinea=8;
 		contexts[i].lineWidth=4;
 		contexts[i].beginPath();
 		contexts[i].moveTo(centerX-radio/2, centerY-(radio-anchoLinea)+radio/4-2);
-		contexts[i].lineTo(centerX+radio-anchoLinea-2, centerY);
+		contexts[i].lineTo(centerX+radio-anchoLinea-5, centerY);
 		contexts[i].lineTo(centerX-radio/2, centerY+(radio-anchoLinea)-radio/4+2);
 		contexts[i].closePath();
-		contexts[i].stroke();
 		contexts[i].fill();
 		contexts[i].strokeStyle = 'white';
 		contexts[i].lineWidth=anchoLinea;
@@ -163,6 +160,9 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 	}
 	$scope.changeVideo = function(num) {
 		$scope.currentVideo = num;
+		for(i in videos){
+			videos[i].pause();
+		}
 	};
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
