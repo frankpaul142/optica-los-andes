@@ -107,20 +107,21 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 	var h = [];
 	var ratios = [];
 	$timeout(function() {
+		//console.log('timeout');
 		for (var i = 0; i < numVideos; i++) {
 			videos[i] = document.getElementById('vid' + i);
 			canvas[i] = document.getElementById('cvs' + i);
 			contexts[i] = canvas[i].getContext('2d');
-			canvas[i].addEventListener('mouseover',function(ev) {
-				var id=parseInt(this.id.substr(3));
+			canvas[i].addEventListener('mouseover', function(ev) {
+				var id = parseInt(this.id.substr(3));
 				drawCanvas(id);
-				contexts[id].fillStyle='rgba(0,0,0,0.5)';
+				contexts[id].fillStyle = 'rgba(0,0,0,0.5)';
 				contexts[id].fillRect(0, 0, w[id], h[id]);
 				contexts[id].fillStyle = 'white';
-				contexts[id].font='20px Arial';
-				contexts[id].fillText(vidsLabel[id],10,50);
+				contexts[id].font = '20px Arial';
+				contexts[id].fillText(vidsLabel[id], 10, 50);
 			});
-			canvas[i].addEventListener('mouseout',function(ev) {
+			canvas[i].addEventListener('mouseout', function(ev) {
 				drawCanvas(parseInt(this.id.substr(3)));
 			});
 			//videos[i].currentTime = 1;
@@ -133,34 +134,35 @@ controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $tim
 			}
 		}
 	}, 500);
+
 	function drawCanvas(i) {
 		ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
 		w[i] = videos[i].videoWidth - 200;
 		h[i] = parseInt(w[i] / ratios[i], 10);
-		centerX=w[i]/2;
-		centerY=h[i]/2;
+		centerX = w[i] / 2;
+		centerY = h[i] / 2;
 		canvas[i].width = w[i];
 		canvas[i].height = h[i];
 		contexts[i].fillRect(0, 0, w[i], h[i]);
 		contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
 		contexts[i].fillStyle = 'white';
-		var radio=50;
-		var anchoLinea=8;
-		contexts[i].lineWidth=4;
+		var radio = 50;
+		var anchoLinea = 8;
+		contexts[i].lineWidth = 4;
 		contexts[i].beginPath();
-		contexts[i].moveTo(centerX-radio/2, centerY-(radio-anchoLinea)+radio/4-2);
-		contexts[i].lineTo(centerX+radio-anchoLinea-5, centerY);
-		contexts[i].lineTo(centerX-radio/2, centerY+(radio-anchoLinea)-radio/4+2);
+		contexts[i].moveTo(centerX - radio / 2, centerY - (radio - anchoLinea) + radio / 4 - 2);
+		contexts[i].lineTo(centerX + radio - anchoLinea - 5, centerY);
+		contexts[i].lineTo(centerX - radio / 2, centerY + (radio - anchoLinea) - radio / 4 + 2);
 		contexts[i].closePath();
 		contexts[i].fill();
 		contexts[i].strokeStyle = 'white';
-		contexts[i].lineWidth=anchoLinea;
-		contexts[i].arc(centerX,centerY,radio,0,2*Math.PI);
+		contexts[i].lineWidth = anchoLinea;
+		contexts[i].arc(centerX, centerY, radio, 0, 2 * Math.PI);
 		contexts[i].stroke();
 	}
 	$scope.changeVideo = function(num) {
 		$scope.currentVideo = num;
-		for(i in videos){
+		for (i in videos) {
 			videos[i].pause();
 		}
 	};
@@ -578,6 +580,16 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
+
+	var lat = -0.177497;
+	var lng = -78.484955;
+	/*if ((navigator.platform.indexOf("iPhone") !== -1) || (navigator.platform.indexOf("iPod") !== -1) || (navigator.platform.indexOf("iPad") !== -1)) {
+		$scope.map = 'http://maps.apple.com?z=16&q=' + lat + ',' + lng;
+	} else {*/
+		$scope.map = 'http://maps.google.com?z=16&q=' + lat + ',' + lng + '&ll=' + lat + ',' + lng;
+	//}
+
+
 	$scope.changeCity = function(id) {
 		if ($scope.ciudadActiva == id) {
 			$scope.desplegar = !$scope.desplegar;
@@ -593,7 +605,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 		$scope.store.phone = ciudades[$scope.ciudadActiva]['locales'][id]['phone'];
 		$scope.store.cellphone = ciudades[$scope.ciudadActiva]['locales'][id]['cellphone'];
 		$scope.store.schedule = ciudades[$scope.ciudadActiva]['locales'][id]['schedule'];
-		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['maps'];
+		$scope.store.map = ciudades[$scope.ciudadActiva]['locales'][id]['map'];
 		$scope.store.picture = ciudades[$scope.ciudadActiva]['locales'][id]['picture'];
 		$scope.localActivo = id;
 		$scope.desplegar = false;

@@ -932,11 +932,11 @@ input#uploadFile {
 	background:rgba(221,225,227,0.45);
 	}	
 .desc-locales{
-	width:96%;
+	/*width:96%;*/
 	position:absolute;
 	left:0;
 	bottom:0;
-	background:rgba(0,0,0,0.8);
+	background:rgba(0,0,0,0.5);
 	color:#FFF;
 	padding:20px 2%;
 	}
