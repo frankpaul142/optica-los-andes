@@ -22,9 +22,9 @@ $(document).ready(function() {
     $('.logo-optica img').click(function() {
     $('nav.nav-resp').slideUp();    
     $('header').removeClass('addclass-header');
-    $('.model-1 .menu .bar:nth-of-type(3)').toggleClass('model-1-hover');
-		$('.model-1 .menu .bar:nth-of-type(2)').toggleClass('model-1-hover2');
-		$('.model-1 .menu .bar:nth-of-type(1)').toggleClass('model-1-hover1');    
+    $('.model-1 .menu .bar:nth-of-type(3)').removeClass('model-1-hover');
+		$('.model-1 .menu .bar:nth-of-type(2)').removeClass('model-1-hover2');
+		$('.model-1 .menu .bar:nth-of-type(1)').removeClass('model-1-hover1');    
     
     });                                
                                     

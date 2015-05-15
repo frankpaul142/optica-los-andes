@@ -197,18 +197,19 @@ header {
 position: absolute;
   bottom: 4%;} 
 .submenu-locales li {
-  padding: 2px;
   width: 50%;
 }   
 .loading2 {
  top: 25%;
   left: 50%;}    
 .submenu-locales{
-  top: auto;
+  top: 45px;
   right: auto;
 left: 0;    
   bottom: 0%;
   width: 100%!important;
+  height: 91%;
+    max-height: 100%;
 }    
 }
 @media screen and (max-width: 640px){
