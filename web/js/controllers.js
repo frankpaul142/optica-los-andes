@@ -31,14 +31,14 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
 controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 	console.log('HomeCtrl');
 	$('.slider').fractionSlider({
-		'fullWidth': 			true,
-		'controls': 			false, 
-		'pager': 				false,
-		'responsive': 			true,
-		'dimensions': 			"1000,500",
-	    'increase': 			true,
-		'pauseOnHover': 		false,
-		'slideEndAnimation': 	true,
+		'fullWidth': true,
+		'controls': false,
+		'pager': false,
+		'responsive': true,
+		'dimensions': "1000,500",
+		'increase': true,
+		'pauseOnHover': false,
+		'slideEndAnimation': true,
 	});
 
 	if ($rootScope.page > 3) {
@@ -87,9 +87,83 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
 	console.log('PromoCtrl');
-	document.getElementById('vid1').addEventListener('loadedmetadata', function() {
-		this.currentTime = 01;
-	}, false);
+	var vids = ['OLA - Lo que Quieres Ver 45 Secs (Historia Completa)', 'OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)'];
+	var vidsLabel = ['Lo que Quieres Ver (Historia Completa)', 'Lo que Quieres Ver (Tecnología)'];
+	$scope.currentVideo = 0;
+	$scope.videos = [];
+	for (i in vids) {
+		$scope.videos.push({
+			'webm': 'images/videos/' + vids[i] + '.webm',
+			'mp4': 'images/videos/' + vids[i] + '.mp4',
+			'ogv': 'images/videos/' + vids[i] + '.ogv'
+		});
+	}
+	var numVideos = Object.keys($scope.videos).length;
+	var tiempo = 100 * numVideos;
+	var videos = [];
+	var canvas = [];
+	var contexts = [];
+	var w = [];
+	var h = [];
+	var ratios = [];
+	$timeout(function() {
+		for (var i = 0; i < numVideos; i++) {
+			videos[i] = document.getElementById('vid' + i);
+			canvas[i] = document.getElementById('cvs' + i);
+			contexts[i] = canvas[i].getContext('2d');
+			canvas[i].addEventListener('mouseover',function(ev) {
+				var id=parseInt(this.id.substr(3));
+				drawCanvas(id);
+				contexts[id].fillStyle='rgba(0,0,0,0.5)';
+				contexts[id].fillRect(0, 0, w[id], h[id]);
+				contexts[id].fillStyle = 'white';
+				contexts[id].font='20px Arial';
+				contexts[id].fillText(vidsLabel[id],10,50);
+			});
+			canvas[i].addEventListener('mouseout',function(ev) {
+				drawCanvas(parseInt(this.id.substr(3)));
+			});
+			//videos[i].currentTime = 1;
+			if (videos[i].readyState >= 2) {
+				drawCanvas(i);
+			} else {
+				videos[i].onloadeddata = function(ev) {
+					drawCanvas(ev.srcElement.id.substr(3));
+				};
+			}
+		}
+	}, 500);
+	function drawCanvas(i) {
+		ratios[i] = videos[i].videoWidth / videos[i].videoHeight;
+		w[i] = videos[i].videoWidth - 200;
+		h[i] = parseInt(w[i] / ratios[i], 10);
+		centerX=w[i]/2;
+		centerY=h[i]/2;
+		canvas[i].width = w[i];
+		canvas[i].height = h[i];
+		contexts[i].fillRect(0, 0, w[i], h[i]);
+		contexts[i].drawImage(videos[i], 0, 0, w[i], h[i]);
+		contexts[i].fillStyle = 'white';
+		var radio=50;
+		var anchoLinea=8;
+		contexts[i].lineWidth=4;
+		contexts[i].beginPath();
+		contexts[i].moveTo(centerX-radio/2, centerY-(radio-anchoLinea)+radio/4-2);
+		contexts[i].lineTo(centerX+radio-anchoLinea-5, centerY);
+		contexts[i].lineTo(centerX-radio/2, centerY+(radio-anchoLinea)-radio/4+2);
+		contexts[i].closePath();
+		contexts[i].fill();
+		contexts[i].strokeStyle = 'white';
+		contexts[i].lineWidth=anchoLinea;
+		contexts[i].arc(centerX,centerY,radio,0,2*Math.PI);
+		contexts[i].stroke();
+	}
+	$scope.changeVideo = function(num) {
+		$scope.currentVideo = num;
+		for(i in videos){
+			videos[i].pause();
+		}
+	};
 	if ($rootScope.page > 2) {
 		$scope.pageClass = 'scroll-up-enter';
 	} else {
@@ -461,10 +535,9 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
 					} else {
 						$scope.showAlert = true;
 						$scope.alertType = "danger";
-						if(data.substr(0,12)=='no extension'){
+						if (data.substr(0, 12) == 'no extension') {
 							$scope.alertMsg = "Solo se acepta formato pdf.";
-						}
-						else{
+						} else {
 							$scope.alertMsg = "Error al enviar mensaje. Intente de nuevo por favor.";
 						}
 					}

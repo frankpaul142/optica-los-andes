@@ -184,11 +184,11 @@ nav ul li a:link, nav ul li a:visited{
 	background-color:#dde1e3;
 	}	
 .info-cp{
-	width:80%;
+	/*width:80%;*/
 	padding:10% 10%;
 	}
 .info-promo{
-	width:40%;
+	width:60%;
 	float:left;
 	}
 .info-promo h1{
@@ -208,7 +208,14 @@ nav ul li a:link, nav ul li a:visited{
 video{
 	width:60%;
 	float:left;
+	padding-top: 2%;
 	}
+.cont-canvas{
+	float:left;
+	width:37%;
+	padding-left:4%;
+	padding-top: 2%;
+}
 /* Section Contacto */
 .cont-contacto{
 	width:100%;
