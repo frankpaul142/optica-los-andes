@@ -580,16 +580,6 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 			$scope.pageClass = 'scroll-left-leave';
 		}
 	});
-
-	var lat = -0.177497;
-	var lng = -78.484955;
-	/*if ((navigator.platform.indexOf("iPhone") !== -1) || (navigator.platform.indexOf("iPod") !== -1) || (navigator.platform.indexOf("iPad") !== -1)) {
-		$scope.map = 'http://maps.apple.com?z=16&q=' + lat + ',' + lng;
-	} else {*/
-		$scope.map = 'http://maps.google.com?z=16&q=' + lat + ',' + lng + '&ll=' + lat + ',' + lng;
-	//}
-
-
 	$scope.changeCity = function(id) {
 		if ($scope.ciudadActiva == id) {
 			$scope.desplegar = !$scope.desplegar;
@@ -597,7 +587,6 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
 			$scope.desplegar = true;
 		}
 		$scope.ciudadActiva = id;
-
 	};
 	$scope.changeStore = function(id) {
 		$scope.store.name = ciudades[$scope.ciudadActiva]['locales'][id]['name'];
