@@ -121,6 +121,7 @@ header{
 	float:left;
 	background-color:#07b1c6;
 	height:10px;
+    display: none;
 	}	
 .cont-menu{
 	width:100%;
@@ -1335,7 +1336,7 @@ body {
 }
 .loading2 {
     position: absolute;
-  top: 50%;
+  top: 70%;
   left: 22%;
   width: 20px;
   height: 20px;
