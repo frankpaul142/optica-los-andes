@@ -15,6 +15,8 @@
 	}
 }
 @media screen and (max-width: 1280px) {
+ nav ul li {
+  width: 110px;}   
 .info-cp {
   width: 90%;
   margin: 0 auto;
@@ -48,7 +50,7 @@
   font-size: 2.5em;
 }
 .list-locales li a:link, .list-locales li a:visited {
-  font-size: 40px;
+  font-size: 20px;
 }
 }
 @media screen and (max-width: 1024px) {
@@ -90,7 +92,7 @@
   padding: 0;
 }
 .list-locales li a:link, .list-locales li a:visited {
-  font-size: 32px;
+  font-size: 20px;
 }
 .info-copyright{
 bottom: 10%;} 
@@ -106,6 +108,11 @@ nav.nav-resp{
 }	
 
 @media screen and (max-width: 860px) {
+ .cont-locales{
+  padding: 80px 0 0 0;
+
+ } 
+
 section .gb-laempresa{
     height: auto;
   padding-top: 0px;
@@ -167,8 +174,10 @@ header {
     left: 0;
       display: none;}
 .list-locales {
-  width: 100%;
-  margin: 0;
+  width: 90%;
+  margin: 0 auto;
+  float: none;
+  z-index: 3;
 }
 .list-locales span {
   display: none;
@@ -193,9 +202,12 @@ header {
 }    
 .info-locales {
   width: 100%;
-  margin:0;
-position: absolute;
-  bottom: 4%;} 
+  height: 50%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  float: none;
+  z-index: 0;} 
 .submenu-locales li {
   width: 50%;
 }   
