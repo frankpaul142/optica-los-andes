@@ -145,7 +145,7 @@ nav ul{
 	display: inline-block;
 }
 nav ul li{
-	width: 150px;
+	width: 140px;
 	float:left;
 	list-style:none;
 	
@@ -191,10 +191,10 @@ nav ul li a:link, nav ul li a:visited{
 	}	
 .info-cp{
 	/*width:80%;*/
-	padding:10% 10%;
+	  padding: 10% 25%;
 	}
 .info-promo{
-	width:60%;
+	width:100%;
 	float:left;
 	}
 .info-promo h1{
@@ -588,7 +588,7 @@ input#uploadFile {
 	text-align:center;
 	float:left;
 	color:#e0e0e0;
-	font-size:0.8em;
+	  font-size: 0.6em;
 	margin:20px 0 0 0;
 	}
 .info-copyright span a:link, .info-copyright span a:visited{
@@ -850,7 +850,7 @@ input#uploadFile {
 	position: relative;
 	background: url(../images/fondo-locales.jpg);
 	background-size: cover;
-	background-attachment: fixed;
+
 	background-repeat: no-repeat;
 	}
 .cont-locales span{
@@ -1335,11 +1335,10 @@ body {
     animation: spin2 2.5s 0s infinite both;
 }
 .loading2 {
-    position: absolute;
-  top: 70%;
+top: 70%;
   left: 22%;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  margin: 20% auto;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
