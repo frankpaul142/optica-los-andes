@@ -3,7 +3,7 @@
 .slider-wrapper{
 	position:relative;
 	overflow:hidden;
-	
+	height: 100%;
 	width:100%;
 z-index: 10;
 	/*margin:200px auto; */
@@ -67,3 +67,4 @@ p{
 .blue-ola2{background: #01447B;}
 .blue-ola3{background: #373E47;}
 .blue-ola4{background: #00B0C6;}
+.fraction-slider{height: 100vh!important;}
