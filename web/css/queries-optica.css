@@ -12,14 +12,14 @@
 @media screen and (max-width: 1366px) {
 .info-vision{
 	min-height:500px;
-  background-position: 100% 0%;
+  background-position: 100% 40%;
   background-size: 50%;
 	}
- .info-mision {
-  min-height: 500px;
-  background-position: 0% 0%;
-  background-size: 50%;
-} 
+.info-mision {
+    min-height: 500px;
+    background-size: 50% auto;
+    background-position: 0% 40%;
+}
 }
 @media screen and (min-width:1024px) {
     nav.nav-resp{
@@ -64,6 +64,7 @@
   font-size: 20px;
 }
 }
+@media screen and (max-width: 1024px) and (orientation : landscape) {}
 @media screen and (max-width: 1024px) {
 
     
@@ -119,7 +120,7 @@ nav.nav-resp{
     display: none;
 } 
 }	
-
+@media screen and (max-width: 860px) and (orientation : landscape) {}
 @media screen and (max-width: 860px) {
  .cont-locales{
   padding: 80px 0 0 0;
@@ -147,9 +148,7 @@ display: block;}
 nav {
   display:none;
 }	
-.img-laempresa {
-  width: 100%;
-}
+
 .info-laempresa {
   width: 90%;
   padding:1% 5% 2% 5%;
@@ -263,6 +262,58 @@ h4 {
   max-height: 100%;
 }    
 }
+@media screen and (max-width: 640px) and (orientation : landscape) {
+    .cont-fcontacto {width: 100%;padding: 2%;}
+    .f-contacto input[type='text'], input[type='email'],.f-contacto select{margin: 0;  width: 50%;}  
+    .f-contacto select{width: 100%;}  
+    .f-contacto textarea{min-height:0;margin: 0;padding: 0;}
+    .info-cp{  padding-top: 10%}   
+    .info-promo {width: 100%;margin: 0% auto;}
+    video {width: 50%; margin: 0 auto;}
+    .cont-canvas {
+      float: left;
+        width: 30%;} 
+    .info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
+      font-size: 1em;
+    }   
+    .info-laempresa span {
+        font-size: 0.7em;}  
+    .info-laempresa {
+        width: 50%;}  
+    .list-locales,.info-locales {
+        width: 50%;
+        float: left;}
+    .locales-img {
+        height: 0;
+    }
+    #img-trabaja{
+        display: none;
+    }    
+    .file{margin: 0;}
+    .logo-optica {
+        width: 25%;}
+    .cont-quienes {
+  padding-top: 5%;
+}
+    .cont-fcontacto h1 {
+  font-size: 2em;
+}
+
+}
+@media screen and (max-width: 640px) and (orientation : portrait) {
+    .cont-fcontacto {
+      width: 56%;
+      padding: 50px 2% 0 2%;
+    }
+    .f-contacto input[type='text'], input[type='email'],.f-contacto select{
+           margin: 20px 2% 0 0; }
+    .info-promo{
+        width: 100%;
+      margin: 10% auto;
+        } 
+    video {width: 100%; margin: 0 auto;}     
+}
+
 @media screen and (max-width: 640px){
 .resp-home{
     display: block;
@@ -273,23 +324,12 @@ h4 {
 .cont-quienes{
     padding-top: 12%;
 }    
-.info-promo{
-	width: 100%;
-  margin: 10% auto;
-	}
-video {
-  width: 100%;
-  margin: 0 auto;
-  
-}
+
 .info-copyright ul {
   width: 30%;
   margin: 50px 35% 0 35%;
 }
-.cont-fcontacto {
-  width: 56%;
-  padding: 50px 2% 0 2%;
-}	
+	
 #mision-a, #vision-a {
   width: 90%;
   margin:4% 5% 0 5%;
@@ -328,7 +368,11 @@ video {
 }
 .file{width: 100%}    
 }
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) and (orientation : landscape) {
+
+}
+@media screen and (max-width: 430px) {
+.img-contacto{display: none;}     
 .cont-locales{padding: 20% 0 0 0;}  
 .info-copyright ul {
     width: 36%;
@@ -353,7 +397,7 @@ video {
   width: 40%;
 }
 .info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 .info-promo h1 {
   line-height: 35px;
@@ -396,10 +440,10 @@ video {
 width: 100%;
 }    
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 340px) {
+.img-contacto{display: none;}     
 .ver-descripcion:link, .ver-descripcion:visited {
-  width: 16%;
-}
+  width: 16%;}
 .tit-artre {
   font-size: 2em;
   padding: 10px 10px;
