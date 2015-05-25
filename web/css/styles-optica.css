@@ -198,7 +198,8 @@ nav ul li a:link, nav ul li a:visited{
   background: url(../images/fondo-videos.jpg);
   background-size: 120% 160%;
   background-repeat: no-repeat;
-  background-position-x: -270px;
+  background-position-x: -380px;
+  background-position-y: -125px;
 	}	
 .info-cp{
 	/*width:80%;*/
@@ -214,7 +215,7 @@ nav ul li a:link, nav ul li a:visited{
 	margin:2% 5% 0 5%;
 	float:left;
 	line-height: 55px;
-    color: #00ADD2;
+    color: rgba(255, 255, 255, 0.82);
 	}
 .info-promo span{
 	width:90%;
@@ -231,7 +232,7 @@ video{
 .cont-canvas{
 	float:left;
 	width:37%;
-	padding-left:4%;
+	padding-right: 4%;
 	padding-top: 2%;
 }
 /* Section Contacto */
