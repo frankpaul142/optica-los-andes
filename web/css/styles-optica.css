@@ -823,6 +823,7 @@ input#uploadFile {
 	z-index:2;
 	top:50%;
 	right:1%;
+      z-index: 999;
 	}
 .nav-circ a:link, .nav-circ a:visited{
 	width:10px;
@@ -861,16 +862,16 @@ input#uploadFile {
 	background-repeat: no-repeat;
 	}
 .cont-locales span{
-	width:80%;
-	float:left;
-	margin:20px 10%;
-	text-align:center;
-	color:#FFF;
+width: 81%;
+  float: left;
+  margin: 20px 10%;
+  text-align: justify;
+  color: #FFF;
 	}	
 .list-locales{
 	width:35%;
 	float:left;
-	margin:0 0 0 5%;
+	margin: 12% 0 0 5%;
 	}
 .list-locales ul{
 	width:100%;
@@ -956,7 +957,7 @@ input#uploadFile {
 	padding:20px 2%;
 	}
 .direccion{
-	width:40%;
+	width: 25%;
 	float:left;
 	}	
 .direccion img{
@@ -967,14 +968,14 @@ input#uploadFile {
 	width:80%;
 	margin:0 5%;
 	float:left;
+      text-align: left;
 	}	
 .txt-locales span{
 	font-size:0.9em;
 	}	
 .txt-telefonos{
-    width: 50%;
+    width: 25%;
     float: left;
-    margin: 10px 0% 0 5%;
 	}	
 
 .txt-telefonos img{
@@ -984,10 +985,12 @@ input#uploadFile {
 .txt-telefonos span{
 	float:left;
 	margin:0px 0 0 0;
+      text-align: left;
 	}
 .direccion-maps{
-	width:20%;
+	width: 25%;
 	float:left;
+      text-align: left;
 	}	
 .direccion-maps img{
 	width:20%;
@@ -1943,3 +1946,7 @@ section {
     width: 50%;
     float: left;
 }
+.desc-locales .txt-locales span {
+  font-size: 0.9em;
+  margin: 0;
+    text-align: left;}
