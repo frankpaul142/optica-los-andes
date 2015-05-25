@@ -24,10 +24,14 @@
 @media screen and (min-width:1024px) {
     nav.nav-resp{
     display: none !important;
-    } }
+    } 
+
+
+}
 @media screen and (max-width: 1280px) {
  nav ul li {
-  width: 110px;}   
+    width: 16%;
+   padding: 0;}   
 .info-cp {
   width: 90%;
   margin: 0 auto;
@@ -182,9 +186,9 @@ header {
   padding: 5% 0;
 }
     .info-copyright {
-  width: 100%;
-    left: 0;
-      display: none;}
+ width: 100%;
+  left: 0;
+  bottom: 0;}
 .list-locales {
   width: 100%;
   margin: 0 auto;

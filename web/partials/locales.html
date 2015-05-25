@@ -1,11 +1,12 @@
 <div class="cont-locales">
 	<div class="list-locales">
-		<span>Optica los Andes posee 50 locales, por todo el Ecuador por las principales ciudades del país, ofreciendo productos de calidad y facilidad a nuestros clientes donde quiera que este.</span>
-		<span>Además tenemos locales en Perú. <a href="http://www.eyesillusion.com/" target="_blank">Eyes Illusion</a></span>
-		<div class="loading2" ng-show="loading">
+        <div class="loading2" ng-show="loading">
 			<div class="dot"></div>
 			<div class="dot2"></div>
 		</div>
+		<span>Optica los Andes posee 50 locales, por todo el Ecuador por las principales ciudades del país, ofreciendo productos de calidad y facilidad a nuestros clientes donde quiera que este.</span>
+		<span>Además tenemos locales en Perú. <a href="http://www.eyesillusion.com/" target="_blank">Eyes Illusion</a></span>
+		
 		<ul ng-show="!loading">
 			<li ng-repeat="(key, ciudad) in ciudades">
 				<a href="javascript:void(0)" ng-click="changeCity(key)" ng-class="{selectedList: ciudadActiva==key}">{{ciudad.name}}</a>

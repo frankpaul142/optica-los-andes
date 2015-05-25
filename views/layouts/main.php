@@ -43,7 +43,7 @@ AppAsset::register($this);
 	<div class="header-line"></div>
     <div class="cont-menu">
     	<a href="#/" ng-click="toSection($event,1)"><div class="logo-optica"><img src="images/logo-ola.png"/></div></a>
-        <nav>
+        <nav class="nav-comp">
         	<ul>
                 <li><a href="#/" ng-click="toSection($event,1)">HOME</a></li>
             	<li><a href="#/quienes_somos" ng-click="toSection($event,4)">QUIENES SOMOS</a></li>
