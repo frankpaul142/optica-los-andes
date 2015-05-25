@@ -190,11 +190,15 @@ nav ul li a:link, nav ul li a:visited{
 	}
 /* CAMPAÑAS PROMOSIONALES */	
 .section-cp{
-	width:100vw;
-	height:100vh;
-	float:left;
-	position:relative;
-	background-color:#dde1e3;
+  width: 100vw;
+  height: 100vh;
+  float: left;
+  position: relative;
+  background-color: #dde1e3;
+  background: url(../images/fondo-videos.jpg);
+  background-size: 120% 160%;
+  background-repeat: no-repeat;
+  background-position-x: -270px;
 	}	
 .info-cp{
 	/*width:80%;*/
@@ -210,6 +214,7 @@ nav ul li a:link, nav ul li a:visited{
 	margin:2% 5% 0 5%;
 	float:left;
 	line-height: 55px;
+    color: #00ADD2;
 	}
 .info-promo span{
 	width:90%;
@@ -555,7 +560,7 @@ input#uploadFile {
 	position: absolute;
 	bottom: 0;
 	left: 16%;
-      height: 5%;
+
 }	
 .info-copyright ul{
 	width:16%;
@@ -1951,3 +1956,12 @@ section {
   font-size: 0.9em;
   margin: 0;
     text-align: left;}
+.ng-isolate-scope {
+  float: left;
+}
+.ng-isolate-scope.rc-anchor-dark {
+  background: #313131;
+  border: 1px solid #525252;
+  color: #fff;
+  border: 1px solid;
+    width: 97%;}
