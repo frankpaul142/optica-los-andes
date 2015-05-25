@@ -1,6 +1,8 @@
-<script>document.getElementById("uploadBtn").onchange = function () {
+<script>
+document.getElementById("uploadBtn").onchange = function() {
     document.getElementById("uploadFile").value = this.value;
-};</script>
+};
+</script>
 <section class="cont-contacto" ng-swipe-down="swipedown($event)">
     <div class="cont-fcontacto">
         <h1>TRABAJA CON NOSOTROS</h1>
@@ -11,16 +13,15 @@
             <input type="text" placeholder="EMAIL" ng-model="iemail" ng-keypress="keypressed($event)" name="email" class="noPreventDefault" />
             <input type="text" placeholder="CELULAR" ng-model="icelular" ng-keypress="keypressed($event)" name="celular" class="noPreventDefault" />
             <div class="file">
-                
                 <div class="fileUpload btn btn-primary">
-                <span>Curriculum</span>
-                <input id="uploadBtn" type="file" class="upload" />
-                    
-</div>
+                    <span>Curriculum</span>
+                    <input id="uploadBtn" type="file" class="upload" />
+                </div>
                 <input id="uploadFile" placeholder="Subir archivo..." disabled="disabled" />
-            <div style="clear:both"></div>
+                <div style="clear:both"></div>
             </div>
             <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
+            <div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
             <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
         </form>
         <alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
@@ -32,12 +33,12 @@
                 <a href="https://www.facebook.com/OpticaLosAndes?ref=hl" target="_blank"><img src="images/ico-facebook.jpg" alt="icono facebook" /></a>
             </li>
             <li>
-                <a href="https://twitter.com/OPTICALOSANDES" target="_blank" ><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
+                <a href="https://twitter.com/OPTICALOSANDES" target="_blank"><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
             </li>
             <li>
-                <a href="http://instagram.com/ola_ec" target="_blank" ><img src="images/ico-instagram.jpg"  alt="icono instagram" /></a>
+                <a href="http://instagram.com/ola_ec" target="_blank"><img src="images/ico-instagram.jpg" alt="icono instagram" /></a>
             </li>
-           <!-- <li>
+            <!-- <li>
                 <a href="#"><img src="images/ico-youtube.jpg" alt="icono youtube" /></a>
             </li> -->
         </ul>
@@ -48,3 +49,4 @@
     <a href="#/quienes_somos" ng-click="toSection($event,4)">4</a>
     <a href="#/trabaja_con_nosotros" class="div-selected">5</a>
 </div>
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>

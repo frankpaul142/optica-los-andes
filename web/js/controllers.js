@@ -508,6 +508,21 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
             $scope.scrollUrl = 'quienes_somos';
         }
     };
+
+    $scope.setResponse = function (response) {
+        $.post('site/captcha',{response: response}).success(function (data) {
+            // console.log(data);
+            var resp=JSON.parse(data);
+            if(resp.success){
+            	$scope.captcha=true;
+            	$scope.$apply();
+            }
+        }).error(function (data) {
+            console.log(data);
+        });
+    };
+
+    $scope.captcha=false;
     $scope.showAlert = false;
     $scope.textoEnviar = 'Postular';
     $scope.enviar = function($event) {
@@ -538,6 +553,10 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
             $scope.showAlert = true;
             $scope.alertType = "danger";
             $scope.alertMsg = "Mensaje no puede estar vacío";
+        } else if (!$scope.captcha) {
+            $scope.showAlert = true;
+            $scope.alertType = "danger";
+            $scope.alertMsg = "Verifica que no eres un robot";
         } else {
             $scope.showAlert = false;
             $scope.textoEnviar = 'Enviando';
