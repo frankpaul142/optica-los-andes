@@ -21,6 +21,7 @@
 			</select>
 			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula" ng-keypress="keypressed($event)" name="cedula" class="noPreventDefault" />
 			<textarea placeholder="MENSAJE" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
+			<div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
 			<input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
 		</form>
 	</div>
@@ -47,3 +48,5 @@
 	<a href="#/promo" ng-click="toSection($event,2)">2</a>
 	<a href="#/contacto" class="div-selected">3</a>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>

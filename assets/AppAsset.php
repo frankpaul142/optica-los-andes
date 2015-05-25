@@ -32,6 +32,7 @@ class AppAsset extends AssetBundle
         'js/freewall.js',
         'js/app.js',
         'js/controllers.js',
+        'js/angular-recaptcha.min.js',
         'js/script.js',
         'js/angular-swipe.js',
         'js/jquery.fractionslider.min.js',

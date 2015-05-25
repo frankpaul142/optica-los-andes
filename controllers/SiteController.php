@@ -45,10 +45,6 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
         ];
     }
 
@@ -166,6 +162,27 @@ class SiteController extends Controller
         }
         else{
             echo "no post";
+        }
+    }
+
+    public function actionCaptcha()
+    {
+        if(isset($_POST['response'])){
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+			$data = array('secret' => '6LeTWwcTAAAAANqcdntvDTr46E3K1yzKnov6DdH6', 'response' => $_POST['response']);
+			$options = array(
+			    'http' => array(
+			        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+			        'method'  => 'POST',
+			        'content' => http_build_query($data),
+			    ),
+			);
+			$context  = stream_context_create($options);
+			$result = file_get_contents($url, false, $context);
+			echo json_encode(json_decode($result,true));
+        }
+        else{
+        	echo 'no post';
         }
     }
 

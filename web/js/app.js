@@ -1,4 +1,4 @@
-var app = angular.module('Optica', ['ngRoute', 'ngAnimate', 'OpticaControllers', 'ui.bootstrap', 'swipe']);
+var app = angular.module('Optica', ['ngRoute', 'ngAnimate', 'OpticaControllers', 'ui.bootstrap', 'swipe','vcRecaptcha']);
 
 // configs
 
@@ -19,6 +19,10 @@ app.config(function($routeProvider /*, $locationProvider*/ ) {
 	when('/quienes_somos', {
 		templateUrl: 'partials/quienes.html',
 		controller: 'QuienesCtrl'
+	}).
+	when('/beneficios', {
+		templateUrl: 'partials/beneficios.html',
+		controller: 'BeneficiosCtrl'
 	}).
 	when('/trabaja_con_nosotros', {
 		templateUrl: 'partials/trabaja.html',

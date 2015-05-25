@@ -1,6 +1,28 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.1.63] - 2015-05-04
+### Added
+- Support for CommonJS (Browserify)
+
+### Updates
+- Allow masking the text content of other html-elements (other then div)
+- Make alternators correctly handle alternations with different lengths
+- better determine the last required position with multiple masks
+
+### Fixed
+- Edit New issue
+Static masks fails when we set value="2015" for an input field where data-inputmask was "2999" #903
+- contenteditable decimal #882
+- Tab out does not work when element is readonly #884
+- Change mask default for allowPlus and allowMinus #896
+- Browser hangs after trying to type some additional digits at the start of a date field #876
+- inputmask decimal with integerDigits or digits with maxlength can cause Browser freezed #889
+- masking a password field #821 (reenable type=password)
+- email inputmask "isComplete" always returns true #855
+- When two masks specified backspace clears the whole input instead of last char #780
+- Phone extention backspace problem #454
+
 ## [3.1.62] - 2015-03-26
 ### Added
 - Numeric alias: add unmaskAsNumber option

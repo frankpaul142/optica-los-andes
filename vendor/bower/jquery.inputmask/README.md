@@ -1,9 +1,9 @@
 #jquery.inputmask 3.x
 
-Copyright (c) 2010 - 2014 Robin Herbots
+Copyright (c) 2010 - 2015 Robin Herbots
 Licensed under the MIT license (http://opensource.org/licenses/mit-license.php)
 
-[![devDependency Status](https://david-dm.org/RobinHerbots/jquery.inputmask/dev-status.svg)](https://david-dm.org/RobinHerbots/jquery.inputmask#info=devDependencies) [![peerDependency Status](https://david-dm.org/RobinHerbots/jquery.inputmask/peer-status.svg)](https://david-dm.org/RobinHerbots/jquery.inputmask#info=peerDependencies)
+[![NPM Version][npm-image]][npm-url] [![Dependency Status][david-image]][david-url] [![devDependency Status][david-dev-image]][david-dev-url]
 
 jquery.inputmask is a jQuery plugin which create an input mask.
 
@@ -25,7 +25,7 @@ Highlights:
 - dynamic-mask support
 - preprocessing-mask support
 - value formatting / validating without input element
-- AMD support
+- AMD/CommonJS support
 
 Demo page see http://robinherbots.github.io/jquery.inputmask
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
 - input type="text" 
 - input type="tel"
 - div contenteditable="true" (and all others supported by contenteditable)
-- div (mask text content or set maskedvalue with jQuery.val)
+- any html-element (mask text content or set maskedvalue with jQuery.val)
 
 #### Default masking definitions
 
@@ -315,12 +315,38 @@ Specify a placeholder for a definition.
 
 ### set defaults
 
+Defaults can be set as below.
 ```javascript
 $.extend($.inputmask.defaults, {
     'autoUnmask': true
 });
 ```
+But if the property is defined within an alias you need to set it for the alias definition.
 
+```javascript
+$.extend($.inputmask.defaults.aliases.numeric , {
+    allowPlus: false,
+    allowMinus: false
+});
+```
+
+However, the preferred way to alter properties for an alias is by creating a new alias which inherits from the default alias definition.
+
+```javascript
+ $.extend($.inputmask.defaults.aliases, {
+	'myNum': {
+            alias: "numeric",
+ 			placeholder: '',
+    		allowPlus: false,
+    		allowMinus: false
+        }
+});
+```
+
+Once defined, you can call the alias by:  
+```javascript
+ $(selector).inputmask("myNum");
+```
 
 ## Options:
 
@@ -441,6 +467,7 @@ Default: false
 #### clearMaskOnLostFocus
 
 Remove the empty mask on blur or when not empty removes the optional trailing part
+Default: true
 
 ```javascript
 $(document).ready(function(){
@@ -1058,3 +1085,10 @@ $(document).ready(function(){
 ```
 
 You can find/modify/extend this alias in the jquery.inputmask.extensions.js
+
+[npm-url]: https://npmjs.org/package/jquery.inputmask
+[npm-image]: https://img.shields.io/npm/v/jquery.inputmask.svg
+[david-url]: https://david-dm.org/RobinHerbots/jquery.inputmask#info=dependencies
+[david-image]: https://img.shields.io/david/RobinHerbots/jquery.inputmask.svg
+[david-dev-url]: https://david-dm.org/RobinHerbots/jquery.inputmask#info=devDependencies
+[david-dev-image]: https://img.shields.io/david/dev/RobinHerbots/jquery.inputmask.svg
