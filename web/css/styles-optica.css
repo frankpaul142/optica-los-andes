@@ -105,13 +105,12 @@ body{
 /**/
 .addclass-header{
 height: 100%;
-background-color: #07B1C6;
 overflow: scroll;
 }
 header{
 	width:100%;
     height: 0%;
-	background-color:#FFF;
+
 	position:absolute;
 	top:0;
 	left:0;
