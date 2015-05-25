@@ -555,6 +555,7 @@ input#uploadFile {
 	position: absolute;
 	bottom: 0;
 	left: 16%;
+      height: 5%;
 }	
 .info-copyright ul{
 	width:16%;
