@@ -42,6 +42,16 @@ footer,header,hgroup,menu,nav,section {
     background: #07b1c6;
     color: #fff!important;
 }
+a:any-link {
+  color: #07b1c6;
+  text-decoration: none;
+  cursor: auto;
+}
+a:-moz-any-link {
+  color: #07b1c6;
+  text-decoration: none;
+  cursor: auto;
+}
 a:-webkit-any-link {
   color: #07b1c6;
   text-decoration: none;
@@ -495,7 +505,7 @@ input#uploadFile {
 	}
 .info-laempresa{
 	width:40%;
-	padding:2% 5% 0 5%;
+	  padding: 0% 0% 0 0%;
 	float:left;
 	}
 .info-laempresa h1{
@@ -559,7 +569,7 @@ input#uploadFile {
 	position: absolute;
 	bottom: 0;
 	left: 16%;
-      z-index: 999;
+      z-index: 99;
 
 }	
 .info-copyright ul{
@@ -1616,7 +1626,7 @@ top: 70%;
   border-radius: 4px;
   float: left;
   position: absolute;
-  bottom: 0;
+  bottom: 25%;
   width: 30%;
 }
 .alert-danger{
@@ -1966,3 +1976,12 @@ section {
   color: #fff;
   border: 1px solid;
     width: 97%;}
+body{
+scrollbar-face-color: #000000;
+scrollbar-highlight-color: #colorvalue;
+scrollbar-3dlight-color: #colorvalue;
+scrollbar-darkshadow-color: #colorvalue;
+scrollbar-shadow-color: #colorvalue;
+scrollbar-arrow-color: #colorvalue;
+scrollbar-track-color: #000000;
+}

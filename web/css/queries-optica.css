@@ -46,8 +46,10 @@
   font-size: 1em;
 }
 .info-laempresa span, .info-promo span, #mision-a span, #vision-a span, .cont-fcontacto span, .info-producto span, .info-colores span {
- font-size: 0.9em;
- line-height:18px;
+  font-size: 0.9em;
+  line-height: 18px;
+  width: 100%;
+  margin: 5%;
 }
 .info-promo span{
 	margin: 20px 5% 0 5%;
@@ -184,6 +186,24 @@ nav.nav-resp{
 } 
 }	
 @media screen and (max-width: 860px) and (orientation : landscape) {
+    span#historia2 {
+  display: none;
+}
+    .img-laempresa {
+        width: 40%!important;}
+  .info-laempresa {
+      width: 60%!important;}  
+        .info-copyright ul {
+  width: auto!important;
+  margin: 0; */
+  float: left;
+}    
+    .info-copyright {
+width: 20%!important;
+  margin: 0;
+  right: 0;
+  bottom: 0;
+  left: auto!important;}
 }
 @media screen and (max-width: 860px) {
     .desc-locales .txt-locales span{
@@ -344,12 +364,14 @@ h4 {
 }    
 }
 @media screen and (max-width: 640px) and (orientation : landscape) {
+
+  
     #mision-a, #vision-a {
         width: 70%;}
     .info-copyright span{display: none}
     .cont-fcontacto {width: 100%;padding: 2%;}
     .f-contacto input[type='text'], input[type='email'],.f-contacto select{margin: 0;  width: 50%;}  
-    .f-contacto select{width: 100%;}  
+     
     .f-contacto textarea{min-height:0;margin: 0;padding: 0;}
     .info-cp{  padding-top: 10%;  width: 60%;}   
     .info-promo {width: 100%;margin: 0% auto;}
@@ -362,9 +384,12 @@ h4 {
         margin: 0% 5% 0 5%;
     }   
     .info-laempresa span {
-        font-size: 0.7em;}  
+        font-size: 0.7em;} 
+     .img-laempresa{
+    display: none;
+    }
     .info-laempresa {
-        width: 50%;}  
+        width: 90%!important;}  
     .list-locales,.info-locales {
         width: 50%;
         float: left;}
@@ -462,6 +487,12 @@ width: 15%;
 
 }
 @media screen and (max-width: 430px) {
+  span#historia2{
+    display: none;
+    }
+    .info-laempresa span{
+    font-size: 0.7em!important;
+    }    
 .img-contacto{display: none;}     
 .cont-locales{padding: 20% 0 0 0;}  
 .info-copyright ul {
@@ -495,6 +526,7 @@ width: 15%;
 .info-laempresa span, .info-promo span, #mision-a span, #vision-a span, .cont-fcontacto span, .info-producto span, .info-colores span{
   font-size: 0.8em;
   line-height: 18px;
+      margin: 0;
 }
 .cont-fcontacto h1 {
   font-size: 1.5em;
