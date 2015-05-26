@@ -1,56 +1,51 @@
 <section class="cont-contacto" ng-swipe-down="swipedown($event)">
-	<div class="img-contacto">
-		
-	</div>
-	<div class="cont-fcontacto">
-		<h1>CONTÁCTANOS</h1>
-		<span>
+    <div class="img-contacto">
+    </div>
+    <div class="cont-fcontacto">
+        <h1>CONTÁCTANOS</h1>
+        <span>
         <span class="color-gb">¿Tienes alguna pregunta?</span>
-		<br/> Póngase en contacto con nosotros y le ayudaremos rápidamente con la respuesta que necesita.
-		</span>
-		<alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
-		<form class="f-contacto" id="formContacto">
-			<input type="text" placeholder="NOMBRE" required ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" class="noPreventDefault" />
-			<input type="text" placeholder="APELLIDO" required ng-model="iapellido" ng-keypress="keypressed($event)" name="apellido" class="noPreventDefault" />
-			<input type="text" placeholder="EMAIL" required ng-model="iemail" ng-keypress="keypressed($event)" name="email" class="noPreventDefault" />
-			<input type="text" placeholder="CELULAR" required ng-model="icelular" ng-keypress="keypressed($event)" name="celular" class="noPreventDefault" />
-			<select id="contactoTipo" ng-model="itipo" ng-init="itipo='Consulta'" name="tipo" class="noPreventDefault">
-				<option value="Consulta">Consulta</option>
-				<option value="Reclamo">Reclamo</option>
-				<option value="Sugerencia">Sugerencia</option>
-			</select>
-			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula" ng-keypress="keypressed($event)" name="cedula" class="noPreventDefault" />
-			<textarea placeholder="MENSAJE" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
-			<div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
-			<input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
-		</form>
-	</div>
-	<div class="info-copyright">
-		<ul>
-			<li>
-				<a href="https://www.facebook.com/OpticaLosAndes?ref=hl" target="_blank" class="noPreventDefault"><img src="images/ico-facebook.jpg" alt="icono facebook" /></a>
-			</li>
-			<li>
-				<a href="https://twitter.com/OPTICALOSANDES" target="_blank" class="noPreventDefault"><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
-			</li>
-			<li>
-				<a href="http://instagram.com/ola_ec" target="_blank" class="noPreventDefault"><img src="images/ico-instagram.jpg" alt="icono instagram" /></a>
-			</li>
-			<!--<li>
-				<a href="#"><img src="images/ico-youtube.jpg" alt="icono youtube" /></a>
-			</li>-->
-		</ul>
-		<span>
+        <br/> Póngase en contacto con nosotros y le ayudaremos rápidamente con la respuesta que necesita.
+        </span>
+        <alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
+        <form class="f-contacto" id="formContacto">
+            <input type="text" placeholder="NOMBRE" required ng-model="inombre" ng-keypress="keypressed($event)" name="nombre" class="noPreventDefault" />
+            <input type="text" placeholder="APELLIDO" required ng-model="iapellido" ng-keypress="keypressed($event)" name="apellido" class="noPreventDefault" />
+            <input type="text" placeholder="EMAIL" required ng-model="iemail" ng-keypress="keypressed($event)" name="email" class="noPreventDefault" />
+            <input type="text" placeholder="CELULAR" required ng-model="icelular" ng-keypress="keypressed($event)" name="celular" class="noPreventDefault" />
+            <select id="contactoTipo" ng-model="itipo" ng-init="itipo='Consulta'" name="tipo" class="noPreventDefault">
+                <option value="Consulta">Consulta</option>
+                <option value="Reclamo">Reclamo</option>
+                <option value="Sugerencia">Sugerencia</option>
+            </select>
+            <input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula" ng-keypress="keypressed($event)" name="cedula" class="noPreventDefault" />
+            <textarea placeholder="MENSAJE" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
+            <div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
+            <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
+        </form>
+    </div>
+</section>
+<div class="nav-circ">
+    <a href="#/" ng-click="toSection($event,1)">1</a>
+    <a href="#/promo" ng-click="toSection($event,2)">2</a>
+    <a href="#/contacto" class="div-selected">3</a>
+</div>
+<div class="info-copyright">
+    <ul>
+        <li>
+            <a href="https://www.facebook.com/OpticaLosAndes?ref=hl" target="_blank"><img src="images/ico-facebook.jpg" alt="icono facebook" /></a>
+        </li>
+        <li>
+            <a href="https://twitter.com/OPTICALOSANDES" target="_blank"><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
+        </li>
+        <li>
+            <a href="http://instagram.com/ola_ec" target="_blank"><img src="images/ico-instagram.jpg" alt="icono instagram" /></a>
+        </li>
+    </ul>
+    <span>
 			<a href="http://opticalosandes.com.ec/docs/20150212130556636.pdf" target="_blank">Emisión de Obligaciones de la compañía ÓPTICA LOS ANDES S.A. por un monto de hasta (USD 2´000.000,00), Resolución aprobatoria.</a>  |  
 			<a href="http://opticalosandes.com.ec/docs/EXTRACTO_EM_OLA.pdf" target="_blank">Extracto del informe de la Calificación de Riesgos de la Emisión de Obligaciones de la Compañía Optica Los Andes</a>  |  
 			<a href="http://opticalosandes.com.ec/docs/Resolucion%20Cancelacion%20de%20Primera%20Emision%20Obligaciones%20OLA%20S.A..pdf" target="_blank">Resolución Cancelación de Primera Emisión Obligaciones  OLA S.A.</a>  |   © 2015 ÓPTICA LOS ANDES ALL RIGHTS RESERVED  ·  Powered by Share Digital Agency
 		</span>
-	</div>
-</section>
-<div class="nav-circ">
-	<a href="#/" ng-click="toSection($event,1)">1</a>
-	<a href="#/promo" ng-click="toSection($event,2)">2</a>
-	<a href="#/contacto" class="div-selected">3</a>
 </div>
-
 <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
