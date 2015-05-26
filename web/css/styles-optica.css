@@ -560,6 +560,7 @@ input#uploadFile {
 	position: absolute;
 	bottom: 0;
 	left: 16%;
+      z-index: 999;
 
 }	
 .info-copyright ul{
