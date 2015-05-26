@@ -332,14 +332,23 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
         $event.preventDefault();
         var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         var reDigits = /^\d{10}$/;
+        var reDig = /\d+/;
         if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
             $scope.showAlert = true;
             $scope.alertType = "danger";
             $scope.alertMsg = "Nombre no puede estar vacío";
+        } else if (reDig.test($scope.inombre)) {
+            $scope.showAlert = true;
+            $scope.alertType = "danger";
+            $scope.alertMsg = "Nombre no puede contener números";
         } else if (typeof($scope.iapellido) === 'undefined' || $scope.iapellido == '') {
             $scope.showAlert = true;
             $scope.alertType = "danger";
             $scope.alertMsg = "Apellido no puede estar vacío";
+        } else if (reDig.test($scope.iapellido)) {
+            $scope.showAlert = true;
+            $scope.alertType = "danger";
+            $scope.alertMsg = "Apellido no puede contener números";
         } else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
             $scope.showAlert = true;
             $scope.alertType = "danger";
@@ -529,10 +538,15 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
         $event.preventDefault();
         var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         var reDigits = /^\d{10}$/;
+        var reDig=/\d+/;
         if (typeof($scope.inombre) === 'undefined' || $scope.inombre == '') {
             $scope.showAlert = true;
             $scope.alertType = "danger";
             $scope.alertMsg = "Nombre no puede estar vacío";
+        } else if (reDig.test($scope.inombre)) {
+            $scope.showAlert = true;
+            $scope.alertType = "danger";
+            $scope.alertMsg = "Nombre no puede contener números";
         } else if (typeof($scope.iemail) === 'undefined' || $scope.iemail == '') {
             $scope.showAlert = true;
             $scope.alertType = "danger";

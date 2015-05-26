@@ -1,6 +1,10 @@
 <script>
 document.getElementById("uploadBtn").onchange = function() {
-    document.getElementById("uploadFile").value = this.value;
+    var filePath=this.value;
+    if(filePath.match(/fakepath/)) {
+        filePath = filePath.replace(/C:\\fakepath\\/i, '');
+    }
+    document.getElementById("uploadFile").value = filePath;
 };
 </script>
 <section class="cont-contacto" ng-swipe-down="swipedown($event)">
