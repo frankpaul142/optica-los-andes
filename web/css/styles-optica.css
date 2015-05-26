@@ -105,7 +105,7 @@ body{
 /**/
 .addclass-header{
 height: 100%;
-overflow: scroll;
+overflow: auto;
 }
 header{
 	width:100%;
@@ -491,7 +491,7 @@ input#uploadFile {
 	background-color:#fcfcfc;
 	}
 .img-laempresa{
-	width: 40%;
+	width: 50%;
 	float:left;
 	}
 .info-laempresa{
@@ -830,7 +830,7 @@ input#uploadFile {
 	z-index:2;
 	top:50%;
 	right:1%;
-      z-index: 999;
+      z-index: 10;
 	}
 .nav-circ a:link, .nav-circ a:visited{
 	width:10px;
