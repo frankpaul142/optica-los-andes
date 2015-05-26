@@ -504,7 +504,7 @@ input#uploadFile {
 	float:left;
 	}
 .info-laempresa{
-	width:40%;
+	width:50%;
 	  padding: 0% 0% 0 0%;
 	float:left;
 	}
@@ -1984,4 +1984,13 @@ scrollbar-darkshadow-color: #colorvalue;
 scrollbar-shadow-color: #colorvalue;
 scrollbar-arrow-color: #colorvalue;
 scrollbar-track-color: #000000;
+}
+
+.chat{
+position: fixed;
+bottom: 0;
+right: 0;    
+  z-index: 999;   
+  height: 143px;
+  width: 305px;    
 }
