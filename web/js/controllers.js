@@ -36,6 +36,7 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
     $scope.banner=banner;
     $scope.banner01 = 'images/banner' + banner + '-01.png';
     $scope.banner03 = 'images/banner' + banner + '-03.png';
+    $scope.banner04 = 'images/banner' + banner + '-04.png';
 
     function randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
