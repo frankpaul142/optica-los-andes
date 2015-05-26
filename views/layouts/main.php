@@ -81,7 +81,7 @@ AppAsset::register($this);
 <?= $content ?>
 
 <?php $this->endBody() ?>   
-    <div class="chat"><img src='../web/images/chatlive.png'></img></div>    
+    <div class="chat"><img src='../web/images/chatenlinea2.png'></img></div>    
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -27,7 +27,11 @@
     } 
     header{
     height: 20%!important;
+    
     }
+    .chat{
+display: block;
+}
 
 
 }
