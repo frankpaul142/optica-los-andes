@@ -15,9 +15,9 @@ document.getElementById("uploadBtn").onchange = function() {
             <div class="file">
                 <div class="fileUpload btn btn-primary">
                     <span>Curriculum</span>
-                    <input id="uploadBtn" type="file" class="upload" />
+                    <input id="uploadBtn" type="file" class="upload noPreventDefault" />
                 </div>
-                <input id="uploadFile" placeholder="Subir archivo..." disabled="disabled" class="noPreventDefault" />
+                <input id="uploadFile" disabled="disabled" class="noPreventDefault" placeholder="Subir archivo..." />
                 <div style="clear:both"></div>
             </div>
             <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
