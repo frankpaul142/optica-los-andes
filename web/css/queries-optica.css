@@ -29,6 +29,7 @@
 
 }
 @media screen and (max-width: 1280px) {
+    .section-cp{background-size:inherit;}    
  nav ul li {
     width: 16%;
    padding: 0;}   
@@ -188,7 +189,10 @@ header {
 }
 .section-cp {
   height: 100%;
-  position: relative;
+  position: relative;  
+background-size: cover;
+  background-position-x: 100%;
+  background-position-y: 100%;
 }
 .cont-contacto {
   padding: 5% 0;
@@ -286,14 +290,15 @@ h4 {
     .f-contacto input[type='text'], input[type='email'],.f-contacto select{margin: 0;  width: 50%;}  
     .f-contacto select{width: 100%;}  
     .f-contacto textarea{min-height:0;margin: 0;padding: 0;}
-    .info-cp{  padding-top: 10%}   
+    .info-cp{  padding-top: 10%;  width: 60%;}   
     .info-promo {width: 100%;margin: 0% auto;}
-    video {width: 50%; margin: 0 auto;}
+    video {width: 70%; margin: 0 auto;}
     .cont-canvas {
       float: left;
         width: 30%;} 
     .info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
       font-size: 1em;
+        margin: 0% 5% 0 5%;
     }   
     .info-laempresa span {
         font-size: 0.7em;}  
