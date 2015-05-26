@@ -22,19 +22,19 @@
 			<input type="text" id="inputCedula" placeholder="CÉDULA" ng-model="icedula" ng-keypress="keypressed($event)" name="cedula" class="noPreventDefault" />
 			<textarea placeholder="MENSAJE" required ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
 			<div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
-			<input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
+			<input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
 		</form>
 	</div>
 	<div class="info-copyright">
 		<ul>
 			<li>
-				<a href="https://www.facebook.com/OpticaLosAndes?ref=hl" target="_blank" ><img src="images/ico-facebook.jpg" alt="icono facebook" /></a>
+				<a href="https://www.facebook.com/OpticaLosAndes?ref=hl" target="_blank" class="noPreventDefault"><img src="images/ico-facebook.jpg" alt="icono facebook" /></a>
 			</li>
 			<li>
-				<a href="https://twitter.com/OPTICALOSANDES" target="_blank" ><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
+				<a href="https://twitter.com/OPTICALOSANDES" target="_blank" class="noPreventDefault"><img src="images/ico-twitter.jpg" alt="icono twitter" /></a>
 			</li>
 			<li>
-				<a href="http://instagram.com/ola_ec" target="_blank" ><img src="images/ico-instagram.jpg" alt="icono instagram" /></a>
+				<a href="http://instagram.com/ola_ec" target="_blank" class="noPreventDefault"><img src="images/ico-instagram.jpg" alt="icono instagram" /></a>
 			</li>
 			<!--<li>
 				<a href="#"><img src="images/ico-youtube.jpg" alt="icono youtube" /></a>

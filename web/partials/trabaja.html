@@ -17,12 +17,12 @@ document.getElementById("uploadBtn").onchange = function() {
                     <span>Curriculum</span>
                     <input id="uploadBtn" type="file" class="upload" />
                 </div>
-                <input id="uploadFile" placeholder="Subir archivo..." disabled="disabled" />
+                <input id="uploadFile" placeholder="Subir archivo..." disabled="disabled" class="noPreventDefault" />
                 <div style="clear:both"></div>
             </div>
             <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
             <div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
-            <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" />
+            <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
         </form>
         <alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
     </div>
