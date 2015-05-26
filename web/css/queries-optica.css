@@ -101,6 +101,9 @@
         width: 100%;}
 }
 @media screen and (max-width: 1024px) and (orientation : landscape) {
+    nav.nav-resp ul li a{
+      padding: 10px;
+    }
     #img-trabaja{
     display: none;
     }
@@ -180,7 +183,8 @@ nav.nav-resp{
     display: none;
 } 
 }	
-@media screen and (max-width: 860px) and (orientation : landscape) {}
+@media screen and (max-width: 860px) and (orientation : landscape) {
+}
 @media screen and (max-width: 860px) {
     .desc-locales .txt-locales span{
     font-size: 0.6em;
@@ -411,8 +415,9 @@ h4 {
 }    
 
 .info-copyright ul {
-  width: 30%;
-  margin: 50px 35% 0 35%;
+width: 15%;
+  margin: 0;
+  float: right;
 }
 	
 #mision-a, #vision-a {

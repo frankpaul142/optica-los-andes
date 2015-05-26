@@ -194,11 +194,10 @@ nav ul li a:link, nav ul li a:visited{
   float: left;
   position: relative;
   background-color: #dde1e3;
-  background: url(../images/fondo-videos.jpg);
-  background-size: 120% 160%;
+  background: url(../images/fondo-videos2.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: -380px;
-  background-position-y: -125px;
+
 	}	
 .info-cp{
 	/*width:80%;*/
@@ -1959,6 +1958,7 @@ section {
     text-align: left;}
 .ng-isolate-scope {
   float: left;
+      margin: 5% auto;
 }
 .ng-isolate-scope.rc-anchor-dark {
   background: #313131;
