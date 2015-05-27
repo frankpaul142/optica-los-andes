@@ -29,12 +29,12 @@ class AppAsset extends AssetBundle
         '//code.angularjs.org/1.3.9/angular-route.min.js',
         '//code.angularjs.org/1.3.9/angular-animate.min.js',
         'js/ui-bootstrap-tpls-0.12.1.min.js',
-        'js/freewall.js',
+        'js/freewall.min.js',
         'js/app.js',
         'js/controllers.js',
         'js/angular-recaptcha.min.js',
         'js/script.js',
-        'js/angular-swipe.js',
+        'js/angular-swipe.min.js',
         'js/jquery.fractionslider.min.js',
     ];
     public $depends = [

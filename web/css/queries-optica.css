@@ -1,604 +1,708 @@
+/*queries*/
 @media screen and (max-width: 1600px) {
-.info-mision, .info-vision{
-	min-height:600px;
-	}
-.resp-home{
-    display: none;
-}    
-.sliderhome{
-    display: block;
-}    
-}
-@media screen and (max-width: 1366px) {
-.info-vision{
-	min-height:500px;
-  background-position: 100% 40%;
-  background-size: 50%;
-	}
-.info-mision {
-    min-height: 500px;
-    background-size: 50% auto;
-    background-position: 0% 40%;
-}
-}
-@media screen and (min-width:1024px) {
-    nav.nav-resp{
-    display: none !important;
-    } 
-    header{
-    height: 20%!important;
-    
-    }
-    .chat{
-display: block;
-}
-
-
-}
-@media screen and (max-width: 1280px) {
-    span#historia2 {display: none;}
-    .section-cp{background-size:inherit;}    
- nav ul li {
-    width: 16%;
-   padding: 0;}   
-.info-cp {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0;
-  padding-top: 10%;
-}	
-.info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
-  font-size: 1.5em;
-}
-.info-laempresa span, .info-promo span, #mision-a span, #vision-a span, .cont-fcontacto span, .info-producto span, .info-colores span {
-  font-size: 0.9em;
-  line-height: 18px;
-  width: 90%;
-  margin: 5%;
-}
-.info-promo span{
-	margin: 20px 5% 0 5%;
-	}
-.menu-productos {
-  width: 90%;
-  padding: 1% 5%;
-}	
-.productos-ola {
-  width: 90%;
-  padding: 2% 5%;
-}
-.info-colores span {
-	width:100%;
-	float:left;
-	margin:3px 0;
-}
-.tit-artre {
-  font-size: 2.5em;
-}
-.list-locales li a:link, .list-locales li a:visited {
-  font-size: 20px;
-}
-}
-@media screen and (max-width: 1024px) and (orientation : portrait){
-.info-cp {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 20%;
-}
-    #mision-a {
-  width: 41%;
-}	
-#vision-a {
-  width: 41%;
-}
-.info-vision{
-	min-height:500px;
-  background-position: 100% 40%;
-  background-size: 50%;
-	}
-.info-mision {
-    min-height: 500px;
-    background-size: 50% auto;
-    background-position: 0% 40%;
-}
-    #mision-a, #vision-a {
-  width: 90%;
-}
-    .info-laempresa {
-        width: 100%;}
-}
-@media screen and (max-width: 1024px) and (orientation : landscape) {
-    nav.nav-resp ul li a{
-      padding: 10px;
-    }
-    #img-trabaja{
-    display: none;
-    }
-    .info-mision {
-  background-position: -20% 20%;
-}
+    .info-mision,
     .info-vision {
-        background-position: 120% 15%;}
-    .info-cp {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 5%;
-}
-    .img-contacto {
-        display: none;}
-    .cont-fcontacto {
-        width: 100%;}
-    .info-copyright span{
+        min-height: 600px;
+    }
+    .resp-home {
         display: none;
     }
-    .f-contacto input[type='text'], input[type='email'],.f-contacto select{
-    margin: 0px 2% 0 0;
+    .sliderhome {
+        display: block;
     }
-    .f-contacto textarea {width: 100%;min-height: 50px;margin: 0;}
-    .cont-fcontacto{padding: 25px 5% 0 5%;} 
-    .cont-fcontacto h1 {font-size: 1.5em}
-    #vision-a, #mision-a{width: 70%}
+}
+
+@media screen and (max-width: 1366px) {
+    .info-vision {
+        min-height: 500px;
+        background-position: 100% 40%;
+        background-size: 50%;
+    }
+    .info-mision {
+        min-height: 500px;
+        background-size: 50% auto;
+        background-position: 0% 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav.nav-resp {
+        display: none !important;
+    }
+    header {
+        height: 20%!important;
+    }
+    .chat {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    span#historia2 {
+        display: none;
+    }
+    .section-cp {
+        background-size: inherit;
+    }
+    nav ul li {
+        width: 16%;
+        padding: 0;
+    }
+    .info-cp {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        padding-top: 10%;
+    }
+    .info-laempresa h1,
+    #mision-a h1,
+    #vision-a h1,
+    .info-promo h1 {
+        font-size: 1.5em;
+    }
+    .info-laempresa span,
+    .info-promo span,
+    #mision-a span,
+    #vision-a span,
+    .cont-fcontacto span,
+    .info-producto span,
+    .info-colores span {
+        font-size: 0.9em;
+        line-height: 18px;
+        width: 90%;
+        margin: 5%;
+    }
+    .info-promo span {
+        margin: 20px 5% 0 5%;
+    }
+    .menu-productos {
+        width: 90%;
+        padding: 1% 5%;
+    }
+    .productos-ola {
+        width: 90%;
+        padding: 2% 5%;
+    }
+    .info-colores span {
+        width: 100%;
+        float: left;
+        margin: 3px 0;
+    }
+    .tit-artre {
+        font-size: 2.5em;
+    }
+    .list-locales li a:link,
+    .list-locales li a:visited {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .info-cp {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 20%;
+    }
+    #mision-a {
+        width: 41%;
+    }
+    #vision-a {
+        width: 41%;
+    }
+    .info-vision {
+        min-height: 500px;
+        background-position: 100% 40%;
+        background-size: 50%;
+    }
+    .info-mision {
+        min-height: 500px;
+        background-size: 50% auto;
+        background-position: 0% 40%;
+    }
+    #mision-a,
+    #vision-a {
+        width: 90%;
+    }
+    .info-laempresa {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    nav.nav-resp ul li a {
+        padding: 10px;
+    }
+    #img-trabaja {
+        display: none;
+    }
+    .info-mision {
+        background-position: -20% 20%;
+    }
+    .info-vision {
+        background-position: 120% 15%;
+    }
+    .info-cp {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 5%;
+    }
+    .img-contacto {
+        display: none;
+    }
+    .cont-fcontacto {
+        width: 100%;
+    }
+    .info-copyright span {
+        display: none;
+    }
+    .f-contacto input[type='text'],
+    input[type='email'],
+    .f-contacto select {
+        margin: 0px 2% 0 0;
+    }
+    .f-contacto textarea {
+        width: 100%;
+        min-height: 50px;
+        margin: 0;
+    }
+    .cont-fcontacto {
+        padding: 25px 5% 0 5%;
+    }
+    .cont-fcontacto h1 {
+        font-size: 1.5em
+    }
+    #vision-a,
+    #mision-a {
+        width: 70%
+    }
 }
 
 @media screen and (max-width: 1023px) {
-    header{
-      background-color: #fff;
-        
-    }    
-
-    
-
-.menu-productos {
-  width: 95%;
-  padding: 1% 2.5%;
-}
-.productos-ola {
-  width: 95%;
-  padding: 2% 2.5%;
-}
-.info-laempresa span {
-  width: 100%;
-}
-.info-laempresa {
-  width: 40%;
-  padding: 1% 5%;
-}
-
-.menu-op1 {
-  width: 12%;
-}	
-.menu-op2 {
-  width: 40%;
-}
-.cont-menu {
-    width: 100%;
-  float: left;
-  padding: 0;
-}
-.list-locales li a:link, .list-locales li a:visited {
-  font-size: 20px;
-}
-.info-copyright{
-} 
-.trigger{
-    display: block;
-}
-nav{
-    display: none;
-}  
-nav.nav-resp{
-    display: none;
-} 
-}	
-@media screen and (max-width: 860px) and (orientation : landscape) {
-    span#historia2 {
-  display: none;
-}
-    .img-laempresa {
-        width: 40%!important;}
-  .info-laempresa {
-      width: 60%!important;}  
-        .info-copyright ul {
-  width: auto!important;
-  margin: 0; */
-  float: left;
-}    
-    .info-copyright {
-width: 20%!important;
-  margin: 0;
-  right: 0;
-  bottom: 0;
-  left: auto!important;}
-}
-@media screen and (max-width: 860px) {
-    .desc-locales .txt-locales span{
-    font-size: 0.6em;
-    }    
-.cont-locales span {
-    width: 80%;}    
- .cont-locales{
-  padding: 80px 0 0 0;
-
- } 
-.list-locales ul{float: none;}
-section .gb-laempresa{
-      height: 50%;
-  padding-top: 0px;
-      width: 100%
-	}    
-.txt-telefonos img{
-     width: 10%;
-}    
-nav.nav-resp{
-    display: none;
-}
-.txt-telefonos{
-      width: 94%;
-  margin: 3%;
-}   
-.direccion {
-  width: 94%;
-  margin: 3%;
-}    
-    .trigger{
-display: block;}    
-nav {
-  display:none;
-}	
-
-.info-laempresa {
-  width: 50%;
-  padding:1% 5% 2% 5%;
-}
-.menu-productos label {
-  font-size: 0.75em;
-}
-.cont-producto {
-  width: 29%;
-  padding: 2% 2% 0.5% 2%;
-}
-.tam-medida {
-  width: 100%;
-}
-header {
-  position: relative;
-}
-#cont-home {
-  /*height: 90%;
-  position: relative;*/
-}
-.sliderhome {
-  height: auto;
-  margin: 0;
-}
-.section-cp {
-  height: 100%;
-  position: relative;  
-background-size: cover;
-  background-position-x: 100%;
-  background-position-y: 100%;
-}
-.cont-contacto {
-  padding: 5% 0;
-}
-    .info-copyright {
- width: 100%;
-  left: 0;
-  bottom: 0;}
-.list-locales {
-  width: 100%;
-  margin: 0 auto;
-  float: none;
-  z-index: 3;
-}
-.list-locales span {
-  display: none;
-}   
-.desc-locales span{
-font-size: 0.9em;
-  margin: 0 5%;
-  float: left;
-}
-.direccion-maps {
-  width: 100%;
-  float: left;
-  padding: 5%;
-}    
-    .direccion-maps h4{
-    font-size: 0.8em;
-  margin: 0 5%;
-  width: 80%;
-  float: left;
-    }    
-.list-locales li a:link, .list-locales li a:visited{
-    font-size: 20px;
-  padding: 0;
-}    
-.tit-encuentranos{
-    padding: 2%;
-      width: 100%;
-  text-align: center;
-  font-size: 1.5em;
-}    
-.desc-locales{
-    width: 100%;
-    position: relative;
-}    
-.list-locales li{
-      padding: 5px 5px;
-}    
-.locales-img{
-  height: 120px;
-  overflow: hidden;
-  width: 100%;
-
-}
- .locales-img img{
-  height: 100%;
-  width: auto;
-
- } 
-.direccion-maps img {
-  width: 7%;
-  float: left;
-}
-h4 {
-  font-size: 0.8em;
-}
-.info-locales {
-  width: 100%;
-
-  margin: 0 auto;
-  bottom: 0;
-  float: none;
-  z-index: 0;} 
-.submenu-locales li {
-  width: 50%;
-}   
-.loading2 {
- top: 25%;
-  left: 50%;}    
-.submenu-locales{
-  top: 35px;
-  right: auto;
-  left: 0;
-  bottom: 0%;
-  width: 100%!important;
-  height: 100%;
-  max-height: 100%;
-}    
-}
-@media screen and (max-width: 640px) and (orientation : landscape) {
-
-  
-    #mision-a, #vision-a {
-        width: 70%;}
-    .info-copyright span{display: none}
-    .cont-fcontacto {width: 100%;padding: 2%;}
-    .f-contacto input[type='text'], input[type='email'],.f-contacto select{margin: 0;  width: 50%;}  
-     
-    .f-contacto textarea{min-height:0;margin: 0;padding: 0;}
-    .info-cp{  padding-top: 10%;  width: 60%;}   
-    .info-promo {width: 100%;margin: 0% auto;}
-    video {width: 70%; margin: 0 auto;}
-    .cont-canvas {
-      float: left;
-        width: 30%;} 
-    .info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
-      font-size: 1em;
-        margin: 0% 5% 0 5%;
-    }   
+    header {
+        background-color: #fff;
+    }
+    .menu-productos {
+        width: 95%;
+        padding: 1% 2.5%;
+    }
+    .productos-ola {
+        width: 95%;
+        padding: 2% 2.5%;
+    }
     .info-laempresa span {
-        font-size: 0.7em;} 
-     .img-laempresa{
-    display: none;
+        width: 100%;
     }
     .info-laempresa {
-        width: 90%!important;}  
-    .list-locales,.info-locales {
+        width: 40%;
+        padding: 1% 5%;
+    }
+    .menu-op1 {
+        width: 12%;
+    }
+    .menu-op2 {
+        width: 40%;
+    }
+    .cont-menu {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+    .list-locales li a:link,
+    .list-locales li a:visited {
+        font-size: 20px;
+    }
+    .info-copyright {}
+    .trigger {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    nav.nav-resp {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 860px) and (orientation: landscape) {
+    span#historia2 {
+        display: none;
+    }
+    .img-laempresa {
+        width: 40%!important;
+    }
+    .info-laempresa {
+        width: 60%!important;
+    }
+    .info-copyright ul {
+        width: auto!important;
+        margin: 0;
+        */ float: left;
+    }
+    .info-copyright {
+        width: 20%!important;
+        margin: 0;
+        right: 0;
+        bottom: 0;
+        left: auto!important;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .desc-locales .txt-locales span {
+        font-size: 0.6em;
+    }
+    .cont-locales span {
+        width: 80%;
+    }
+    .cont-locales {
+        padding: 80px 0 0 0;
+    }
+    .list-locales ul {
+        float: none;
+    }
+    section .gb-laempresa {
+        height: 50%;
+        padding-top: 0px;
+        width: 100%
+    }
+    .txt-telefonos img {
+        width: 10%;
+    }
+    nav.nav-resp {
+        display: none;
+    }
+    .txt-telefonos {
+        width: 94%;
+        margin: 3%;
+    }
+    .direccion {
+        width: 94%;
+        margin: 3%;
+    }
+    .trigger {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    .info-laempresa {
         width: 50%;
-        float: left;}
+        padding: 1% 5% 2% 5%;
+    }
+    .menu-productos label {
+        font-size: 0.75em;
+    }
+    .cont-producto {
+        width: 29%;
+        padding: 2% 2% 0.5% 2%;
+    }
+    .tam-medida {
+        width: 100%;
+    }
+    header {
+        position: relative;
+    }
+    #cont-home {
+        /*height: 90%;
+  position: relative;*/
+    }
+    .sliderhome {
+        height: auto;
+        margin: 0;
+    }
+    .section-cp {
+        height: 100%;
+        position: relative;
+        background-size: cover;
+        background-position-x: 100%;
+        background-position-y: 100%;
+    }
+    .cont-contacto {
+        padding: 5% 0;
+    }
+    .info-copyright {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    .list-locales {
+        width: 100%;
+        margin: 0 auto;
+        float: none;
+        z-index: 3;
+    }
+    .list-locales span {
+        display: none;
+    }
+    .desc-locales span {
+        font-size: 0.9em;
+        margin: 0 5%;
+        float: left;
+    }
+    .direccion-maps {
+        width: 100%;
+        float: left;
+        padding: 5%;
+    }
+    .direccion-maps h4 {
+        font-size: 0.8em;
+        margin: 0 5%;
+        width: 80%;
+        float: left;
+    }
+    .list-locales li a:link,
+    .list-locales li a:visited {
+        font-size: 20px;
+        padding: 0;
+    }
+    .tit-encuentranos {
+        padding: 2%;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .desc-locales {
+        width: 100%;
+        position: relative;
+    }
+    .list-locales li {
+        padding: 5px 5px;
+    }
+    .locales-img {
+        height: 120px;
+        overflow: hidden;
+        width: 100%;
+    }
+    .locales-img img {
+        height: 100%;
+        width: auto;
+    }
+    .direccion-maps img {
+        width: 7%;
+        float: left;
+    }
+    h4 {
+        font-size: 0.8em;
+    }
+    .info-locales {
+        width: 100%;
+        margin: 0 auto;
+        bottom: 0;
+        float: none;
+        z-index: 0;
+    }
+    .submenu-locales li {
+        width: 50%;
+    }
+    .loading2 {
+        top: 25%;
+        left: 50%;
+    }
+    .submenu-locales {
+        top: 35px;
+        right: auto;
+        left: 0;
+        bottom: 0%;
+        width: 100%!important;
+        height: 100%;
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    #mision-a,
+    #vision-a {
+        width: 70%;
+    }
+    .info-copyright span {
+        display: none
+    }
+    .cont-fcontacto {
+        width: 100%;
+        padding: 2%;
+    }
+    .f-contacto input[type='text'],
+    input[type='email'],
+    .f-contacto select {
+        margin: 0;
+        width: 50%;
+    }
+    .f-contacto textarea {
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .info-cp {
+        padding-top: 10%;
+        width: 60%;
+    }
+    .info-promo {
+        width: 100%;
+        margin: 0% auto;
+    }
+    video {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .cont-canvas {
+        float: left;
+        width: 30%;
+    }
+    .info-laempresa h1,
+    #mision-a h1,
+    #vision-a h1,
+    .info-promo h1 {
+        font-size: 1em;
+        margin: 0% 5% 0 5%;
+    }
+    .info-laempresa span {
+        font-size: 0.7em;
+    }
+    .img-laempresa {
+        display: none;
+    }
+    .info-laempresa {
+        width: 90%!important;
+    }
+    .list-locales,
+    .info-locales {
+        width: 50%;
+        float: left;
+    }
     .locales-img {
         height: 0;
     }
-    #img-trabaja{
+    #img-trabaja {
         display: none;
-    }    
-    .file{margin: 0;}
+    }
+    .file {
+        margin: 0;
+    }
     .logo-optica {
-        width: 25%;}
+        width: 25%;
+    }
     .cont-quienes {
-  padding-top: 5%;
-}
+        padding-top: 5%;
+    }
     .cont-fcontacto h1 {
-  font-size: 2em;
+        font-size: 2em;
+    }
 }
 
-}
-@media screen and (max-width: 640px) and (orientation : portrait) {
+@media screen and (max-width: 640px) and (orientation: portrait) {
     .info-laempresa {
-  width: 100%;
-  padding: 1% 5% 2% 5%;
-}
-    .cont-fcontacto {
-      width: 56%;
-      padding: 50px 2% 0 2%;
-    }
-    .f-contacto input[type='text'], input[type='email'],.f-contacto select{
-           margin: 20px 2% 0 0; }
-    .info-promo{
         width: 100%;
-      margin: 5% auto;
-        } 
-    video {width: 100%; margin: 0 auto;}     
-}
-
-@media screen and (max-width: 640px){
-.resp-home{
-    display: block;
-}    
-.sliderhome{
-    display: none;
-}    
-.cont-quienes{
-    padding-top: 12%;
-}    
-
-.info-copyright ul {
-width: 15%;
-  margin: 0;
-  float: right;
-}
-	
-#mision-a, #vision-a {
- 
-  margin:4% 5% 0 5%;
-}
-.menu-op1, .menu-op2, .menu-op3 {
-  width: 100%;
-  margin:7px 0;
-}
-.menu-op2 {
-  border-left: none;
-  border-right: none;
-  padding: 0;
-}
-.menu-op3 {
-  border-right: none;
-  padding: 0;
-}
-.menu-op1 ul li, .menu-op2 ul li, .menu-op3 ul li {
-  width:auto; 
-  float: left;
-  padding: 4px 6px;
-}
-.menu-productos label {
-  margin: 2px 0 0 5px;
-}
-.cont-improducto {
-  width: 60%;
-  margin: 0 20%;
-}
-.info-producto {
-  width: 90%;
-  margin: 20px 5%;
-}
-.img-contacto{
-    display: none;
-}
-.file{width: 100%}    
-}
-@media screen and (max-width: 430px) and (orientation : landscape) {
-
-}
-@media screen and (max-width: 430px) {
-  span#historia2{
-    display: none;
+        padding: 1% 5% 2% 5%;
     }
-    .info-laempresa span{
-    font-size: 0.7em!important;
-    }    
-.img-contacto{display: none;}     
-.cont-locales{padding: 20% 0 0 0;}  
-.info-copyright ul {
-    width: 36%;
-  float: none;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
+    .cont-fcontacto {
+        width: 56%;
+        padding: 50px 2% 0 2%;
+    }
+    .f-contacto input[type='text'],
+    input[type='email'],
+    .f-contacto select {
+        margin: 20px 2% 0 0;
+    }
+    .info-promo {
+        width: 100%;
+        margin: 5% auto;
+    }
+    video {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
-.cont-contacto img {
-  width: 60%;
-  margin: 20px 0 0 0;
+
+@media screen and (max-width: 640px) {
+    .resp-home {
+        display: block;
+    }
+    .sliderhome {
+        display: none;
+    }
+    .cont-quienes {
+        padding-top: 12%;
+    }
+    .info-copyright ul {
+        width: 15%;
+        margin: 0;
+        float: right;
+    }
+    #mision-a,
+    #vision-a {
+        margin: 4% 5% 0 5%;
+    }
+    .menu-op1,
+    .menu-op2,
+    .menu-op3 {
+        width: 100%;
+        margin: 7px 0;
+    }
+    .menu-op2 {
+        border-left: none;
+        border-right: none;
+        padding: 0;
+    }
+    .menu-op3 {
+        border-right: none;
+        padding: 0;
+    }
+    .menu-op1 ul li,
+    .menu-op2 ul li,
+    .menu-op3 ul li {
+        width: auto;
+        float: left;
+        padding: 4px 6px;
+    }
+    .menu-productos label {
+        margin: 2px 0 0 5px;
+    }
+    .cont-improducto {
+        width: 60%;
+        margin: 0 20%;
+    }
+    .info-producto {
+        width: 90%;
+        margin: 20px 5%;
+    }
+    .img-contacto {
+        display: none;
+    }
+    .file {
+        width: 100%
+    }
 }
-.cont-fcontacto {
-  width: 100%;
-  padding: 20% 5% 0 5%;
+
+@media screen and (max-width: 430px) and (orientation: landscape) {}
+
+@media screen and (max-width: 430px) {
+    span#historia2 {
+        display: none;
+    }
+    .info-laempresa span {
+        font-size: 0.7em!important;
+    }
+    .img-contacto {
+        display: none;
+    }
+    .cont-locales {
+        padding: 20% 0 0 0;
+    }
+    .info-copyright ul {
+        width: 36%;
+        float: none;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+    }
+    .cont-contacto img {
+        width: 60%;
+        margin: 20px 0 0 0;
+    }
+    .cont-fcontacto {
+        width: 100%;
+        padding: 20% 5% 0 5%;
+    }
+    .cont-menu {
+        padding: 0;
+        width: 100%;
+    }
+    .logo-optica {
+        width: 40%;
+    }
+    .info-laempresa h1,
+    #mision-a h1,
+    #vision-a h1,
+    .info-promo h1 {
+        font-size: 2em;
+    }
+    .info-promo h1 {
+        line-height: 35px;
+    }
+    .info-laempresa span,
+    .info-promo span,
+    #mision-a span,
+    #vision-a span,
+    .cont-fcontacto span,
+    .info-producto span,
+    .info-colores span {
+        font-size: 0.8em;
+        line-height: 18px;
+        margin: 0;
+    }
+    .cont-fcontacto h1 {
+        font-size: 1.5em;
+    }
+    .info-copyright span {
+        font-size: 0.7em;
+        display: none;
+    }
+    #img-trabaja {
+        display: none;
+    }
+    .info-mision,
+    .info-vision {
+        min-height: 320px;
+        background-position: 0% 100%;
+        background-size: 100%;
+    }
+    .cont-producto h3 {
+        font-size: 0.8em;
+    }
+    .cont-producto {
+        width: 46%;
+        padding: 2% 2% 0.5% 2%;
+    }
+    .cont-improducto {
+        width: 90%;
+        margin: 0 5%;
+    }
+    .file {
+        width: 100%
+    }
+    .lens-txt,
+    .lens-txt2 {
+        width: 45%;
+    }
+    .lens,
+    .lens-txt3 {
+        width: 100%;
+    }
 }
-.cont-menu {
-  padding: 0;
-  width: 100%;
-}
-.logo-optica {
-  width: 40%;
-}
-.info-laempresa h1, #mision-a h1, #vision-a h1, .info-promo h1 {
-  font-size: 2em;
-}
-.info-promo h1 {
-  line-height: 35px;
-}
-.info-laempresa span, .info-promo span, #mision-a span, #vision-a span, .cont-fcontacto span, .info-producto span, .info-colores span{
-  font-size: 0.8em;
-  line-height: 18px;
-      margin: 0;
-}
-.cont-fcontacto h1 {
-  font-size: 1.5em;
-}
-.info-copyright span {
-  font-size: 0.7em;
-    display: none;
-}
-#img-trabaja{
-	display:none;
-	}
-.info-mision, .info-vision {
-  min-height: 320px;
-  background-position: 0% 100%;
-  background-size: 100%;
-}	
-.cont-producto h3 {
-  font-size: 0.8em;
-}
-.cont-producto {
-  width: 46%;
-  padding: 2% 2% 0.5% 2%;
-}
-.cont-improducto {
-  width: 90%;
-  margin: 0 5%;
-}
-.file{width: 100%} 
-.lens-txt,.lens-txt2{
-    width: 45%;
-}   
-.lens,.lens-txt3{
-width: 100%;
-}    
-}
+
 @media screen and (max-width: 340px) {
-.img-contacto{display: none;}     
-.ver-descripcion:link, .ver-descripcion:visited {
-  width: 16%;}
-.tit-artre {
-  font-size: 2em;
-  padding: 10px 10px;
+    .img-contacto {
+        display: none;
+    }
+    .ver-descripcion:link,
+    .ver-descripcion:visited {
+        width: 16%;
+    }
+    .tit-artre {
+        font-size: 2em;
+        padding: 10px 10px;
+    }
+    .tit-encuentranos {}
+    .list-locales li a:link,
+    .list-locales li a:visited {
+        font-size: 15px;
+        padding: 0px 5px;
+    }
+    .list-locales li {
+        padding: 5px;
+    }
+    .cont-locales {
+        padding: 20% 0 0 0;
+    }
+    nav.nav-resp ul li a {
+        padding: 25px;
+    }
+    .img-laempresa {
+        width: 60%;
+        margin: 0 auto;
+        float: none;
+    }
+    .cont-fcontacto {
+        padding: 15% 5% 0 5%;
+    }
 }
-.tit-encuentranos{
-
-}    
-.list-locales li a:link, .list-locales li a:visited{
-    font-size: 15px;
-    padding: 0px 5px;
-}    
-.list-locales li {
-  padding: 5px;
-}
-.cont-locales {
-  padding: 20% 0 0 0;
-}
-nav.nav-resp ul li a{
-    padding: 25px;
-}   
-.img-laempresa {
-  width: 60%;
-  margin: 0 auto;
-  float: none;
-}
-.cont-fcontacto {
- padding: 15% 5% 0 5%;
-}    
-}		
-	
-

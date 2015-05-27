@@ -46,7 +46,7 @@ AppAsset::register($this);
         <nav class="nav-comp">
         	<ul>
                 <li><a href="#/" ng-click="toSection($event,1)">HOME</a></li>
-            	<li><a href="#/quienes_somos" ng-click="toSection($event,4)">QUIENES SOMOS</a></li>
+            	<li><a href="#/quienes_somos" ng-click="toSection($event,4)">QUIÉNES SOMOS</a></li>
                 <!-- <li><a href="#">PRODUCTOS</a></li> -->
                 <!-- <li><a href="#">SERVICIOS</a></li> -->
                 <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
