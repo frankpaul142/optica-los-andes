@@ -843,8 +843,8 @@ input#uploadFile {
       z-index: 10;
 	}
 .nav-circ a:link, .nav-circ a:visited{
-	width:10px;
-	height:10px;
+  width: 12px;
+  height: 12px;
 	border-radius:100%;
 	background-color:rgba(255,255,255,0.6);
 	font-size:0.5px;
