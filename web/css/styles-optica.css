@@ -45,17 +45,17 @@ footer,header,hgroup,menu,nav,section {
 a:any-link {
   color: #07b1c6;
   text-decoration: none;
-  cursor: auto;
+  cursor: pointer;
 }
 a:-moz-any-link {
   color: #07b1c6;
   text-decoration: none;
-  cursor: auto;
+  cursor: pointer;
 }
 a:-webkit-any-link {
   color: #07b1c6;
   text-decoration: none;
-  cursor: auto;
+  cursor: pointer;
 }
 /* FONTS */
 @font-face {
