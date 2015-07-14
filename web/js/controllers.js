@@ -16,7 +16,6 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
         } else if (section == 3) {
             $location.url('contacto');
         }
-
     }
     $scope.$on('$routeChangeStart', function() {
         $rootScope.scrolling1 = true;
@@ -33,10 +32,25 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
     var numBanners = 4;
     var banner = randomIntFromInterval(1, numBanners);
     console.log(banner);
-    $scope.banner=banner;
-    $scope.banner01 = 'images/banner' + banner + '-01.png';
+    $scope.banner=[];
+    for (var i = 1; i <= numBanners; i++) {
+        $scope.banner[i]=banner++;
+        if(banner>numBanners){
+            banner=1;
+        }
+    }
+    // $scope.banner=banner;
+    /*$scope.banner01 = 'images/banner' + banner + '-01.png';
     $scope.banner03 = 'images/banner' + banner + '-03.png';
-    $scope.banner04 = 'images/banner' + banner + '-04.png';
+    $scope.banner04 = 'images/banner' + banner + '-04.png';*/
+    /*$scope.imagenes1='images/imagenes1_'+banner+'_ima.png';
+    $scope.imagenes2='images/imagenes2_'+banner+'_ima.png';
+    $scope.imagenes3='images/imagenes3_'+banner+'_ima.png';
+    $scope.msn='images/banner'+banner+'-03_msn.png';
+    $scope.bg='images/banner'+banner+'-01_bg.png';
+    $scope.point='images/banner'+banner+'-01_point.png';
+    $scope.tex='images/banner'+banner+'-01_tex.png';
+    $scope.ley='images/banner'+banner+'-04_ley.png';*/
 
     function randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
