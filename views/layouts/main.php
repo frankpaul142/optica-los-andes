@@ -4,9 +4,35 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\web\View;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+
+$script=
+<<< JS
+var LHCChatOptions = {};
+LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var refferer = (document.referrer) ? encodeURIComponent(document.referrer.substr(document.referrer.indexOf('://')+1)) : '';
+var location  = (document.location) ? encodeURIComponent(window.location.href.substring(window.location.protocol.length)) : '';
+po.src = '//chat.leadfort.com/lhc/index.php/esp/chat/getstatus/(click)/internal/(position)/bottom_right/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true/(department)/2/3?r='+refferer+'&l='+location;
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+JS;
+$script2=
+<<<JS
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5567008-21', 'auto');
+  ga('send', 'pageview');
+JS;
+$this->registerJs($script,View::POS_END);
+$this->registerJs($script2,View::POS_END);
 
 AppAsset::register($this);
 ?>
@@ -81,7 +107,7 @@ AppAsset::register($this);
 <?= $content ?>
 
 <?php $this->endBody() ?>   
-    <div class="chat"><img src='../web/images/chatenlinea2.png'></img></div>    
+    <!-- <div class="chat"><img src='../web/images/chatenlinea2.png'></img></div>     -->
 </body>
 </html>
 <?php $this->endPage() ?>

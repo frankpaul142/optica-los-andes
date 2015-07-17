@@ -328,7 +328,7 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
     });
 
     $scope.setResponse = function (response) {
-        $.post('site/captcha',{response: response}).success(function (data) {
+        $.post('web/site/captcha',{response: response}).success(function (data) {
             // console.log(data);
             var resp=JSON.parse(data);
             if(resp.success){
@@ -400,7 +400,7 @@ controllers.controller('ContactoCtrl', function($scope, $location, $rootScope, $
             $scope.showAlert = false;
             $scope.textoEnviar = 'Enviando';
             var form = $('#formContacto').serializeArray();
-            $.post('site/contact', form).success(function(data) {
+            $.post('web/site/contact', form).success(function(data) {
                 console.log(data);
                 if (data == 'enviado') {
                     $scope.showAlert = true;
@@ -534,7 +534,7 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
     };
 
     $scope.setResponse = function (response) {
-        $.post('site/captcha',{response: response}).success(function (data) {
+        $.post('web/site/captcha',{response: response}).success(function (data) {
             // console.log(data);
             var resp=JSON.parse(data);
             if(resp.success){
@@ -598,7 +598,7 @@ controllers.controller('TrabajaCtrl', function($scope, $location, $rootScope) {
             // var form = $('#formTrabaja').serializeArray();console.log(form);
             // form.push(fdata);console.log(form);
             jQuery.ajax({
-                url: 'site/work',
+                url: 'web/site/work',
                 data: form,
                 cache: false,
                 contentType: false,
@@ -680,7 +680,7 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
         $scope.desplegar = false;
     }
     if (typeof(ciudades) === 'undefined') {
-        $http.get('site/load-stores').success(function(data) {
+        $http.get('web/site/load-stores').success(function(data) {
             // console.log(data);
             if (data != '') {
                 ciudades = data;
