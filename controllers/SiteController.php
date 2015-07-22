@@ -105,7 +105,27 @@ class SiteController extends Controller
                 }
             }
             if($contact->save()){
-            	echo "enviado";
+                /*$body='Tipo: '.$contact->type.'\n';
+                if($contact->identity!=''){
+                    $body.='Cedula: '.$contact->identity;
+                }
+                $body.='Nombre: '.$contact->name.'\n'.
+                    'Apellido: '.$contact->lastname.'\n'.
+                    'Email: '.$contact->lastname.'\n'.
+                    'Cellphone: '.$contact->cellphone.'\n'.
+                    'Mensaje: '.$contact->message.'\n';*/
+                if(Yii::$app->mailer->compose('contact/contact',['contact'=>$contact])
+                    // ->setFrom([$contact->email=>$contact->name.' '.$contact->lastname])
+                    ->setFrom([Yii::$app->params['adminEmail']=>'Optica los Andes'])
+                    ->setTo('1800optica@ola.ec')
+                    ->setSubject('Contacto Optica los Andes')
+                    // ->setTextBody($body)
+                    ->send()){
+                	echo "enviado";
+                }
+                else{
+                    echo "no enviado";
+                }
             }
             else{
             	echo "no save";
