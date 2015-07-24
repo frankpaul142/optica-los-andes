@@ -30,6 +30,9 @@ $script2=
 
   ga('create', 'UA-5567008-21', 'auto');
   ga('send', 'pageview');
+  $(document).ready(function(){
+	  $("#pop-up").fancybox();
+	  });
 JS;
 $this->registerJs($script,View::POS_END);
 $this->registerJs($script2,View::POS_END);
@@ -104,6 +107,9 @@ AppAsset::register($this);
         </nav>
     </div>
 </header>
+<div id="pop-up">
+<img src="images/promo/pop-up.jpg"/>
+</div>
 <?= $content ?>
 
 <?php $this->endBody() ?>   

@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
         'css/style.css',
         'css/fractionslider.css',
         'css/queries-optica.css',
+		'css/jquery.fancybox-1.3.4.css',
     ];
     public $js = [
         '//code.angularjs.org/1.3.9/angular.min.js',
@@ -36,6 +37,7 @@ class AppAsset extends AssetBundle
         'js/script.js',
         'js/angular-swipe.min.js',
         'js/jquery.fractionslider.min.js',
+		'js/jquery.fancybox-1.3.4.pack.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
