@@ -94,3 +94,5 @@ preload(
 	"images/contacto/contacto_12.jpg"
 );
 
+$.fancybox.open('images/promo/pop-up.jpg');
+    

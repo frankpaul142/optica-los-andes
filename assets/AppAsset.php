@@ -18,12 +18,12 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/jquery.fancybox.css',
         'css/site.css',
         'css/styles-optica.css',
         'css/style.css',
         'css/fractionslider.css',
         'css/queries-optica.css',
-		'css/jquery.fancybox-1.3.4.css',
     ];
     public $js = [
         '//code.angularjs.org/1.3.9/angular.min.js',
@@ -34,10 +34,10 @@ class AppAsset extends AssetBundle
         'js/app.js',
         'js/controllers.js',
         'js/angular-recaptcha.min.js',
+        'js/jquery.fancybox.js',
         'js/script.js',
         'js/angular-swipe.min.js',
         'js/jquery.fractionslider.min.js',
-		'js/jquery.fancybox-1.3.4.pack.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
