@@ -2022,3 +2022,72 @@ display: none;
 	font-family: 'bebas_neueregular';
 	font-size:1em;
 	}	
+/**/
+.tit-promo{
+	width:100%;
+	padding:2% 0 1% 0;
+	text-align:center;
+	color:#00a2c3;
+	height:5%;
+	background-color:#333333;
+	margin:5% 0 0 0;
+	}	
+.tit-promo span{
+	font-size:3em;
+	outline:1px solid #00a2c3;
+	padding:0.2% 2%;
+	 font-family: 'bebas_neueregular';
+	}	
+.section-promo{
+	width:33.33%;
+	height:79%;
+	float:left;
+	}
+.gift-card{
+	background-color:#00a2c3;
+	}
+.platinum{
+	background-color:#FFF;
+	}	
+.promosop{
+	background-color:#ec2227;
+	}
+.gift-card h1{
+	color:rgba(255,255,255,1.00);
+	}	
+.platinum h1{
+	color:#00a2c3;
+	}	
+.promosop h1{
+	color:rgba(255,255,255,1.00);
+	}	
+.section-promo img{
+	width:80%;
+	margin:5% 10% 2% 10%;
+	float:left;
+	}	
+.section-promo h1{
+	width:100%;
+	float:left;
+	text-align:center;
+	font-size:4.2em;
+	font-family: 'bebas_neueregular';
+	}				
+.section-promo a:link, .section-promo a:visited{
+	width:60%;
+	margin:3% 20% 0 20%;
+	padding:1.5% 0;
+	text-align:center;
+	color:#FFF;
+	font-size:0.9em;
+	float:left;
+	}	
+.gift-card a{
+	background:#3d2b89;
+	}	
+.platinum a{
+	background:#00a2c3;
+	}	
+.promosop a{
+	background:#333333;
+	}																																										
