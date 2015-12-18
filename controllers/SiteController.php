@@ -154,7 +154,7 @@ class SiteController extends Controller
             if(in_array($ext,$allowed)){
                 if(is_uploaded_file($filetemp)) {
     		        if(move_uploaded_file($filetemp, $filepath . $filename)) {
-    		        	if(chmod($filepath . $filename, 777)){
+    		        	if(chmod($filepath . $filename,0755)){
     		            	$work->cv=$filename;
     		        	}
     		        	else{
@@ -173,7 +173,17 @@ class SiteController extends Controller
                 echo "no extension";
             }
             if($work->save()){
-            	echo "enviado";
+                               if(Yii::$app->mailer->compose('contact/work',['work'=>$work])
+                    // ->setFrom([$contact->email=>$contact->name.' '.$contact->lastname])
+                    ->setFrom([Yii::$app->params['adminEmail']=>'Optica los Andes'])
+                    ->setTo('recursos@ola.ec')
+                    //->setTo('recursos@ola.ec')
+                    ->setSubject('CV aspirante Optica los Andes')
+                    // ->setTextBody($body)
+                    ->send()){
+                    echo "enviado";
+                } 
+         
             }
             else{
             	echo "no save";

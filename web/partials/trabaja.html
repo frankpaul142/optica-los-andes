@@ -19,7 +19,7 @@ document.getElementById("uploadBtn").onchange = function() {
             <div class="file">
                 <div class="fileUpload btn btn-primary">
                     <span>Currículum</span>
-                    <input id="uploadBtn" type="file" class="upload noPreventDefault" />
+                    <input id="uploadBtn" type="file" name="cv" class="upload noPreventDefault" />
                 </div>
                 <input id="uploadFile" disabled="disabled" class="noPreventDefault" placeholder="Subir archivo..." />
                 <div style="clear:both"></div>
@@ -29,6 +29,7 @@ document.getElementById("uploadBtn").onchange = function() {
             <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
         </form>
         <alert ng-show="showAlert" type="{{alertType}}">{{alertMsg}}</alert>
+          <div id="txt-laborales">Consulta nuestras ofertas laborales: <a href="http://opticalosandes.bumeran.com.ec/listadoofertas.bum" target="_blank">Aquí</a></div>
     </div>
     <img src="images/trabajo-ola.jpg" alt="trabaja con nosotros ola" id="img-trabaja" />
 </section>
@@ -49,9 +50,9 @@ document.getElementById("uploadBtn").onchange = function() {
         </li>
     </ul>
     <span>
-            <a href="http://opticalosandes.com.ec/docs/20150212130556636.pdf" target="_blank">Emisión de Obligaciones de la compañía ÓPTICA LOS ANDES S.A. por un monto de hasta (USD 2´000.000,00), Resolución aprobatoria.</a>  |  
+            <!--<a href="http://opticalosandes.com.ec/docs/20150212130556636.pdf" target="_blank">Emisión de Obligaciones de la compañía ÓPTICA LOS ANDES S.A. por un monto de hasta (USD 2´000.000,00), Resolución aprobatoria.</a>  |  
             <a href="http://opticalosandes.com.ec/docs/EXTRACTO_EM_OLA.pdf" target="_blank">Extracto del informe de la Calificación de Riesgos de la Emisión de Obligaciones de la Compañía ÓPTICA LOS ANDES S.A.</a>  |  
-            <a href="http://opticalosandes.com.ec/docs/Resolucion%20Cancelacion%20de%20Primera%20Emision%20Obligaciones%20OLA%20S.A..pdf" target="_blank">Resolución Cancelación de Primera Emisión Obligaciones  OLA S.A.</a>  |   © 2015 ÓPTICA LOS ANDES ALL RIGHTS RESERVED  ·  Powered by Share Digital Agency
+            <a href="http://opticalosandes.com.ec/docs/Resolucion%20Cancelacion%20de%20Primera%20Emision%20Obligaciones%20OLA%20S.A..pdf" target="_blank">Resolución Cancelación de Primera Emisión Obligaciones  OLA S.A.</a>  |-->   © 2015 ÓPTICA LOS ANDES ALL RIGHTS RESERVED  ·  Powered by Share Digital Agency
         </span>
 </div>
 <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>

@@ -1,0 +1,5 @@
+[25-May-2015 22:13:08 UTC] PHP Warning:  Unterminated comment starting line 167 in /home/opticala/public_html/prueba/vendor/yiisoft/yii2/base/Controller.php on line 167
+[25-May-2015 22:13:08 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/opticala/public_html/prueba/vendor/yiisoft/yii2/base/Controller.php on line 168
+[25-May-2015 22:13:51 UTC] PHP Warning:  Unterminated comment starting line 823 in /home/opticala/public_html/prueba/vendor/yiisoft/yii2/helpers/BaseHtml.php on line 823
+[25-May-2015 22:13:51 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/opticala/public_html/prueba/vendor/yiisoft/yii2/helpers/BaseHtml.php on line 828
+[15-Jun-2015 17:19:51 UTC] PHP Fatal error:  Class 'View' not found in /home/opticala/public_html/prueba/views/layouts/main.php on line 22

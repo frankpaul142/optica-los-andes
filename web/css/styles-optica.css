@@ -155,8 +155,8 @@ nav ul{
 	display: inline-block;
 }
 nav ul li{
-width: 15%;
-  padding: 2%;
+width: 14%;
+  padding: 2% 1%;
   float: left;
   list-style: none;
 	
@@ -2003,3 +2003,21 @@ z-index: 999;
 width: 150px;  
 display: none;    
 }
+#txt-laborales{
+	width:100%;
+	margin:1% 0 0 0;
+	padding:2% 0 0 0;
+	color:#FFFFFF;
+	border-top:1px solid #FFFFFF;
+	font-family: 'bebas_neueregular';
+	text-align:left;
+	font-size:1.4em;
+	}
+#txt-laborales a:link, #txt-laborales a:visited{
+	padding:5px 25px;
+	background-color:#0bb0c7;
+	color:#FFFFFF;
+	margin:0 0 0 2%;
+	font-family: 'bebas_neueregular';
+	font-size:1em;
+	}	

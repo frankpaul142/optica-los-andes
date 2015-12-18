@@ -113,8 +113,8 @@ controllers.controller('HomeCtrl', function($scope, $location, $rootScope) {
 
 controllers.controller('PromoCtrl', function($scope, $location, $rootScope, $timeout) {
     console.log('PromoCtrl');
-    var vids = ['OLA - Lo que Quieres Ver 45 Secs (Historia Completa)', 'OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)'];
-    var vidsLabel = ['Lo que Quieres Ver (Historia Completa)', 'Lo que Quieres Ver (Tecnología)'];
+    var vids = ['todo_lo_que_quieres_ver','OLA - Lo que Quieres Ver 45 Secs (Historia Completa)', 'OLA - Lo que Quieres Ver 20 Secs (TECNOLOGIA)','reduccion'];
+    var vidsLabel = ['2x$89 en Armazones más lunas','Lo que Quieres Ver (Historia Completa)', 'Lo que Quieres Ver (Tecnología)','Ola Reducción'];
     $scope.currentVideo = 0;
     $scope.videos = [];
     for (i in vids) {

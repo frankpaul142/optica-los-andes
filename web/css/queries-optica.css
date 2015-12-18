@@ -45,7 +45,7 @@
         background-size: inherit;
     }
     nav ul li {
-        width: 16%;
+        width: 14%;
         padding: 0;
     }
     .info-cp {
@@ -95,6 +95,12 @@
     .list-locales li a:visited {
         font-size: 20px;
     }
+    .cont-menu {
+    width: 100%;
+   
+    padding: 1% 2%;
+
+}
 }
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
