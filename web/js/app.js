@@ -20,9 +20,9 @@ app.config(function($routeProvider /*, $locationProvider*/ ) {
 		templateUrl: 'partials/quienes.html',
 		controller: 'QuienesCtrl'
 	}).
-	when('/beneficios', {
-		templateUrl: 'partials/beneficios.html',
-		controller: 'BeneficiosCtrl'
+	when('/productos', {
+		templateUrl: 'partials/productos.html',
+		controller: 'ProductosCtrl'
 	}).
 	when('/trabaja_con_nosotros', {
 		templateUrl: 'partials/trabaja.html',

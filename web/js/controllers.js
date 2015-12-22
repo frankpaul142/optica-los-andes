@@ -16,6 +16,9 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
         } else if (section == 3) {
             $location.url('contacto');
         }
+        else if (section == 2) {
+            $location.url('productos');
+        }
     }
     $scope.$on('$routeChangeStart', function() {
         $rootScope.scrolling1 = true;
@@ -695,4 +698,15 @@ controllers.controller('LocalesCtrl', function($scope, $location, $rootScope, $h
         $scope.ciudades = ciudades;
         $scope.loading = false;
     }
+});
+controllers.controller('ProductosCtrl', function($scope, $location, $rootScope, $http) {
+          $scope.desplegar = false;
+         $scope.pageClass = 'scroll-right-enter';
+        $rootScope.page = 2;
+    $rootScope.$on('sectionMenu', function(event, args) {
+        if (args < 2) {
+            $scope.pageClass = 'scroll-left-leave';
+        }
+    });
+    console.log('ProductosCtrl');
 });

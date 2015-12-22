@@ -79,7 +79,7 @@ AppAsset::register($this);
                  <li><a href="#/trabaja_con_nosotros" ng-click="toSection($event,5)">TRABAJA CON NOSOTROS</a></li>
                 <li><a href="#/locales" ng-click="toSection($event,6)">ENCUÉNTRANOS</a></li>
                 <li><a href="http://facte.gerenciall.com:86/fe/seg_Login_OLA/seg_Login_OLA.php" target="_blank">FACTURACIÓN ELECTRÓNICA</a></li>
-                 <li><a href="http://www.opticalosandes.com.ec/docs/optica-transparencia.pdf" target="_blank">TRANSPARENCIA</a></li>
+                 <li><a href="#/productos" ng-click="toSection($event,2)" >PRODUCTOS</a></li>
                 <li><a href="#/contacto" ng-click="toSection($event,3)">CONTACTO</a></li>
             </ul>
         </nav>
@@ -99,7 +99,7 @@ AppAsset::register($this);
                 <!-- <li><a href="#">SERVICIOS</a></li> -->
                 <!-- <li><a href="#">PLANES EMPRESARIALES</a></li> -->
                  <li><a href="#/trabaja_con_nosotros" ng-click="toSection($event,5)">TRABAJA CON NOSOTROS</a></li>
-                <li><a href="http://www.opticalosandes.com.ec/docs/optica-transparencia.pdf" target="_blank">TRANSPARENCIA</a></li>
+                <li><a href="#/productos" ng-click="toSection($event,2)" >PRODUCTOS</a></li>
                 <li><a href="#/locales" ng-click="toSection($event,6)">ENCUÉNTRANOS</a></li>
                 <li><a href="#/contacto" ng-click="toSection($event,3)">CONTACTO</a></li>
             </ul>
