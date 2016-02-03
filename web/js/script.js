@@ -35,7 +35,9 @@ $(document).ready(function() {
 			$('.nav.nav-resp').hide();
 		}
 	});
-
+	/**/
+	
+	/**/
 });
 
 var images = new Array();
@@ -95,4 +97,4 @@ preload(
 );
 
 $.fancybox.open('images/promo/pop-up.jpg');
-    
+ 

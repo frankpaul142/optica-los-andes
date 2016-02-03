@@ -24,7 +24,7 @@ document.getElementById("uploadBtn").onchange = function() {
                 <input id="uploadFile" disabled="disabled" class="noPreventDefault" placeholder="Subir archivo..." />
                 <div style="clear:both"></div>
             </div>
-            <textarea placeholder="COMENTARIOS" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
+            <textarea placeholder="CARGO" ng-model="imensaje" ng-keypress="keypressed($event)" name="mensaje" class="noPreventDefault"></textarea>
             <div vc-recaptcha key="'6LeTWwcTAAAAAO3sGiEeUyKargRgVgxtykDuBO2H'" on-success="setResponse(response)" theme="dark"></div>
             <input type="submit" value="{{textoEnviar}}" ng-click="enviar($event)" ng-disabled="textoEnviar=='Enviando'" class="noPreventDefault" />
         </form>

@@ -1,9 +1,5 @@
 /*queries*/
 @media screen and (max-width: 1600px) {
-    .info-mision,
-    .info-vision {
-        min-height: 600px;
-    }
     .resp-home {
         display: none;
     }
@@ -14,12 +10,10 @@
 
 @media screen and (max-width: 1366px) {
     .info-vision {
-        min-height: 500px;
         background-position: 100% 40%;
         background-size: 50%;
     }
     .info-mision {
-        min-height: 500px;
         background-size: 50% auto;
         background-position: 0% 40%;
     }
@@ -116,12 +110,10 @@
         width: 41%;
     }
     .info-vision {
-        min-height: 500px;
         background-position: 100% 40%;
         background-size: 50%;
     }
     .info-mision {
-        min-height: 500px;
         background-size: 50% auto;
         background-position: 0% 40%;
     }

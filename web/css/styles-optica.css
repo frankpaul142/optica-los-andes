@@ -499,6 +499,7 @@ input#uploadFile {
 /* LA EMPRESA */
 .gb-laempresa{
 	background-color:#fcfcfc;
+    height: 50%;
 	}
 .img-laempresa{
 	width: 50%;
@@ -2003,7 +2004,6 @@ z-index: 999;
 width: 150px;  
 display: none;    
 }
-
 #txt-laborales{
 	width:100%;
 	margin:1% 0 0 0;
@@ -2022,6 +2022,8 @@ display: none;
 	font-family: 'bebas_neueregular';
 	font-size:1em;
 	}	
+/*/*/
+
 /**/
 .tit-promo{
 	width:100%;
@@ -2040,7 +2042,7 @@ display: none;
 	}	
 .section-promo{
 	width:33.33%;
-	height:79%;
+	height:84.5%;
 	float:left;
 	}
 .gift-card{
@@ -2073,7 +2075,7 @@ display: none;
 	font-size:4.2em;
 	font-family: 'bebas_neueregular';
 	}				
-.section-promo a:link, .section-promo a:visited{
+.section-promo a:link, .section-promo a:visited, #btn-promoplatinum{
 	width:60%;
 	margin:3% 20% 0 20%;
 	padding:1.5% 0;
@@ -2081,13 +2083,31 @@ display: none;
 	color:#FFF;
 	font-size:0.9em;
 	float:left;
+	cursor:pointer;
 	}	
 .gift-card a{
 	background:#3d2b89;
 	}	
-.platinum a{
+.platinum a, #btn-promoplatinum{
 	background:#00a2c3;
 	}	
 .promosop a{
 	background:#333333;
-	}																																										
+	}																						/**/
+#pest-promo{
+	background-color:#00a2c3;
+	color:#FFFFFF;
+	font-size:1em;
+	padding:2% 1%;	
+}
+#pest-promo h1{
+	font-size:2em;
+	}
+.section-promo span{
+	color:rgba(255,255,255,1.00);
+	font-size:0.75em;
+	text-align:justify;
+	width:96%;
+	float:left;
+	padding:0 2%;
+	}	

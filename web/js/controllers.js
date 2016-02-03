@@ -16,7 +16,7 @@ controllers.controller('MainCtrl', function($scope, $location, $rootScope, $time
         } else if (section == 3) {
             $location.url('contacto');
         }
-        else if (section == 2) {
+          else if (section == 2) {
             $location.url('productos');
         }
     }
@@ -708,5 +708,13 @@ controllers.controller('ProductosCtrl', function($scope, $location, $rootScope, 
             $scope.pageClass = 'scroll-left-leave';
         }
     });
+    $(".btn-promoplatinum").fancybox({
+		 'width' : '50%',
+		 'height' : '75%',
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
     console.log('ProductosCtrl');
 });
